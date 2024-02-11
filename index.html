@@ -3,17 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
     <title>Document</title>
 </head>
 <body>
-    <div class = "content">
-        <div class = "header">
-            <img id = "logo" src = "imgs/logo.png" />
+    <div class="container">
+        <div class="header">
+            <div class="header-item">
+                <a href="index.html">
+                    <img class="logo" src="imgs/logo.png">
+                </a> 
+            </div>
+            <div class="header-item">
+                <div class="search-div">
+                    <input class="search-bar" type="text" placeholder="Search...">
+                    <span class="icon search-i"></span>
+                </div>
+            </div>
+            <div class="header-item">
+                <a class="login" href="#">LOGIN</a>
+                <span class="icon profile-i"></span>
+            </div>
         </div>
-        <div class = "body">
-
-        </div>
+        <div class="main"></div>
     </div>
 </body>
 </html>
