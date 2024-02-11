@@ -21,3 +21,24 @@
     --padd-sm: 10px;
     --padd-big: 20px;
 }
+
+/* icon class - all icons must use this class */
+.icon {
+    background-image: url("../imgs/spritesheet.svg");
+    background-size: 100px;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+
+    /* example for custom icons
+     
+      <span class="icon star"></span>
+      .star {
+          background-position: 0 0;
+          background-size: 200px;        // ratio of width / height 
+          width: 50px;                   // to background size is 1:4
+          height: 50px;
+      } 
+     
+    */
+}
