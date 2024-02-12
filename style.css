@@ -18,11 +18,12 @@
 
     --padd-sm: 10px;
     --padd-big: 20px;
-    --brad--def: 10px;
+    --padd-lg: 40px;
+    --brad--def: 20px;
 
     font-size: 14px;
     font-family: 'Montserrat', 'sans-serif';
-
+    color: white;
 }
 
 /* icon class - all icons must use this class */
@@ -114,3 +115,74 @@ body {
     background-position: -40px -60px;
 }
 /* end of header styles */
+
+/* homepage */
+.p1-content {
+    padding: var(--padd-lg);
+}
+
+.p1-restaurants-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.p1-star-i {
+    background-position: -150px 0;
+    background-size: 200px;
+    width: 50px;
+    height: 50px;
+
+    margin-right: 25px;
+}
+
+.p1-label-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+} 
+
+.p1-label {
+    display: inline-block;
+    font-size: 2.5rem;
+}
+
+.p1-card {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    max-height: 325px;
+    overflow: hidden;
+}
+
+.p1-resto-name {
+    font-size: 1.5rem;
+    color: var(--col-prim);
+}
+
+.p1-card-img {
+    width: 80%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--brad--def);
+    margin-bottom: 10px;
+}
+
+.p1-rating-i {
+    background-size: 40px;       
+    width: 10px;
+    height: 10px;
+}
+
+.p1-reviews {
+    font-size: 0.8rem;
+    color: #b4b9b9;
+}
+
+.p1-description {
+    margin-top: 5px;
+    font-size: 0.8rem;
+}
+
+
