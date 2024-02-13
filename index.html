@@ -7,6 +7,42 @@
         <title>Document</title>
     </head>
     <body>
+        <div id="login-container">
+            <div class="popup">
+                <span class="icon popup-x-i" onclick="toggleLoginPopup()"></span>
+                <div class="login-box">
+                    <h2 class="login-title">Login</h2>
+                    <form class="login-form" action="post">
+                        <label class="login-label" for="login-username">Username
+                            <input id="login-username" class="login-input" type="text">
+                        </label>
+                        <label class="login-label" for="login-password">Password
+                            <input id="login-password" class="login-input" type="password">
+                        </label>
+                        <input type="submit" value="LOGIN" class="popup-button">
+                    </form>
+                </div>
+                <div class="or-box">
+                    OR
+                </div>
+                <div class="register-box">
+                    <p class="register-prompt">Don't have an account?</p>
+                    <h2 class="register-title">Register</h2>
+                    <form class="login-form" action="post">
+                        <label class="login-label" for="register-username">Username
+                            <input id="register-username" class="register-input" type="text">
+                        </label>
+                        <label class="login-label" for="register-password">Password
+                            <input id="register-password" class="register-input" type="password">
+                        </label>
+                        <label class="login-label" for="register-confirm-password">Confirm Password
+                            <input id="register-confirm-password" class="register-input" type="password">
+                        </label>
+                        <input type="submit" value="REGISTER" class="popup-button">
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="header">
                 <div class="header-item">
@@ -23,7 +59,7 @@
                     </div>
                 </div>
                 <div class="header-item">
-                    <a class="login" href="#">LOGIN</a>
+                    <p class="login" onclick="toggleLoginPopup()">LOGIN</p>
                     <span class="icon profile-i"></span>
                 </div>
             </div>
@@ -60,7 +96,7 @@
                                 <span class="icon p1-rating-i"></span>
                                 <span class="icon p1-rating-i"></span>
                                 <span class="p1-reviews">(3k reviews)</span>
-                                <p class="p1-description">Burger Man is an American restaurant founded by the late Ger, Bu R. It proudly serves honest to God American burgers in 37 of the 50 states.</p>
+                                <p class="p1-description">Get your froyo (frozen yos) at Fred's, here we serve anyone good desserts. Please don't write negative review or you are ban! Thank you!</p>
                             </div>
                         </div>
                         </li>
@@ -75,7 +111,7 @@
                                 <span class="icon p1-rating-i"></span>
                                 <span class="icon p1-rating-i"></span>
                                 <span class="p1-reviews">(300 reviews)</span>
-                                <p class="p1-description">Burger Man is an American restaurant founded by the late Ger, Bu R. It proudly serves honest to God American burgers in 37 of the 50 states.</p>
+                                <p class="p1-description">McDonald’s only uses 100% pure beef for its Hamburger, Cheeseburger, Big Mac, Quarter Pounder with cheese and Big N' Tasty with no additives, preservatives or flavor enhancers.</p>
                             </div>
                         </div>
                         </li>
@@ -90,7 +126,7 @@
                                 <span class="icon p1-rating-i"></span>
                                 <span class="icon p1-rating-i"></span>
                                 <span class="p1-reviews">(1.1k reviews)</span>
-                                <p class="p1-description">Burger Man is an American restaurant founded by the late Ger, Bu R. It proudly serves honest to God American burgers in 37 of the 50 states.</p>
+                                <p class="p1-description">Have you guys seen joe?</p>
                             </div>
                         </div>
                         </li>
@@ -105,7 +141,7 @@
                                 <span class="icon p1-rating-i"></span>
                                 <span class="icon p1-rating-i"></span>
                                 <span class="p1-reviews">(12.2k reviews)</span>
-                                <p class="p1-description">Burger Man is an American restaurant founded by the late Ger, Bu R. It proudly serves honest to God American burgers in 37 of the 50 states.</p>
+                                <p class="p1-description">Welcome to Freddy Fazbear's Pizza. A magical place for kids and grown-ups alike, where fantasy and fun come to life. Fazbear Entertainment is not responsible for damage to property or person.</p>
                             </div>
                         </div>
                         </li>
@@ -114,7 +150,8 @@
             </div>
         </div>
 
-
+        <!-- javascript -->
         <script src="js/homepage.js"></script>
+        <script src="js/login.js"></script>
     </body>
 </html>
