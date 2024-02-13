@@ -16,8 +16,10 @@
                 </div>
                 <div class="header-item">
                     <div class="search-div">
-                        <input class="search-bar" type="text" placeholder="Search...">
-                        <span class="icon search-i"></span>
+                        <form action="index.html" method="get">
+                            <input id="search-bar" type="text" name="filter" placeholder="Search restaurants...">
+                            <span class="icon search-i"></span>
+                        </form>
                     </div>
                 </div>
                 <div class="header-item">
@@ -31,73 +33,88 @@
                     <h1 class="p1-label">Rate and Review!</h1>
                 </div>
                 <div class="p1-restaurants-container">
-                    <div class="p1-card">
-                        <img class="p1-card-img" src="imgs/restaurants/burger-man.jpg" alt="">
-                        <div class="p1-card-info">
-                            <h2 class="p1-resto-name">Burger Man</h2>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="p1-reviews">(21 reviews)</span>
-                            <p class="p1-description">Burger Man is an American restaurant founded by the late Ger, Bu R. It proudly serves honest to God American burgers in 37 of the 50 states.</p>
+                    <ul id="p1-restaurants-list">
+                        <li>
+                        <div class="p1-card">
+                            <img class="p1-card-img" src="imgs/restaurants/burger-man.jpg" alt="">
+                            <div class="p1-card-info">
+                                <h2 class="p1-resto-name">Burger Man</h2>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="p1-reviews">(21 reviews)</span>
+                                <p class="p1-description">Burger Man is an American restaurant founded by the late Ger, Bu R. It proudly serves honest to God American burgers in 37 of the 50 states.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="p1-card">
-                        <img class="p1-card-img" src="imgs/restaurants/burger-man.jpg" alt="">
-                        <div class="p1-card-info">
-                            <h2 class="p1-resto-name">Fred's Froyo</h2>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="p1-reviews">(3k reviews)</span>
-                            <p class="p1-description">Burger Man is an American restaurant founded by the late Ger, Bu R. It proudly serves honest to God American burgers in 37 of the 50 states.</p>
+                        </li>
+                        <li>
+                        <div class="p1-card">
+                            <img class="p1-card-img" src="imgs/restaurants/freds-froyo.jpg" alt="">
+                            <div class="p1-card-info">
+                                <h2 class="p1-resto-name">Fred's Froyo</h2>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="p1-reviews">(3k reviews)</span>
+                                <p class="p1-description">Burger Man is an American restaurant founded by the late Ger, Bu R. It proudly serves honest to God American burgers in 37 of the 50 states.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="p1-card">
-                        <img class="p1-card-img" src="imgs/restaurants/burger-man.jpg" alt="">
-                        <div class="p1-card-info">
-                            <h2 class="p1-resto-name">McWonalds</h2>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="p1-reviews">(300 reviews)</span>
-                            <p class="p1-description">Burger Man is an American restaurant founded by the late Ger, Bu R. It proudly serves honest to God American burgers in 37 of the 50 states.</p>
+                        </li>
+                        <li>
+                        <div class="p1-card">
+                            <img class="p1-card-img" src="imgs/restaurants/mcwonalds.jpg" alt="">
+                            <div class="p1-card-info">
+                                <h2 class="p1-resto-name">McWonalds</h2>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="p1-reviews">(300 reviews)</span>
+                                <p class="p1-description">Burger Man is an American restaurant founded by the late Ger, Bu R. It proudly serves honest to God American burgers in 37 of the 50 states.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="p1-card">
-                        <img class="p1-card-img" src="imgs/restaurants/burger-man.jpg" alt="">
-                        <div class="p1-card-info">
-                            <h2 class="p1-resto-name">Candice Nuts</h2>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="p1-reviews">(1.1k reviews)</span>
-                            <p class="p1-description">Burger Man is an American restaurant founded by the late Ger, Bu R. It proudly serves honest to God American burgers in 37 of the 50 states.</p>
+                        </li>
+                        <li>
+                        <div class="p1-card">
+                            <img class="p1-card-img" src="imgs/restaurants/candice-nuts.jpg" alt="">
+                            <div class="p1-card-info">
+                                <h2 class="p1-resto-name">Candice Nuts</h2>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="p1-reviews">(1.1k reviews)</span>
+                                <p class="p1-description">Burger Man is an American restaurant founded by the late Ger, Bu R. It proudly serves honest to God American burgers in 37 of the 50 states.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="p1-card">
-                        <img class="p1-card-img" src="imgs/restaurants/burger-man.jpg" alt="">
-                        <div class="p1-card-info">
-                            <h2 class="p1-resto-name">Freddy Fazbear's Pizza</h2>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="icon p1-rating-i"></span>
-                            <span class="p1-reviews">(12.2k reviews)</span>
-                            <p class="p1-description">Burger Man is an American restaurant founded by the late Ger, Bu R. It proudly serves honest to God American burgers in 37 of the 50 states.</p>
+                        </li>
+                        <li>
+                        <div class="p1-card">
+                            <img class="p1-card-img" src="imgs/restaurants/freddy-fazbears-pizza.jpg" alt="">
+                            <div class="p1-card-info">
+                                <h2 class="p1-resto-name">Freddy Fazbear's Pizza</h2>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="icon p1-rating-i"></span>
+                                <span class="p1-reviews">(12.2k reviews)</span>
+                                <p class="p1-description">Burger Man is an American restaurant founded by the late Ger, Bu R. It proudly serves honest to God American burgers in 37 of the 50 states.</p>
+                            </div>
                         </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
+
+
+        <script src="js/homepage.js"></script>
     </body>
 </html>
