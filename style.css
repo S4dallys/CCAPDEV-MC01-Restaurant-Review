@@ -327,7 +327,7 @@ body {
     height: auto;
     width: 70%;
 
-    outline: rgb(13, 255, 0) solid 3px;
+    color: black;
 
 }
 li.pro-review-box{
@@ -402,7 +402,7 @@ li.pro-review-box{
 }
 
 .sb-pic {
-    width: 150px;
+    width: 180px;
     aspect-ratio: 1;
 }
 
