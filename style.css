@@ -681,17 +681,18 @@ li.pro-or-box{
 
 .ed-div {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    padding-bottom: 25px;
 }
 
 .ed-cancel {
     display: flex;
-    justify-content: row;
+    margin: 0px 40px 0px 0px;
 }
 
 .ed-save {
     display: flex;
-    justify-content: row;
+    margin: 0px 0px 0px 40px;
 }
 
 .edit-user-text {
