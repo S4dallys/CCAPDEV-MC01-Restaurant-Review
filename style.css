@@ -303,6 +303,10 @@ body {
     object-fit: cover;
     border-radius: var(--brad--def);
     margin-bottom: 10px;
+
+    border: 2px solid white;
+    box-shadow: 7px 10px 7px rgba(0, 0, 0, 0.7); 
+
 }
 
 .p1-rating-i {
@@ -424,6 +428,7 @@ li.pro-or-box{
     font-size: 2vh;
     margin-right: 1vh;
     margin-top: 1vh;
+    color: var(--col-owner-sec);
 }
 
 .pro-or-icon{
