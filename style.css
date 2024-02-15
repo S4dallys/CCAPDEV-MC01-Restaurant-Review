@@ -397,7 +397,7 @@ li.pro-or-box{
 }
 .pro-or-box{
     width: 60%;
-    height: 20vh;
+    height: 18vh;
 
     margin-left: auto;
     margin-right: auto;
@@ -411,6 +411,32 @@ li.pro-or-box{
     background-color: var(--col-sec);
     border: 2px solid white;
     border-radius:  0 0 15px  15px ;
+}
+
+.pro-or-header{
+    margin-left: 10%;
+    font-size: 2.5vh;
+    width: 50%;
+    height: 25%;
+}
+
+.pro-or-text{
+    font-size: 2vh;
+    margin-right: 1vh;
+    margin-top: 1vh;
+}
+
+.pro-or-icon{
+    width: 3vw;
+    aspect-ratio: 1;
+    
+    border-radius: 100%;
+    padding: 0% ;
+    margin-top: -1.4vh;
+    margin-left: 1.2vh;
+
+    position: absolute;
+
 }
 
 .pro-sidebar{
