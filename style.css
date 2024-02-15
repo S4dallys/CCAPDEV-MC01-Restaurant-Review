@@ -65,13 +65,20 @@ body {
 }
 
 /* header styles */
+
+.container {
+    position: sticky;
+    float: top;
+    top: 0.00000000000000000000000000000000000000000000000001px;
+    z-index: 1;
+}
+
 .header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: var(--col-sec);
     padding: var(--padd-sm) 40px;
-
     
     border-bottom: 1px solid var(--col-prim);
 }
@@ -104,6 +111,11 @@ body {
     height: 100%;
     border-radius: 20px;
     padding: 10px;
+    border: 2px solid var(--col-prim);
+}
+
+#search-bar:focus{
+    border-color: #fff;
 }
 
 .search-i {
@@ -136,7 +148,7 @@ body {
 #login-container {
     display: none;
 
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.7);
@@ -303,6 +315,10 @@ body {
     object-fit: cover;
     border-radius: var(--brad--def);
     margin-bottom: 10px;
+
+    border: 2px solid white;
+    box-shadow: 7px 10px 7px rgba(0, 0, 0, 0.7); 
+
 }
 
 .p1-rating-i {
@@ -435,7 +451,7 @@ li.pro-or-box{
 }
 .pro-or-box{
     width: 60%;
-    height: 20vh;
+    height: 18vh;
 
     margin-left: auto;
     margin-right: auto;
@@ -451,6 +467,33 @@ li.pro-or-box{
     border-radius:  0 0 15px  15px ;
 
     position: relative;
+}
+
+.pro-or-header{
+    margin-left: 10%;
+    font-size: 2.5vh;
+    width: 50%;
+    height: 25%;
+}
+
+.pro-or-text{
+    font-size: 2vh;
+    margin-right: 1vh;
+    margin-top: 1vh;
+    color: var(--col-owner-sec);
+}
+
+.pro-or-icon{
+    width: 3vw;
+    aspect-ratio: 1;
+    
+    border-radius: 100%;
+    padding: 0% ;
+    margin-top: -1.4vh;
+    margin-left: 1.2vh;
+
+    position: absolute;
+
 }
 
 .pro-sidebar{
