@@ -10,7 +10,7 @@
         <div class ="bg-tint"></div>   
         <div id="login-container" style="display: none">
             <div class="popup">
-                <span class="icon popup-x-i hov2" onclick="toggleLoginPopup()"></span>
+                <span class="icon popup-x-i hov2" onclick="togglePopup('login-container')"></span>
                 <div class="login-box">
                     <h2 class="login-title">Login</h2>
                     <form class="login-form" action="bob123.html">
@@ -45,6 +45,30 @@
             </div>
         </div>
 
+        <div id="cr-container" style="display: none">
+            <form class="cr-popup" action="post">
+                <div class="cr-header">
+                    <h1 class="cr-label">Create Review</h1>
+                    <span class="icon popup-x-i cr-x-i hov2" onclick="togglePopup('cr-container')"></span>
+                </div>
+                <input type="text" class="cr-title" placeholder="Title...">
+                <textarea class="cr-content" placeholder="What I think about this restaurant..."></textarea>
+                <div class="cr-actions">
+                    <ul class="cr-star-group">
+                        <li class="icon cr-star-i"></li>
+                        <li class="icon cr-star-i"></li>
+                        <li class="icon cr-star-i"></li>
+                        <li class="icon cr-star-i"></li>
+                        <li class="icon cr-star-i"></li>
+                    </ul>
+                    <div class="cr-button-group">
+                        <button type="button" class="popup-button cr-cancel">CANCEL</button>
+                        <button type="submit" class="popup-button cr-post">POST</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
         <div class="container">
             <div class="header">
                 <div class="header-item">
@@ -61,7 +85,7 @@
                     </div>
                 </div>
                 <div class="header-item">
-                    <p class="login thov3" onclick="toggleLoginPopup()">LOGIN</p>
+                    <p class="login thov3" onclick="togglePopup('login-container')">LOGIN</p>
                     <a href="bob123.html">
                         <span class="icon profile-i hov2"></span>
                     </a>
@@ -70,7 +94,6 @@
         </div>
 
         <div class = "pro-main">
-            
             <div class ="pro-sidebar">
                 <div class ="pro-sidebar-bg">
                     <h2 class="sb-name">Burger Man</h2>
@@ -89,13 +112,102 @@
                         <p class="reviews"><span class="orange-bold">52</span> reviews</p>
                         <p class="stars"><span class="orange-bold">4.5</span> stars</p>
                     </div>
+                    <div class="edit-div">
+                        <a class="edit-user create-review hov1" onclick="togglePopup('cr-container')" href="#">
+                            <span class="icon plus-i"></span>
+                            <p class="edit-user-text">CREATE REVIEW</p>
+                        </a>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class ="pro-review-holder">
+            <ul>
+                <li class="pro-review-box">
+                    <div class="pro-actions">
+                        <span class="icon pro-like"></span>
+                        <span class="pro-like-count">-72</span>
+                        <span class="icon pro-dislike"></span>
+                    </div>
+                    <img class="pro-review-icon hov1" src ="imgs/profiles/bob123.jpg"></img>
+                    <div class = "pro-review-header">
+                        <p class="pro-review-location"><a href="#" class="pro-user-link thov1">Bob123</a> on <a href="#" class="pro-location-link bitalics thov1">Burger Man</a> • <span class="pro-user-date">(1/11/09)</span></p>
+                        <h3 class ="pro-review-title bold">This place is awful</h3>
+                    </div>
+                    <div class = "pro-review-text">
+                        i took my son here and he died wtf!!! I will eat your burgers no more!!!! My cat also died. I have diarrhea and i cant feel any of my limbs..... i have been hospitalized and my wife left me.    
+                    </div>
+                </li>
+                <li class="pro-or-box">
+                    <div class = "pro-or-header">
+                        <span class="icon pro-crown-i"></span>
+                        <span class = "bold">Owner Response • <span class="pro-or-date">(1/11/09)</span></span>
+                    </div>
+                    <div class = "pro-or-text">
+                        Hi Bob! I’m sorry to hear that! I hope he gets better soon. You and your remaining family are entitled to a free pack of breadsticks on your next visit. Check your email for the coupon code!
+                    </div>
+                </li>
+
+                <li class="pro-review-box">
+                    <div class="pro-actions">
+                        <span class="icon pro-like"></span>
+                        <span class="pro-like-count">-72</span>
+                        <span class="icon pro-dislike"></span>
+                    </div>
+                    <img class="pro-review-icon hov1" src ="imgs/profiles/bob123.jpg"></img>
+                    <div class = "pro-review-header">
+                        <p class="pro-review-location"><a href="#" class="pro-user-link thov1">Bob123</a> on <a href="#" class="pro-location-link bitalics thov1">Burger Man</a> • <span class="pro-user-date">(1/11/09)</span></p>
+                        <h3 class ="pro-review-title bold">This place is awful</h3>
+                    </div>
+                    <div class = "pro-review-text">
+                        i took my son here and he died wtf!!! I will eat your burgers no more!!!! My cat also died. I have diarrhea and i cant feel any of my limbs..... i have been hospitalized and my wife left me.    
+                    </div>
+                </li>
+                <li class="pro-review-box">
+                    <div class="pro-actions">
+                        <span class="icon pro-like"></span>
+                        <span class="pro-like-count">-72</span>
+                        <span class="icon pro-dislike"></span>
+                    </div>
+                    <img class="pro-review-icon hov1" src ="imgs/profiles/bob123.jpg"></img>
+                    <div class = "pro-review-header">
+                        <p class="pro-review-location"><a href="#" class="pro-user-link thov1">Bob123</a> on <a href="#" class="pro-location-link bitalics thov1">Burger Man</a> • <span class="pro-user-date">(1/11/09)</span></p>
+                        <h3 class ="pro-review-title bold">This place is awful</h3>
+                    </div>
+                    <div class = "pro-review-text">
+                        i took my son here and he died wtf!!! I will eat your burgers no more!!!! My cat also died. I have diarrhea and i cant feel any of my limbs..... i have been hospitalized and my wife left me.    
+                    </div>
+                </li>
+                <li class="pro-review-box">
+                    <div class="pro-actions">
+                        <span class="icon pro-like"></span>
+                        <span class="pro-like-count">-72</span>
+                        <span class="icon pro-dislike"></span>
+                    </div>
+                    <img class="pro-review-icon hov1" src ="imgs/profiles/bob123.jpg"></img>
+                    <div class = "pro-review-header">
+                        <p class="pro-review-location"><a href="#" class="pro-user-link thov1">Bob123</a> on <a href="#" class="pro-location-link bitalics thov1">Burger Man</a> • <span class="pro-user-date">(1/11/09)</span></p>
+                        <h3 class ="pro-review-title bold">This place is awful</h3>
+                    </div>
+                    <div class = "pro-review-text">
+                        i took my son here and he died wtf!!! I will eat your burgers no more!!!! My cat also died. I have diarrhea and i cant feel any of my limbs..... i have been hospitalized and my wife left me.    
+                    </div>
+                </li>
+                <li class="pro-or-box">
+                    <div class = "pro-or-header">
+                        <span class="icon pro-crown-i"></span>
+                        <span class = "bold">Owner Response • <span class="pro-or-date">(1/11/09)</span></span>
+                    </div>
+                    <div class = "pro-or-text">Hi bob! We believe this is your fault. Hope this helps!</div>
+                </li>
+
+            </ul> 
         </div>
 
         <!-- javascript -->
         <script src="js/homepage.js"></script>
         <script src="js/profile.js"></script>
         <script src="js/login.js"></script>
+        <script src="js/rating.js"></script>
     </body>
 </html>
