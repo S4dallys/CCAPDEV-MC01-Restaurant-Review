@@ -295,7 +295,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 200px;
-    max-height: 325px;
+    max-height: 375px;
 }
 
 .p1-resto-name {
@@ -368,6 +368,8 @@ body {
 }
 
 .pro-review-title {
+    margin-top: -3px;
+    margin-bottom: 3px;
     font-size: 1.5rem;
 }
 
@@ -771,6 +773,10 @@ li.pro-or-box{
     color: var(--col-prim);
     border-color: var(--col-prim);
     margin-left: 20px;
+}
+
+.cr-star-group{
+    margin-top: 5px;
 }
 
 .cr-star-j {
