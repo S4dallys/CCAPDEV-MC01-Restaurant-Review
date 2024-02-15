@@ -543,6 +543,17 @@ li.pro-or-box{
     gap: 10px;
 }
 
+.pro-user-date{
+    font-style: italic;
+
+}
+
+.pro-or-date{
+    font-weight: normal;
+    font-style: italic;
+    font-size: 1.8vh;
+}
+
 .pro-crown-i {
     background-position: -0px -75px;
     background-size: 100px;
@@ -600,6 +611,38 @@ li.pro-or-box{
     border-left: 0px;
 }
 
+.ed-main {
+    justify-content: center;
+}
+
+.ed-midbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10px;
+    position: fixed;
+
+    height: 90%;
+    width: 25%;
+
+    
+}
+
+.ed-midbar-bg{
+    width: 100%;
+    height: 90%;
+    background-color: var(--col-sec);
+    border-radius: 30px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padd-lg);
+
+    
+    border: 1px solid #ffffff;
+}
+
 .sb-name {
    font-size: 2.5rem; 
 }
@@ -640,13 +683,33 @@ li.pro-or-box{
     width: 100px;
     height: 40px;
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
     border-radius: 20px;
     text-decoration: none;
     color: black;
+}
+
+.ed-div {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 25px;
+}
+
+.ed-cancel {
+    display: flex;
+    margin: 0px 40px 0px 0px;
+}
+
+.ed-save {
+    display: flex;
+    margin: 0px 0px 0px 40px;
+}
+
+.ed-hover {
+    
 }
 
 .edit-user-text {
