@@ -329,6 +329,7 @@ body {
 .p1-description {
     margin-top: 5px;
     font-size: 0.8rem;
+    text-align: justify;
 }
 
 /*user profile page*/
@@ -518,7 +519,7 @@ li.pro-or-box{
 }
 .pro-or-box{
     width: 60%;
-    height: 18vh;
+    height: 16vh;
 
     margin-left: auto;
     margin-right: auto;
