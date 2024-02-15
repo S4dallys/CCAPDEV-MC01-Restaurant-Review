@@ -329,6 +329,7 @@ body {
 .p1-description {
     margin-top: 5px;
     font-size: 0.8rem;
+    text-align: justify;
 }
 
 /*user profile page*/
