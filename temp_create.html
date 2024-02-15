@@ -7,91 +7,33 @@
         <title>Document</title>
     </head>
     <body>
-        <div id="login-container">
-            <div class="popup">
-                <span class="icon popup-x-i" onclick="toggleLoginPopup()"></span>
-                <div class="login-box">
-                    <h2 class="login-title">Login</h2>
-                    <form class="login-form" action="post">
-                        <label class="login-label" for="login-username">Username
-                            <input id="login-username" class="login-input" type="text">
-                        </label>
-                        <label class="login-label" for="login-password">Password
-                            <input id="login-password" class="login-input" type="password">
-                        </label>
-                        <input type="submit" value="LOGIN" class="popup-button">
-                    </form>
-                </div>
-                <div class="or-box">
-                    OR
-                </div>
-                <div class="register-box">
-                    <p class="register-prompt">Don't have an account?</p>
-                    <h2 class="register-title">Register</h2>
-                    <form class="login-form" action="post">
-                        <label class="login-label" for="register-username">Username
-                            <input id="register-username" class="register-input" type="text">
-                        </label>
-                        <label class="login-label" for="register-password">Password
-                            <input id="register-password" class="register-input" type="password">
-                        </label>
-                        <label class="login-label" for="register-confirm-password">Confirm Password
-                            <input id="register-confirm-password" class="register-input" type="password">
-                        </label>
-                        <input type="submit" value="REGISTER" class="popup-button">
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="header">
-                <div class="header-item">
-                    <a href="index.html">
-                        <img class="logo" src="imgs/logo.png">
-                    </a> 
-                </div>
-                <div class="header-item">
-                    <div class="search-div">
-                        <form action="index.html" method="get">
-                            <input id="search-bar" type="text" name="filter" placeholder="Search restaurants...">
-                            <span class="icon search-i"></span>
-                        </form>
-                    </div>
-                </div>
-                <div class="header-item">
-                    <p class="login" onclick="toggleLoginPopup()">LOGIN</p>
-                    <span class="icon profile-i"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="cr-container">
+        <div id="cr-container">
             <form class="cr-popup" action="post">
-                <div>
+                <div class="cr-header">
                     <h1 class="cr-label">Create Review</h1>
                     <span class="icon popup-x-i cr-x-i"></span>
                 </div>
-                <input type="text" class="cr-title">
+                <input type="text" class="cr-title" placeholder="Title...">
                 <textarea class="cr-content" placeholder="What I think about this restaurant..."></textarea>
                 <div class="cr-actions">
-                    <div class="cr-star-group">
-                        <span id="cr-star-1" class="icon cr-star-i"></span>
-                        <span id="cr-star-2" class="icon cr-star-i"></span>
-                        <span id="cr-star-3" class="icon cr-star-i"></span>
-                        <span id="cr-star-4" class="icon cr-star-i"></span>
-                        <span id="cr-star-5" class="icon cr-star-i"></span>
-                    </div>
+                    <ul class="cr-star-group">
+                        <li class="icon cr-star-i"></li>
+                        <li class="icon cr-star-i"></li>
+                        <li class="icon cr-star-i"></li>
+                        <li class="icon cr-star-i"></li>
+                        <li class="icon cr-star-i"></li>
+                    </ul>
                     <div class="cr-button-group">
-                        <button type="button" class="cancel">CANCEL</button>
-                        <button type="submit" class="post">POST</button>
+                        <button type="button" class="popup-button cr-cancel">CANCEL</button>
+                        <button type="submit" class="popup-button cr-post">POST</button>
                     </div>
                 </div>
             </form>
         </div>
 
-            <!-- javascript -->
-            <script src="js/homepage.js"></script>
-            <script src="js/login.js"></script>
+        <!-- javascript -->
+        <script src="js/homepage.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/rating.js"></script>
     </body>
 </html>
