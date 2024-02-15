@@ -543,6 +543,17 @@ li.pro-or-box{
     gap: 10px;
 }
 
+.pro-user-date{
+    font-style: italic;
+
+}
+
+.pro-or-date{
+    font-weight: normal;
+    font-style: italic;
+    font-size: 1.8vh;
+}
+
 .pro-crown-i {
     background-position: -0px -75px;
     background-size: 100px;
