@@ -144,7 +144,7 @@ body {
 /* end of header styles */
 
 /* login popup styles */
-#login-container {
+#login-container, #cr-container {
     display: none;
 
     position: fixed;
@@ -153,7 +153,7 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 2;
 
-    /* display: flex; */
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -623,3 +623,70 @@ li.pro-or-box{
 
 }
 
+.cr-popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-inline: 40px;
+    height: 65%;
+    width: 45%;
+    background-color: var(--col-sec);
+    border-radius: 20px;
+}
+
+.cr-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cr-label {
+    font-size: 2.5rem;
+}
+
+.cr-x-i {
+    position: static;
+}
+
+.cr-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cr-title, .cr-content {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cr-title {
+    height: 50px;
+    font-size: 1.5rem;
+}
+
+.cr-content {
+    height: 200px;
+    font-size: 1.1rem;
+}
+
+.cr-cancel, .cr-post {
+    width: 100px;
+}
+
+.cr-cancel {
+    color: lightgray;
+}
+
+.cr-post {
+    color: var(--col-prim);
+    border-color: var(--col-prim);
+    margin-left: 20px;
+}
+
+.cr-star-i {
+    background-position: 0 0;
+}
+
+.cr-star-toggle-i {
+    background-position: -40px 0;
+}
