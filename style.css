@@ -392,6 +392,27 @@ li.pro-review-box{
 
 }
 
+li.pro-or-box{
+    list-style-type: none;
+}
+.pro-or-box{
+    width: 60%;
+    height: 20vh;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -.2vh;
+    
+    padding: 2vh 0 0 2vh;
+
+    font-size: 2vh;
+    color:var(--col-owner-prim);
+
+    background-color: var(--col-sec);
+    border: 2px solid white;
+    border-radius:  0 0 15px  15px ;
+}
+
 .pro-sidebar{
     display: flex;
     flex-direction: column;
