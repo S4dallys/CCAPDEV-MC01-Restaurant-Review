@@ -546,6 +546,38 @@ li.pro-or-box{
     border-left: 0px;
 }
 
+.ed-main {
+    justify-content: center;
+}
+
+.ed-midbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10px;
+    position: fixed;
+
+    height: 90%;
+    width: 25%;
+
+    
+}
+
+.ed-midbar-bg{
+    width: 100%;
+    height: 90%;
+    background-color: var(--col-sec);
+    border-radius: 30px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padd-lg);
+
+    
+    border: 1px solid #ffffff;
+}
+
 .sb-name {
    font-size: 2.5rem; 
 }
@@ -584,7 +616,7 @@ li.pro-or-box{
     width: 100px;
     height: 40px;
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -593,8 +625,31 @@ li.pro-or-box{
     color: black;
 }
 
+.ed-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.ed-cancel {
+    display: flex;
+    justify-content: row;
+}
+
+.ed-save {
+    display: flex;
+    justify-content: row;
+}
+
 .edit-user-text {
     width: 40%;
+}
+
+.ed-cancel-text {
+
+}
+
+.edit-save-text {
+
 }
 
 .edit-i {
