@@ -50,6 +50,18 @@
 /* main background */
 body {
     background-color: var(--col-bg);
+    background-image: url("imgs/bgs/blackwall.jpg"); 
+    background-size: 100%;
+    background-attachment: fixed; 
+}
+.bg-tint{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.18); 
+    z-index: -1;
 }
 
 /* header styles */
