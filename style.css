@@ -266,6 +266,7 @@ body {
     list-style-type: none;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 50px;
 }
@@ -293,9 +294,8 @@ body {
 .p1-card {
     display: flex;
     flex-direction: column;
-    width: 220px;
+    width: 200px;
     max-height: 325px;
-    overflow: hidden;
 }
 
 .p1-resto-name {
@@ -304,14 +304,14 @@ body {
 }
 
 .p1-card-img {
-    width: 80%;
+    width: 100%;
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: var(--brad--def);
     margin-bottom: 10px;
 
     border: 2px solid white;
-    box-shadow: 7px 10px 7px rgba(0, 0, 0, 0.7); 
+    box-shadow: 12px 10px 12px rgba(0, 0, 0, 0.7); 
 
 }
 
@@ -329,7 +329,6 @@ body {
 .p1-description {
     margin-top: 5px;
     font-size: 0.8rem;
-    text-align: justify;
 }
 
 /*user profile page*/
@@ -381,7 +380,19 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 250px;
+}
+
+.pro-actions-like {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100px;
+}
+
+.pro-like-count {
+    margin-top: 5px;
+    margin-left: -5px;
 }
 
 .pro-actions span
@@ -487,13 +498,23 @@ li.pro-review-box{
 
     position: relative;
 }
+.pro-user-date{
+    font-style: italic;
 
+}
+
+.pro-or-date{
+    font-weight: normal;
+    font-style: italic;
+    font-size: 1.8vh;
+}
 .pro-review-header{
     margin-left: 10%;
     font-size: 3vh;
-    width: 50%;
-    height: 50%;
     line-height: 130%;
+    display: flex;
+    align-items: center;
+    gap: 100px;
 }
 
 .pro-review-text{
@@ -772,4 +793,53 @@ li.pro-or-box{
 
 .cr-star-toggle-i:hover {
     transform: scale(1.3);
+}
+.ed-main {
+    justify-content: center;
+}
+
+.ed-midbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10px;
+    position: fixed;
+
+    height: 90%;
+    width: 25%;
+
+
+}
+
+.ed-midbar-bg{
+    width: 100%;
+    height: 90%;
+    background-color: var(--col-sec);
+    border-radius: 30px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padd-lg);
+
+
+    border: 1px solid #ffffff;
+}
+.ed-div {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 25px;
+}
+.ed-cancel {
+    display: flex;
+    margin: 0px 40px 0px 0px;
+}
+
+.ed-save {
+    display: flex;
+    margin: 0px 0px 0px 40px;
+}
+
+.ed-hover {
+
 }
