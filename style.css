@@ -266,6 +266,7 @@ body {
     list-style-type: none;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 50px;
 }
@@ -293,9 +294,8 @@ body {
 .p1-card {
     display: flex;
     flex-direction: column;
-    width: 220px;
+    width: 200px;
     max-height: 325px;
-    overflow: hidden;
 }
 
 .p1-resto-name {
@@ -304,14 +304,14 @@ body {
 }
 
 .p1-card-img {
-    width: 80%;
+    width: 100%;
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: var(--brad--def);
     margin-bottom: 10px;
 
     border: 2px solid white;
-    box-shadow: 7px 10px 7px rgba(0, 0, 0, 0.7); 
+    box-shadow: 12px 10px 12px rgba(0, 0, 0, 0.7); 
 
 }
 
@@ -329,7 +329,6 @@ body {
 .p1-description {
     margin-top: 5px;
     font-size: 0.8rem;
-    text-align: justify;
 }
 
 /*user profile page*/
