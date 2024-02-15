@@ -613,10 +613,12 @@ li.pro-or-box{
     width: 100%;
     height: 100%;
     border-radius: 50%;
-
-    
+    object-fit: cover;
     border: 2px solid #ffffff;
     box-shadow: 7px 10px 7px rgba(0, 0, 0, 0.5); 
+}
+.sb-resto img {
+    border-radius: 20px;
 }
 
 .sb-description {
