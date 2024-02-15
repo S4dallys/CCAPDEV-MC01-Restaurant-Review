@@ -104,6 +104,11 @@ body {
     height: 100%;
     border-radius: 20px;
     padding: 10px;
+    border: 2px solid var(--col-prim);
+}
+
+#search-bar:focus{
+    border-color: #fff;
 }
 
 .search-i {
