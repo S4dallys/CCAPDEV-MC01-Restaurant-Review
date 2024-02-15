@@ -60,7 +60,7 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.18); 
+    background-color: rgba(72, 72, 72, 0.117); 
     z-index: -1;
 }
 
@@ -69,7 +69,7 @@ body {
 .container {
     position: sticky;
     float: top;
-    top: 0.00000000000000000000000000000000000000000000000001px;
+    top: 0px;
     z-index: 1;
 }
 
@@ -396,7 +396,12 @@ body {
     height: 25px;
 }
 
+.pro-like::hover{
+    transform: scale(1.1);
+}
+
 .pro-like {
+    transition: transform 0.3s ease;
     background-position: -25px -25px;   
 }
 
