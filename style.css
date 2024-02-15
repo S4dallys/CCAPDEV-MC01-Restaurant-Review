@@ -68,8 +68,7 @@ body {
 
 .container {
     position: sticky;
-    float: top;
-    top: 0.00000000000000000000000000000000000000000000000001px;
+    top: 0;
     z-index: 1;
 }
 
