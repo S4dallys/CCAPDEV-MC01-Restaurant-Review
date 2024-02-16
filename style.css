@@ -369,6 +369,10 @@ body {
     color: black;
 }
 
+.pro-review-li {
+    list-style-type: none;
+}
+
 .pro-review-search {
     padding-left: 100px;
     padding-top: 32px;
