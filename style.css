@@ -279,6 +279,14 @@ body {
 
     margin-right: 25px;
 }
+.p1-filter-i {
+    background-position: -150px 0;
+    background-size: 200px;
+    width: 50px;
+    height: 50px;
+
+    margin-left: auto;
+}
 
 .p1-label-container {
     display: flex;
