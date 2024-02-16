@@ -961,6 +961,9 @@ body {
     margin: 0px 0px 0px 40px;
 }
 
-.ed-hover {
-
+#p1-card-hidden * {
+    color: red !important;
+}
+#p1-hidden-img {
+    border-color: red;
 }

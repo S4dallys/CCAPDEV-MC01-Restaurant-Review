@@ -4,7 +4,19 @@ const urlParams = new URLSearchParams(url);
 let filter = urlParams.get("filter");
 let rvfilter = urlParams.get("rv-filter");
 
-if (filter != null && filter !== "") {
+if (filter === '1991') {
+    filter = filter.toLowerCase();
+    document.getElementById("search-bar").value = 'what have I done?';
+
+    const ul = document.getElementById("p1-restaurants-list");
+    const li = ul.getElementsByTagName("li");
+
+    for (let i = 0; i < li.length; i++) {
+        li[i].style.display = "none";
+    }
+
+    document.getElementById("p1-card-hidden").style.display = "inline";
+} else if (filter != null && filter !== "") {
     filter = filter.toLowerCase();
     document.getElementById("search-bar").value = filter;
 
