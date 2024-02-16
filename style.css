@@ -491,19 +491,16 @@ body {
     transform: scale(1.3);
 }
 
-li.pro-review-box{
-    list-style-type: none;
-}
-
 .pro-review-box{
+    list-style-type: none;
     width: 80%;
-    height: 20vh;
+    min-height: 20vh;
     margin-top: 3vh;
 
     margin-left: auto;
     margin-right: auto;
 
-    padding: 2vh 0 0 2vh;
+    padding: 2vh;
     font-size: 5vh;
 
     background-color: white;
@@ -549,9 +546,6 @@ li.pro-review-box{
 
 }
 
-li.pro-or-box{
-    list-style-type: none;
-}
 .pro-or-box{
     width: 60%;
     height: 16vh;
@@ -560,7 +554,7 @@ li.pro-or-box{
     margin-right: auto;
     margin-top: -.2vh;
     
-    padding: 2vh 0 0 2vh;
+    padding: 2vh;
 
     font-size: 2vh;
     color:var(--col-owner-prim);

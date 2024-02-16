@@ -78,8 +78,8 @@
                 </div>
                 <div class="header-item">
                     <div class="search-div">
-                        <form action="index.html" method="get">
-                            <input id="search-bar" type="text" name="filter" placeholder="Search restaurants...">
+                        <form action="#" method="get">
+                            <input id="search-bar" type="text" name="rv-filter" placeholder="Search reviews...">
                             <span class="icon search-i"></span>
                         </form>
                     </div>
@@ -122,15 +122,10 @@
             </div>
         </div>
         <div class ="pro-review-holder">
-            <div class="search-div pro-review-search">
-                <form action="review.html" method="get">
-                    <input id="search-bar" type="text" name="filter" placeholder="Search review...">
-                    <span class="icon pro-search-i"></span>
-                </form>
-            </div>
-            <ul>               
-                <li class="pro-review-box">
-                    <div class="pro-actions">
+            <ul id="pro-review-ul">               
+                <li class="pro-review-li">
+                    <div class="pro-review-box">
+                        <div class="pro-actions">
                             <ul class="cr-star-group">
                                 <li class="icon cr-star-j"></li>
                                 <li class="icon cr-star-j"></li>
@@ -139,192 +134,190 @@
                                 <li class="icon cr-star-j"></li>
                             </ul>
                             <div class="pro-actions-like">
-                        <span class="icon pro-like"></span>
-                        <span class="pro-like-count">100</span>
-                        <span class="icon pro-dislike"></span>
+                                <span class="icon pro-like"></span>
+                                <span class="pro-like-count">100</span>
+                                <span class="icon pro-dislike"></span>
                             </div>
-                    </div>
-                    <a href="profile.html">
-                        <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
-                    </a>
-                    <div class = "pro-review-header">
-                        <div>
-                            <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
-                            <h3 class ="pro-review-title bold">Review Title</h3>
                         </div>
-                        <div>
-                        </div>
-                    </div>
-                    <div class = "pro-review-text">
-                        This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
-                    </div>
-                </li>
-                <li class="pro-or-box">
-                    <div class = "pro-or-header">
-                        <span class="icon pro-crown-i"></span>
-                        <span class = "bold">Owner Response • <span class="pro-or-date">(01/13/2009)</span></span>
-                    </div>
-                    <div class = "pro-or-text">
-                        This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews.    
-                    </div>
-                </li>
-                
-                <li class="pro-review-box">
-                    <div class="pro-actions">
-                            <ul class="cr-star-group">
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                            </ul>
-                            <div class="pro-actions-like">
-                        <span class="icon pro-like"></span>
-                        <span class="pro-like-count">100</span>
-                        <span class="icon pro-dislike"></span>
+                        <a href="profile.html">
+                            <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
+                        </a>
+                        <div class = "pro-review-header">
+                            <div>
+                                <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
+                                <h3 class ="pro-review-title bold">Review Title</h3>
                             </div>
-                    </div>
-                    <a href="profile.html">
-                        <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
-                    </a>
-                    <div class = "pro-review-header">
-                        <div>
-                            <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
-                            <h3 class ="pro-review-title bold">Review Title</h3>
                         </div>
-                        <div>
+                        <div class = "pro-review-text">
+                            This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
                         </div>
                     </div>
-                    <div class = "pro-review-text">
-                        This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
-                    </div>
-                </li>
-                <li class="pro-review-box">
-                    <div class="pro-actions">
-                            <ul class="cr-star-group">
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                            </ul>
-                            <div class="pro-actions-like">
-                        <span class="icon pro-like"></span>
-                        <span class="pro-like-count">100</span>
-                        <span class="icon pro-dislike"></span>
-                            </div>
-                    </div>
-                    <a href="profile.html">
-                        <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
-                    </a>
-                    <div class = "pro-review-header">
-                        <div>
-                            <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
-                            <h3 class ="pro-review-title bold">Review Title</h3>
+                    <div class="pro-or-box">
+                        <div class = "pro-or-header">
+                            <span class="icon pro-crown-i"></span>
+                            <span class = "bold">Owner Response • <span class="pro-or-date">(01/13/2009)</span></span>
                         </div>
-                        <div>
+                        <div class = "pro-or-text">
+                            This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews.    
                         </div>
-                    </div>
-                    <div class = "pro-review-text">
-                        This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
-                    </div>
-                </li>
-                <li class="pro-review-box">
-                    <div class="pro-actions">
-                            <ul class="cr-star-group">
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                            </ul>
-                            <div class="pro-actions-like">
-                        <span class="icon pro-like"></span>
-                        <span class="pro-like-count">100</span>
-                        <span class="icon pro-dislike"></span>
-                            </div>
-                    </div>
-                    <a href="profile.html">
-                        <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
-                    </a>
-                    <div class = "pro-review-header">
-                        <div>
-                            <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
-                            <h3 class ="pro-review-title bold">Review Title</h3>
-                        </div>
-                        <div>
-                        </div>
-                    </div>
-                    <div class = "pro-review-text">
-                        This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
-                    </div>
-                </li>
-                <li class="pro-review-box">
-                    <div class="pro-actions">
-                            <ul class="cr-star-group">
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                            </ul>
-                            <div class="pro-actions-like">
-                        <span class="icon pro-like"></span>
-                        <span class="pro-like-count">100</span>
-                        <span class="icon pro-dislike"></span>
-                            </div>
-                    </div>
-                    <a href="profile.html">
-                        <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
-                    </a>
-                    <div class = "pro-review-header">
-                        <div>
-                            <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
-                            <h3 class ="pro-review-title bold">Review Title</h3>
-                        </div>
-                        <div>
-                        </div>
-                    </div>
-                    <div class = "pro-review-text">
-                        This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
-                    </div>
-                </li>
-                <li class="pro-review-box">
-                    <div class="pro-actions">
-                            <ul class="cr-star-group">
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                                <li class="icon cr-star-j"></li>
-                            </ul>
-                            <div class="pro-actions-like">
-                        <span class="icon pro-like"></span>
-                        <span class="pro-like-count">100</span>
-                        <span class="icon pro-dislike"></span>
-                            </div>
-                    </div>
-                    <a href="profile.html">
-                        <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
-                    </a>
-                    <div class = "pro-review-header">
-                        <div>
-                            <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
-                            <h3 class ="pro-review-title bold">Review Title</h3>
-                        </div>
-                        <div>
-                        </div>
-                    </div>
-                    <div class = "pro-review-text">
-                        This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
                     </div>
                 </li>
 
+                <li class="pro-review-li">
+                    <div class="pro-review-box">
+                        <div class="pro-actions">
+                            <ul class="cr-star-group">
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                            </ul>
+                            <div class="pro-actions-like">
+                                <span class="icon pro-like"></span>
+                                <span class="pro-like-count">100</span>
+                                <span class="icon pro-dislike"></span>
+                            </div>
+                        </div>
+                        <a href="profile.html">
+                            <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
+                        </a>
+                        <div class = "pro-review-header">
+                            <div>
+                                <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
+                                <h3 class ="pro-review-title bold">Review Title</h3>
+                            </div>
+                        </div>
+                        <div class = "pro-review-text">
+                            This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
+                        </div>
+                    </div>
+                </li>
+                <li class="pro-review-li">
+                    <div class="pro-review-box">
+                        <div class="pro-actions">
+                            <ul class="cr-star-group">
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                            </ul>
+                            <div class="pro-actions-like">
+                                <span class="icon pro-like"></span>
+                                <span class="pro-like-count">100</span>
+                                <span class="icon pro-dislike"></span>
+                            </div>
+                        </div>
+                        <a href="profile.html">
+                            <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
+                        </a>
+                        <div class = "pro-review-header">
+                            <div>
+                                <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
+                                <h3 class ="pro-review-title bold">Review Title</h3>
+                            </div>
+                        </div>
+                        <div class = "pro-review-text">
+                            This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
+                        </div>
+                    </div>
+                </li>
+                <li class="pro-review-li">
+                    <div class="pro-review-box">
+                        <div class="pro-actions">
+                            <ul class="cr-star-group">
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                            </ul>
+                            <div class="pro-actions-like">
+                                <span class="icon pro-like"></span>
+                                <span class="pro-like-count">100</span>
+                                <span class="icon pro-dislike"></span>
+                            </div>
+                        </div>
+                        <a href="profile.html">
+                            <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
+                        </a>
+                        <div class = "pro-review-header">
+                            <div>
+                                <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
+                                <h3 class ="pro-review-title bold">Review Title</h3>
+                            </div>
+                        </div>
+                        <div class = "pro-review-text">
+                            This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
+                        </div>
+                    </div>
+                </li>
+                <li class="pro-review-li">
+                    <div class="pro-review-box">
+                        <div class="pro-actions">
+                            <ul class="cr-star-group">
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                            </ul>
+                            <div class="pro-actions-like">
+                                <span class="icon pro-like"></span>
+                                <span class="pro-like-count">100</span>
+                                <span class="icon pro-dislike"></span>
+                            </div>
+                        </div>
+                        <a href="profile.html">
+                            <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
+                        </a>
+                        <div class = "pro-review-header">
+                            <div>
+                                <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
+                                <h3 class ="pro-review-title bold">Review Title</h3>
+                            </div>
+                        </div>
+                        <div class = "pro-review-text">
+                            This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
+                        </div>
+                    </div>
+                </li>
+                <li class="pro-review-li">
+                    <div class="pro-review-box">
+                        <div class="pro-actions">
+                            <ul class="cr-star-group">
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                            </ul>
+                            <div class="pro-actions-like">
+                                <span class="icon pro-like"></span>
+                                <span class="pro-like-count">100</span>
+                                <span class="icon pro-dislike"></span>
+                            </div>
+                        </div>
+                        <a href="profile.html">
+                            <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
+                        </a>
+                        <div class = "pro-review-header">
+                            <div>
+                                <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
+                                <h3 class ="pro-review-title bold">Review Title</h3>
+                            </div>
+                        </div>
+                        <div class = "pro-review-text">
+                            This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
+                        </div>
+                    </div>
+                </li>
             </ul> 
         </div>
 
         <!-- javascript -->
-        <script src="js/homepage.js"></script>
+        <script src="js/filter.js"></script>
         <script src="js/profile.js"></script>
         <script src="js/login.js"></script>
         <script src="js/rating.js"></script>
