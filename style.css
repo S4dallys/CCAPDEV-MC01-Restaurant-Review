@@ -298,6 +298,10 @@ body {
     max-height: 375px;
 }
 
+.p1-card a {
+    text-decoration: none;
+}
+
 .p1-resto-name {
     font-size: 1.5rem;
     color: var(--col-prim);
@@ -744,6 +748,11 @@ body {
     height: 25px;
 }
 
+.edit-user-i {
+    margin-left: 20px;
+    opacity: 0.4;
+}
+
 .plus-i {
     background-position: -25px 0;
     background-size: 100px;
@@ -767,7 +776,6 @@ body {
 .bitalics{
     font-style: italic;
     font-weight: bold;
-
 }
 
 .cr-popup {
