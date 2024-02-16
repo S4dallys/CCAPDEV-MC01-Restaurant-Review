@@ -580,6 +580,13 @@ body {
     height: 25px;
     transform: scaleY(0.8);
 }
+.pro-author-i {
+    background-position: -0px -75px;
+    background-size: 100px;
+    width: 25px;
+    height: 25px;
+    transform: scaleY(0.8);
+}
 
 .pro-or-text{
     font-size: 2vh;
@@ -587,7 +594,34 @@ body {
     margin-top: 1vh;
     color: var(--col-owner-sec);
 }
+.pro-or-auth-box{
+    width: 20%;
+    height: 8vh;
 
+    margin-left: 65%;
+    margin-right: auto;
+    margin-top: -.2vh;
+    
+    padding: 2vh;
+
+    font-size: 2vh;
+    color:var(--col-owner-prim);
+
+    background-color: var(--col-sec);
+    border: 2px solid white;
+    border-radius:  0 0 15px  15px ;
+
+    position: relative;
+}
+.pro-or-auth-header{
+    font-size: 2vh;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+
+    margin-top: -5px;
+    gap: 10px;
+}
 .pro-or-icon{
     width: 3vw;
     aspect-ratio: 1;
