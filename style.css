@@ -612,6 +612,13 @@ body {
 
     position: relative;
 }
+.pro-or-auth-box:hover {
+    border-color: var(--col-prim);
+}
+.pro-or-auth-box:hover .bold, .pro-or-auth-box:hover .pro-author-i {
+    color: var(--col-prim);
+    background-position: -0px -50px;
+}
 .pro-or-auth-header{
     font-size: 2vh;
     font-weight: normal;
