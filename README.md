@@ -1,4 +1,10 @@
 # CCAPDEV-MC01-Restaurant-Review
+
+MEMBERS:
+LIM, RYDEL 
+NGO, RENDELL
+KO, CARL
+
 A repo for a restaurant review site.  
 
 Link to GH repo: https://github.com/S4dallys/CCAPDEV-MCO1-Restaurant-Review
