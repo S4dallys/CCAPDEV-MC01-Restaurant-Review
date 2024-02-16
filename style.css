@@ -581,11 +581,10 @@ body {
     transform: scaleY(0.8);
 }
 .pro-author-i {
-    background-position: -0px -75px;
+    background-position: -75px -50px;
     background-size: 100px;
     width: 25px;
     height: 25px;
-    transform: scaleY(0.8);
 }
 
 .pro-or-text{
