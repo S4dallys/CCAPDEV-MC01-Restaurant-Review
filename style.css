@@ -777,6 +777,8 @@ body {
 .edit-user-i {
     margin-left: 20px;
     opacity: 0.4;
+    padding-top: 4px;
+    transform: scale(.7);
 }
 
 .plus-i {
