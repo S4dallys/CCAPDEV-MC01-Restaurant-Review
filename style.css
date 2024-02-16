@@ -279,6 +279,7 @@ body {
 
     margin-right: 25px;
 }
+
 .p1-filter-i {
     background-position: -50px -100px;
     background-size: 200px;
@@ -328,6 +329,20 @@ body {
 }
 
 .p1-rating-i {
+    background-size: 40px;       
+    width: 10px;
+    height: 10px;
+}
+
+.p1-rating-toggle-i {
+    background-position: -20px 0;
+    background-size: 40px;       
+    width: 10px;
+    height: 10px;
+}
+
+.p1-rating-half-i {
+    background-position: -0px -40px;
     background-size: 40px;       
     width: 10px;
     height: 10px;
