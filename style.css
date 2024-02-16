@@ -530,6 +530,20 @@ body {
 
     position: relative;
 }
+.pro-review-image-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+}
+
+.pro-review-image{
+    width: 120px;
+    aspect-ratio:1;
+    object-fit: cover;  
+    border: var(--col-sec) 1px solid;
+}
+
 .pro-user-date{
     font-style: italic;
 
@@ -616,13 +630,13 @@ body {
 }
 .pro-or-auth-box{
     width: 20%;
-    height: 8vh;
+    height: auto;
 
     margin-left: 65%;
     margin-right: auto;
     margin-top: -.2vh;
     
-    padding: 2vh;
+    padding: 1.7vh;
 
     font-size: 2vh;
     color:var(--col-owner-prim);
