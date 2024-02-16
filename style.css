@@ -357,6 +357,18 @@ body {
     color: black;
 }
 
+.pro-review-search {
+    padding-left: 100px;
+    padding-top: 32px;
+}
+
+.pro-search-i {
+    background-position: -60px -60px;
+    position: absolute;
+    top: 41px;
+    right: 10px;
+}
+
 .pro-review-location {
     font-size: 1rem;
     opacity: 0.6;
