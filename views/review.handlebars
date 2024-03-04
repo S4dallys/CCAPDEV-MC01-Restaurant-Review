@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <title>Restaurant Reviews</title>
+    </head>
+    <body>
+        <div class ="bg-tint"></div>   
+        <div id="login-container" style="display: none">
+            <div class="popup">
+                <span class="icon popup-x-i hov2" onclick="togglePopup('login-container')"></span>
+                <div class="login-box">
+                    <h2 class="login-title">Login</h2>
+                    <form class="login-form" action="bob123.html">
+                        <label class="login-label" for="login-username">Username
+                            <input id="login-username" class="login-input" type="text">
+                        </label>
+                        <label class="login-label" for="login-password">Password
+                            <input id="login-password" class="login-input" type="password">
+                        </label>
+                        <input type="submit" value="LOGIN" class="popup-button hov1">
+                    </form>
+                </div>
+                <div class="or-box hov1">
+                    OR
+                </div>
+                <div class="register-box">
+                    <p class="register-prompt">Don't have an account?</p>
+                    <h2 class="register-title">Register</h2>
+                    <form class="login-form" action="bob123.html">
+                        <label class="login-label" for="register-username">Username
+                            <input id="register-username" class="register-input" type="text">
+                        </label>
+                        <label class="login-label" for="register-password">Password
+                            <input id="register-password" class="register-input" type="password">
+                        </label>
+                        <label class="login-label" for="register-confirm-password">Confirm Password
+                            <input id="register-confirm-password" class="register-input" type="password">
+                        </label>
+                        <input type="submit" value="REGISTER" class="popup-button hov1">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="cr-container" style="display: none">
+            <form class="cr-popup" action="#">
+                <div class="cr-header">
+                    <h1 class="cr-label">Create Review</h1>
+                    <span class="icon popup-x-i cr-x-i hov2" onclick="togglePopup('cr-container')"></span>
+                </div>
+                <input type="text" class="cr-title" placeholder="Title...">
+                <textarea class="cr-content" placeholder="What I think about this restaurant..."></textarea>
+                <div class="cr-actions">
+                    <ul class="cr-star-group">
+                        <li class="icon cr-star-i"></li>
+                        <li class="icon cr-star-i"></li>
+                        <li class="icon cr-star-i"></li>
+                        <li class="icon cr-star-i"></li>
+                        <li class="icon cr-star-i"></li>
+                    </ul>
+                    <div class="cr-button-group">
+                        <button type="button" class="popup-button cr-cancel hov1" onclick="togglePopup('cr-container')">CANCEL</button>
+                        <button type="submit" class="popup-button cr-post hov1">POST</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="container">
+            <div class="header">
+                <div class="header-item">
+                    <a href="index.html">
+                        <img class="logo hov1" src="imgs/logo.png">
+                    </a> 
+                </div>
+                <div class="header-item">
+                    <div class="search-div">
+                        <form action="#" method="get">
+                            <input id="search-bar" type="text" name="rv-filter" placeholder="Search reviews...">
+                            <span class="icon search-i"></span>
+                        </form>
+                    </div>
+                </div>
+                <div class="header-item">
+                    <p class="login thov3" onclick="togglePopup('login-container')">LOGIN</p>
+                    <a href="bob123.html">
+                        <span class="icon profile-i hov2"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class = "pro-main">
+            <div class ="pro-sidebar">
+                <div class ="pro-sidebar-bg">
+                    <h2 class="sb-name">Placeholder Resto</h2>
+                    <ul class="cr-star-group">
+                        <li class="icon cr-star-j"></li>
+                        <li class="icon cr-star-j"></li>
+                        <li class="icon cr-star-j"></li>
+                        <li class="icon cr-star-j"></li>
+                        <li class="icon cr-star-j"></li>
+                    </ul>
+                    <div class="sb-pic sb-resto hov1">
+                        <img src="imgs/restaurants/rest_def.png" alt="">
+                    </div>
+                    <p class="sb-description">This is a placeholder restaurant. It is not one of our 3 pieces of "real" sample data. It is only here to provide extra entries to show what the website looks like under higher traffic.</p>
+                    <div class="sb-stats">
+                        <p class="reviews"><span class="orange-bold">52</span> reviews</p>
+                        <p class="stars"><span class="orange-bold">4.5</span> stars</p>
+                    </div>
+                    <div class="edit-div">
+                        <a class="edit-user create-review hov1" onclick="togglePopup('cr-container')" href="#">
+                            <span class="icon plus-i"></span>
+                            <p class="edit-user-text">CREATE REVIEW</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class ="pro-review-holder">
+            <ul id="pro-review-ul">               
+                <li class="pro-review-li">
+                    <div class="pro-review-box">
+                        <div class="pro-actions">
+                            <ul class="cr-star-group">
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                            </ul>
+                            <div class="pro-actions-like">
+                                <span class="icon pro-like"></span>
+                                <span class="pro-like-count">100</span>
+                                <span class="icon pro-dislike"></span>
+                            </div>
+                        </div>
+                        <a href="profile.html">
+                            <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
+                        </a>
+                        <div class = "pro-review-header">
+                            <div>
+                                <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
+                                <h3 class ="pro-review-title bold">Review Title</h3>
+                            </div>
+                        </div>
+                        <div class = "pro-review-text">
+                            This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
+                        </div>
+                    </div>
+                    <div class="pro-or-box">
+                        <div class = "pro-or-header">
+                            <span class="icon pro-crown-i"></span>
+                            <span class = "bold">Owner Response • <span class="pro-or-date">(01/13/2009)</span></span>
+                        </div>
+                        <div class = "pro-or-text">
+                            This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews.    
+                        </div>
+                    </div>
+                </li>
+
+                <li class="pro-review-li">
+                    <div class="pro-review-box">
+                        <div class="pro-actions">
+                            <ul class="cr-star-group">
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                            </ul>
+                            <div class="pro-actions-like">
+                                <span class="icon pro-like"></span>
+                                <span class="pro-like-count">100</span>
+                                <span class="icon pro-dislike"></span>
+                            </div>
+                        </div>
+                        <a href="profile.html">
+                            <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
+                        </a>
+                        <div class = "pro-review-header">
+                            <div>
+                                <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
+                                <h3 class ="pro-review-title bold">Review Title</h3>
+                            </div>
+                        </div>
+                        <div class = "pro-review-text">
+                            This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
+                        </div>
+                    </div>
+                </li>
+                <li class="pro-review-li">
+                    <div class="pro-review-box">
+                        <div class="pro-actions">
+                            <ul class="cr-star-group">
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                            </ul>
+                            <div class="pro-actions-like">
+                                <span class="icon pro-like"></span>
+                                <span class="pro-like-count">100</span>
+                                <span class="icon pro-dislike"></span>
+                            </div>
+                        </div>
+                        <a href="profile.html">
+                            <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
+                        </a>
+                        <div class = "pro-review-header">
+                            <div>
+                                <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
+                                <h3 class ="pro-review-title bold">Review Title</h3>
+                            </div>
+                        </div>
+                        <div class = "pro-review-text">
+                            This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
+                        </div>
+                    </div>
+                </li>
+                <li class="pro-review-li">
+                    <div class="pro-review-box">
+                        <div class="pro-actions">
+                            <ul class="cr-star-group">
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                            </ul>
+                            <div class="pro-actions-like">
+                                <span class="icon pro-like"></span>
+                                <span class="pro-like-count">100</span>
+                                <span class="icon pro-dislike"></span>
+                            </div>
+                        </div>
+                        <a href="profile.html">
+                            <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
+                        </a>
+                        <div class = "pro-review-header">
+                            <div>
+                                <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
+                                <h3 class ="pro-review-title bold">Review Title</h3>
+                            </div>
+                        </div>
+                        <div class = "pro-review-text">
+                            This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
+                        </div>
+                    </div>
+                </li>
+                <li class="pro-review-li">
+                    <div class="pro-review-box">
+                        <div class="pro-actions">
+                            <ul class="cr-star-group">
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                            </ul>
+                            <div class="pro-actions-like">
+                                <span class="icon pro-like"></span>
+                                <span class="pro-like-count">100</span>
+                                <span class="icon pro-dislike"></span>
+                            </div>
+                        </div>
+                        <a href="profile.html">
+                            <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
+                        </a>
+                        <div class = "pro-review-header">
+                            <div>
+                                <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
+                                <h3 class ="pro-review-title bold">Review Title</h3>
+                            </div>
+                        </div>
+                        <div class = "pro-review-text">
+                            This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
+                        </div>
+                    </div>
+                </li>
+                <li class="pro-review-li">
+                    <div class="pro-review-box">
+                        <div class="pro-actions">
+                            <ul class="cr-star-group">
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                                <li class="icon cr-star-j"></li>
+                            </ul>
+                            <div class="pro-actions-like">
+                                <span class="icon pro-like"></span>
+                                <span class="pro-like-count">100</span>
+                                <span class="icon pro-dislike"></span>
+                            </div>
+                        </div>
+                        <a href="profile.html">
+                            <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
+                        </a>
+                        <div class = "pro-review-header">
+                            <div>
+                                <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
+                                <h3 class ="pro-review-title bold">Review Title</h3>
+                            </div>
+                        </div>
+                        <div class = "pro-review-text">
+                            This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
+                        </div>
+                    </div>
+                </li>
+            </ul> 
+        </div>
+
+        <!-- javascript -->
+        <script src="js/filter.js"></script>
+        <script src="js/profile.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/rating.js"></script>
+    </body>
+</html>

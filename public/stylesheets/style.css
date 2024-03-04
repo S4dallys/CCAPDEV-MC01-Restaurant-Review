@@ -28,7 +28,7 @@
 
 /* icon class - all icons must use this class */
 .icon {
-    background-image: url("imgs/spritesheet.svg");
+    background-image: url("/imgs/spritesheet.svg");
     background-size: 80px;
     width: 20px;
     height: 20px;
