@@ -19,11 +19,25 @@ app.set('view engine', 'handlebars')
 
 // homepage get request
 app.get('/', (req, res) => {
-    res.render('profile')
+    res.render('index')
     console.log('index.handlebars loaded...')
+    console.log(`filter: ${req.query.filter}`)
 })
 
+app.get('/profile', (req, res) => {
+    res.render('profile')
+    console.log('profile.handlebars loaded...')
+})
 
+app.get('/review', (req, res) => {
+    res.render('review')
+    console.log('review.handlebars loaded...')
+})
+
+app.get('/edit_profile', (req, res) => {
+    res.render('edit_profile')
+    console.log('edit_profile.handlebars loaded...')
+})
 
 
 

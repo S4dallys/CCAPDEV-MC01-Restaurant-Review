@@ -29,9 +29,6 @@
 /* icon class - all icons must use this class */
 .icon {
     background-image: url("/imgs/spritesheet.svg");
-    background-size: 80px;
-    width: 20px;
-    height: 20px;
     display: inline-block;
 
     /* example icons use
@@ -47,66 +44,72 @@
     */
 }
 
+.icon-sm {
+    background-size: 40px;
+    width: 10px;
+    height: 10px;
+}
+
+.icon-md {
+    background-size: 80px;
+    width: 20px;
+    height: 20px;
+}
+
+.icon-lg {
+    background-size: 100px;
+    width: 25px;
+    height: 25px;
+}
+
 /* main background */
 body {
-    background-color: var(--col-bg);
-    background-image: url("imgs/bgs/blackwall.jpg"); 
+    background-image: url("/imgs/bgs/blackwall.jpg"); 
     background-size: 100%;
     background-attachment: fixed; 
 }
-.bg-tint{
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(72, 72, 72, 0.117); 
-    z-index: -1;
-}
 
 /* header styles */
-
-.container {
+#header-container {
     position: sticky;
     float: top;
     top: 0px;
     z-index: 1;
 }
 
-.header {
+#header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: var(--col-sec);
     padding: var(--padd-sm) 40px;
-    
     border-bottom: 1px solid var(--col-prim);
 }
 
-.header-item {
+#header > div {
     flex-grow: 0;
     flex-basis: calc(100% / 3);
+    display: flex;
 }
 
-.logo {
-    width: 180px;
-}
-
-/* 2nd header-item in header */
-.header-item:nth-child(2) {
+#header > div:nth-child(2) {
+    /* 2nd header-item in header */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* to absolutely position search icon */
-.search-div {
-    width: 60%;
-    height: 70%;
-    position: relative;
+#header > div:nth-child(3) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-#search-bar {
+#logo {
+    width: 180px;
+}
+
+#header-search-bar {
     width: 100%;
     height: 100%;
     border-radius: 20px;
@@ -114,7 +117,14 @@ body {
     border: 2px solid var(--col-prim);
 }
 
-#search-bar:focus{
+#header-search-div {
+    /* to absolutely position search icon */
+    width: 60%;
+    height: 70%;
+    position: relative;
+}
+
+#header-search-bar:focus{
     border-color: #fff;
 }
 
@@ -125,13 +135,7 @@ body {
     top: 8px;
 }
 
-.header-item:nth-child(3) {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.login {
+#lor-popup-open {
     font-size: 1.4rem;
     color: var(--col-prim);
     text-decoration: none;
@@ -145,7 +149,7 @@ body {
 /* end of header styles */
 
 /* login popup styles */
-#login-container, #cr-container {
+.popup {
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -166,7 +170,7 @@ body {
     height: 100%;
 }
 
-.popup {
+#lor-popup {
    display: flex;  
    flex-direction: row;
    justify-content: center;
@@ -183,43 +187,43 @@ body {
     top: 8px;
 }
 
-.or-box {
+#lor-or-box {
     font-size: 1.5rem;
     font-weight: bold;
     border-bottom: 5px solid white;
     padding: 10px;
 }
 
-.login-box, .register-box {
+#lor-login-box, #lor-register-box {
     width: 400px;
     padding: var(--padd-big);
     border-radius: 10px;
 }
 
-.login-box {
+#lor-login-box {
     background-color: #292F33;
     height: 350px;
 }
 
-.register-box {
+#lor-register-box {
     background-color: white;
     height: 550px;
     color: #292F33;
 }
 
-.login-title {
+#lor-login-title {
     color: var(--col-prim);
     font-size: 2.5rem;
     height: 20%;
 }
 
-.register-title {
+#lor-register-title {
     font-size: 2.5rem;
     height: 50px;
     text-align: right;
 }
 
-.register-prompt {
+#lor-register-prompt {
     opacity: 0.8;
     text-align: right;
     font-weight: bold;
@@ -230,18 +234,18 @@ body {
     border-bottom: 5px solid #292F33;
 }
 
-.login-form {
-    height: 80%;
+.lor-form {
+   height: 80%;
    display: flex;  
    flex-direction: column;
    justify-content: space-around;
 }
 
-.login-label {
+.lor-label {
     font-size: 1.4rem;
 }
 
-.login-input, .register-input {
+.lor-login-input, .lor-register-input {
     width: 100%;
     height: 50px;
     border-radius: 8px;
@@ -251,7 +255,7 @@ body {
     padding: var(--padd-sm)
 }
 
-.register-input {
+.lor-register-input {
     background-color: #292F33;
     color: white;
 }
@@ -265,10 +269,9 @@ body {
     border: 2px solid gray;
     align-self: center;
 }
-/* end of login styles */
 
 /* homepage */
-.p1-content {
+#p1-content {
     padding: var(--padd-lg);
 }
 
@@ -282,32 +285,29 @@ body {
 }
 
 .p1-star-i {
-    background-position: -150px 0;
-    background-size: 200px;
-    width: 50px;
-    height: 50px;
-
-    margin-right: 25px;
+    background-position: -75px 0;
 }
 
 .p1-filter-i {
-    background-position: -50px -100px;
-    background-size: 200px;
-    width: 50px;
-    height: 50px;
-
-    margin-left: auto;
+    background-position: -25px -50px;
 }
 
-.p1-label-container {
+#p1-label-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
 } 
 
 .p1-label {
     display: inline-block;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-inline: 20px;
+}
+
+#p1-label-container > div {
+    display: flex;
+    align-items: center
 }
 
 .p1-card {
@@ -332,10 +332,8 @@ body {
     object-fit: cover;
     border-radius: var(--brad--def);
     margin-bottom: 10px;
-
     border: 2px solid white;
     box-shadow: 12px 10px 12px rgba(0, 0, 0, 0.7); 
-
 }
 
 .p1-rating-i {
@@ -373,11 +371,8 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;     
-
     width: auto;
     height: auto;
-
-    /*outline: red solid 3px;*/
 }
 
 .pro-review-holder{
@@ -401,13 +396,6 @@ body {
 .pro-review-search {
     padding-left: 100px;
     padding-top: 32px;
-}
-
-.pro-search-i {
-    background-position: -60px -60px;
-    position: absolute;
-    top: 41px;
-    right: 10px;
 }
 
 .pro-review-location {
@@ -450,63 +438,64 @@ body {
     margin-left: -5px;
 }
 
-.pro-actions span
-{
+.pro-actions span {
     background-size: 100px;             
     width: 25px;                        
     height: 25px;
 }
 
-.hov1{
+.hov1 {
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1.2);
 }
-.hov1:hover{
+
+.hov1:hover {
     transform: scale(1.1); 
 }
-.hov2{
+
+.hov2 {
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1.2);
 }
-.hov2:hover{
+
+.hov2:hover {
     transform: scale(1.25); 
 }
 
-.hov3{
+.hov3 {
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1.2);
 }
-.hov3:hover{
+
+.hov3:hover {
     transform: scale(1.05); 
 }
-
 
 .thov1{
     transition: color 0.2s ease;
 }
-.thov1:hover{
+
+.thov1:hover {
     color: var(--col-prim);
 }
+
 .thov2{
     transition: color 0.2s ease;
 }
-.thov2:hover{
+
+.thov2:hover {
     color: var(--col-sec);
 }
 
-.thov3{
+.thov3 {
     transition: color 0.2s ease;
 }
+
 .thov3:hover{
-    color: white;
+    color: white !important;
 }
 
 .thov-auth{
     transition: color 0.2s ease;
 
 }
-.thov-auth:hover{
-   /* color: var(--col-prim);*/
-
-}
-
 
 .pro-like {
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1.2);

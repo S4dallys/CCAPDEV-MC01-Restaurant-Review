@@ -1,9 +1,9 @@
 <!-- create review popup -->
-<div id="cr-container" style="display: none">
+<div id="cr-container" class="popup">
     <form class="cr-popup" action="#">
         <div class="cr-header">
             <h1 class="cr-label">Create Review</h1>
-            <span class="icon popup-x-i cr-x-i hov2" onclick="togglePopup('cr-container')"></span>
+            <span id="cr-popup-close" class="icon icon-md popup-x-i cr-x-i hov2"></span>
         </div>
         <input type="text" class="cr-title" placeholder="Title...">
         <textarea class="cr-content" placeholder="What I think about this restaurant..."></textarea>
@@ -16,8 +16,8 @@
                 <li class="icon cr-star-i"></li>
             </ul>
             <div class="cr-button-group">
-                <button type="button" class="popup-button cr-cancel hov1" onclick="togglePopup('cr-container')">CANCEL</button>
-                <button type="submit" class="popup-button cr-post hov1">POST</button>
+                <button id="cr-cancel" type="button" class="popup-button cr-cancel hov1">CANCEL</button>
+                <button id="cr-post" type="submit" class="popup-button cr-post hov1">POST</button>
             </div>
         </div>
     </form>
@@ -43,11 +43,11 @@
                 <p class="reviews"><span class="orange-bold">52</span> reviews</p>
                 <p class="stars"><span class="orange-bold">4.5</span> stars</p>
             </div>
-            <div class="edit-div">
-                <a class="edit-user create-review hov1" onclick="togglePopup('cr-container')" href="#">
+            <div id="cr-popup-open" class="edit-div">
+                <div class="edit-user create-review hov1">
                     <span class="icon plus-i"></span>
                     <p class="edit-user-text">CREATE REVIEW</p>
-                </a>
+                </div>
             </div>
         </div>
     </div>
