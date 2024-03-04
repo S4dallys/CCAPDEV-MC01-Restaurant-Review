@@ -4,14 +4,9 @@ const setUpPopup = (toggler, popup) => {
 
     if (tog && po) {
         tog.addEventListener("click", () => {
-            po.style.display = (po.style.display == "none") ? "flex" : "none";
+            po.style.display = (po.style.display == "flex") ? "none" : "flex";
         })
     }
-}
-
-const popups = document.getElementsByClassName("popup")
-for (let i = 0; i < popups.length; i++) {
-    popups[i].style.display = "none"
 }
 
 setUpPopup('lor-popup-open', 'lor-container')
