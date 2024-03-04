@@ -14,12 +14,19 @@ app.use(fileUpload()) // for fileuploads
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'header' }))
 app.set('view engine', 'handlebars')
 
-// express gets
+
+
+
+// homepage get request
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('profile')
+    console.log('index.handlebars loaded...')
 })
 
-// express posts
+
+
+
+
 
 // listen!
 var server = app.listen(3000, function () {
