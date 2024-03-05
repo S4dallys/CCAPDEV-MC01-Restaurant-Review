@@ -1,6 +1,5 @@
 // node requires
 const express = require("express")
-const path = require("path")
 const fileUpload = require("express-fileupload")
 const exphbs = require("express-handlebars")
 
@@ -17,18 +16,17 @@ app.set('view engine', 'handlebars')
 // homepage get request
 app.get('/', (req, res) => {
     res.render('index')
-    console.log('index.handlebars loaded...')
-    console.log(`filter: ${req.query.filter}`)
+    console.log(`ROUTE -> index: filter = '${req.query.filter}'`)
 })
 
-app.get('/profile', (req, res) => {
+app.get('/profile/:userId', (req, res) => {
     res.render('profile')
-    console.log('profile.handlebars loaded...')
+    console.log(`ROUTE -> profile: ${req.params.userId}`)
 })
 
-app.get('/review', (req, res) => {
-    res.render('review')
-    console.log('review.handlebars loaded...')
+app.get('/resto/:restoId', (req, res) => {
+    res.render('resto')
+    console.log(`ROUTE -> resto: ${req.params.restoId}`)
 })
 
 app.get('/edit_profile', (req, res) => {
@@ -36,11 +34,7 @@ app.get('/edit_profile', (req, res) => {
     console.log('edit_profile.handlebars loaded...')
 })
 
-
-
-
-// listen!
+// listen! :3
 var server = app.listen(3000, function () {
-    console.log('Node server is running..');
+    console.log('SERVER IS UP!');
 });
-
