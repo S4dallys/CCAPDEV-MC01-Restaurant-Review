@@ -14,9 +14,6 @@ app.use(fileUpload()) // for fileuploads
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'header' }))
 app.set('view engine', 'handlebars')
 
-
-
-
 // homepage get request
 app.get('/', (req, res) => {
     res.render('index')

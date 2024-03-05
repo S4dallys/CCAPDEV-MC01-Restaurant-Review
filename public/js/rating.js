@@ -13,4 +13,3 @@ function rateStars(star) {
         stars[j].className = (j <= i) ? activeClass : inactiveClass;
     }
 }
-
