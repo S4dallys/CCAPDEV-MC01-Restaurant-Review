@@ -1,58 +1,57 @@
 <div class = "pro-main">
     <div class ="pro-sidebar">
         <div class ="pro-sidebar-bg">
-            <h2 class="sb-name">Username123</h2>
+            <h2 class="sb-name">{{ sb.name }}</h2>
             <div class="sb-pic hov1">
-                <img src="imgs/profiles/profile_def.png" alt="">
+                <!--TODO: Replace when can -->
+                <img src="" alt="">
             </div>
-            <p class="sb-description">
-            This is a placeholder description. This page and the profiles linked to it are to simply display how the website handles and displays multiple users.
-            </p>        
+            <p class="sb-description">{{ sb.description }}</p>        
             <div class="sb-stats">
-                <p class="reviews"><span class="orange-bold">17</span> reviews</p>
-                <p class="erms"><span class="orange-bold">1,000</span> erms</p>
+                <p class="reviews"><span class="orange-bold">{{ sb.reviewCount }}</span> reviews</p>
+                <p class="erms"><span class="orange-bold">{{ sb.totalErms }}</span> erms</p>
             </div>
         </div>
     </div>
     <div class ="pro-review-holder">
         <ul id="pro-review-ul">
+           
+            {{#each reviews}}
+
             <li class="pro-review-li">
                 <div class="pro-review-box">
                     <div class="pro-actions">
-                        <ul class="cr-star-group">
-                            <li class="icon cr-star-j"></li>
-                            <li class="icon cr-star-j"></li>
-                            <li class="icon cr-star-j"></li>
-                            <li class="icon cr-star-j"></li>
-                            <li class="icon cr-star-j"></li>
-                        </ul>
+                        <ul class="cr-star-group" data-stars="{{ stars }}"></ul>
                         <div class="pro-actions-like">
                             <span class="icon pro-like"></span>
-                            <span class="pro-like-count">100</span>
+                            <span class="pro-like-count">{{ likeCount }}</span>
                             <span class="icon pro-dislike"></span>
                         </div>
                     </div>
-                    <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
+                    <img class="pro-review-icon hov1" src =""> <!-- TODO: REPLACE THIS TOO -->
+                    </img>
                     <div class = "pro-review-header">
                         <div>
-                            <p class="pro-review-location"><a href="#" class="pro-user-link thov1">Username123</a> on <a href="review.html" class="pro-location-link bitalics thov1">Placeholder Resto</a> • <span class="pro-user-date">(1/11/2009)</span></p>
-                            <h3 class ="pro-review-title bold">Review Title</h3>
+                            <p class="pro-review-location"><a href="/profile/{{ profileId.name }}" class="pro-user-link thov1">{{ profileId.name }}</a> on <a href="/resto/{{ restoId.name }}" class="pro-location-link bitalics thov1">{{ restoId.name }}</a> • <span class="pro-user-date" data-date="{{ lastUpdated }}"></span></p>
+                            <!-- TODO: MAKE DATE FUNCTION (1/11/2009) -->
+                            <h3 class ="pro-review-title bold">{{ title }}</h3>
                         </div>
                     </div>
-                    <div class = "pro-review-text">
-                        This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
-                    </div>
+                    <div class = "pro-review-text">{{ body }}</div>
                 </div>
+                {{#if hasOr}}
                 <div class="pro-or-box">
                     <div class = "pro-or-header">
                         <span class="icon pro-crown-i"></span>
-                        <span class = "bold">Owner Response • <span class="pro-or-date">(1/11/2009)</span></span>
+                        <span class = "bold">Owner Response • <span class="pro-or-date" data-date="{{ ownersResponse.lastUpdated }}"></span></span>
                     </div>
-                    <div class = "pro-or-text">
-                        This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews.    
-                    </div>
+                    <div class = "pro-or-text">{{ ownersResponse.body }}</div>
                 </div>
+                {{/if}}
             </li>
+
+            {{/each}}
+
         </ul> 
     </div>
 </div>

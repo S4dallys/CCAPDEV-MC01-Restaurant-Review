@@ -1,7 +1,15 @@
 // node requires
+const path = require("path")
 const express = require("express")
-const fileUpload = require("express-fileupload")
 const exphbs = require("express-handlebars")
+const fileUpload = require("express-fileupload")
+
+// mongoose connect
+const mongoose = require("mongoose")
+const Profile = require("./database/models/Profile")
+const Resto = require("./database/models/Resto")
+const Review = require("./database/models/Review")
+mongoose.connect("mongodb://localhost/ccapdev");
 
 // express settings
 const app = new express()
@@ -19,9 +27,26 @@ app.get('/', (req, res) => {
     console.log(`ROUTE -> index: filter = '${req.query.filter}'`)
 })
 
-app.get('/profile/:userId', (req, res) => {
-    res.render('profile')
-    console.log(`ROUTE -> profile: ${req.params.userId}`)
+app.get('/profile/:profileId', async(req, res) => {
+    const profile = await getProfile({ name: req.params.profileId })
+    const reviews = await getReviews({ profileId: profile._id })
+
+    const data = {
+        sb: {
+            ...profile,
+            reviewCount: reviews.length
+        },
+        reviews: reviews.map((r) => {
+            r.likeCount = r.likes.length - r.dislikes.length
+            return r
+        })
+    }
+
+    console.log(data.reviews[0].restoId.name)
+
+    res.render('profile', data)
+
+    console.log(`ROUTE -> profile: ${req.params.profileId}`)
 })
 
 app.get('/resto/:restoId', (req, res) => {
@@ -38,3 +63,20 @@ app.get('/edit_profile', (req, res) => {
 var server = app.listen(3000, function () {
     console.log('SERVER IS UP!');
 });
+
+
+
+
+// functions
+// TODO: move elsewhere?
+async function getProfile(filter, select = {}) {
+    return await Profile.findOne(filter, select).lean()
+}
+
+async function getReviews(filter) {
+    return await Review.find(filter)
+        .populate("restoId")
+        .populate("profileId")
+        .lean()
+}
+

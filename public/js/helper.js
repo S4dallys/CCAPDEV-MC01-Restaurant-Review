@@ -1,4 +1,4 @@
-const generateStars = (score) => {
+function generateStars(score) {
     let stars = []
     const isHalf = (score % 1 != 0)
 
@@ -23,6 +23,3 @@ const generateStars = (score) => {
 
     return stars
 }
-
-
-
