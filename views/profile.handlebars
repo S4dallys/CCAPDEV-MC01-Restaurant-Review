@@ -28,8 +28,8 @@
                             <span class="icon pro-dislike"></span>
                         </div>
                     </div>
-                    <img class="pro-review-icon hov1" src =""> <!-- TODO: REPLACE THIS TOO -->
-                    </img>
+                    <a href="/profile/{{ profileId.name }}"><img class="pro-review-icon" src =""> <!-- TODO: REPLACE THIS TOO -->
+                        </img></a>
                     <div class = "pro-review-header">
                         <div>
                             <p class="pro-review-location"><a href="/profile/{{ profileId.name }}" class="pro-user-link thov1">{{ profileId.name }}</a> on <a href="/resto/{{ restoId.name }}" class="pro-location-link bitalics thov1">{{ restoId.name }}</a> • <span class="pro-user-date" data-date="{{ lastUpdated }}"></span></p>

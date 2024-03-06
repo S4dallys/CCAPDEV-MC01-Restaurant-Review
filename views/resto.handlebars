@@ -1,20 +1,16 @@
 <!-- create review popup -->
 <div id="cr-container" class="popup">
-    <form class="cr-popup" action="#">
+    <!-- TODO: POST request for CR -->
+    <form class="cr-popup" method="post" action="">
         <div class="cr-header">
             <h1 class="cr-label">Create Review</h1>
             <span id="cr-popup-close" class="icon icon-md popup-x-i cr-x-i hov2"></span>
         </div>
-        <input type="text" class="cr-title" placeholder="Title...">
-        <textarea class="cr-content" placeholder="What I think about this restaurant..."></textarea>
+        <input type="text" name="rv-title" class="cr-title" placeholder="Title...">
+        <textarea name="rv-body" class="cr-content" placeholder="What I think about this restaurant..."></textarea>
         <div class="cr-actions">
-            <ul class="cr-star-group">
-                <li class="icon cr-star-i"></li>
-                <li class="icon cr-star-i"></li>
-                <li class="icon cr-star-i"></li>
-                <li class="icon cr-star-i"></li>
-                <li class="icon cr-star-i"></li>
-            </ul>
+            <ul id="g-ul-clickable" class="cr-star-group hov3" data-stars="5"> </ul>
+            <input type="hidden" id="cr-star-input" name="rv-stars" value="5">
             <div class="cr-button-group">
                 <button id="cr-cancel" type="button" class="popup-button cr-cancel hov1">CANCEL</button>
                 <button id="cr-post" type="submit" class="popup-button cr-post hov1">POST</button>
@@ -27,16 +23,16 @@
 <div class = "pro-main">
     <div class ="pro-sidebar">
         <div class ="pro-sidebar-bg">
-            <h2 class="sb-name">Placeholder Resto</h2>
-            <ul class="cr-star-group">
+            <h2 class="sb-name">{{ sb.name }}</h2>
+            <ul class="cr-star-group" data-stars="{{ sb.stars }}">
             </ul>
             <div class="sb-pic sb-resto hov1">
-                <img src="imgs/restaurants/rest_def.png" alt="">
+                <img src="" alt="">
             </div>
-            <p class="sb-description">This is a placeholder restaurant. It is not one of our 3 pieces of "real" sample data. It is only here to provide extra entries to show what the website looks like under higher traffic.</p>
+            <p class="sb-description">{{ sb.description }}</p>
             <div class="sb-stats">
-                <p class="reviews"><span class="orange-bold">52</span> reviews</p>
-                <p class="stars"><span class="orange-bold">4.5</span> stars</p>
+                <p class="reviews"><span class="orange-bold">{{ sb.reviewCount }}</span> reviews</p>
+                <p class="stars"><span class="orange-bold">{{ sb.stars }}</span> stars</p>
             </div>
             <div id="cr-popup-open" class="edit-div">
                 <div class="edit-user create-review hov1">
@@ -49,45 +45,45 @@
 </div>
 
 <div class ="pro-review-holder">
-    <ul id="pro-review-ul">               
+    <ul id="pro-review-ul">
+
+        {{#each reviews}}
+
         <li class="pro-review-li">
             <div class="pro-review-box">
                 <div class="pro-actions">
-                    <ul class="cr-star-group">
-                        <li class="icon cr-star-j"></li>
-                        <li class="icon cr-star-j"></li>
-                        <li class="icon cr-star-j"></li>
-                        <li class="icon cr-star-j"></li>
-                        <li class="icon cr-star-j"></li>
-                    </ul>
+                    <ul class="cr-star-group" data-stars="{{ stars }}"></ul>
                     <div class="pro-actions-like">
                         <span class="icon pro-like"></span>
-                        <span class="pro-like-count">100</span>
+                        <span class="pro-like-count">{{ likeCount }}</span>
                         <span class="icon pro-dislike"></span>
                     </div>
                 </div>
-                <a href="profile.html">
-                    <img class="pro-review-icon hov1" src ="imgs/profiles/profile_def.png"></img>
-                </a>
+                <a href="/profile/{{ profileId.name }}"><img class="pro-review-icon" src =""> <!-- TODO: REPLACE THIS TOO -->
+                    </img></a>
                 <div class = "pro-review-header">
                     <div>
-                        <p class="pro-review-location"><a href="profile.html" class="pro-user-link thov1">Username123</a> • <span class="pro-user-date">(1/11/2009)</span></p>
-                        <h3 class ="pro-review-title bold">Review Title</h3>
+                        <p class="pro-review-location"><a href="/profile/{{ profileId.name }}" class="pro-user-link thov1">{{ profileId.name }}</a> on <a href="/resto/{{ restoId.name }}" class="pro-location-link bitalics thov1">{{ restoId.name }}</a> • <span class="pro-user-date" data-date="{{ lastUpdated }}"></span></p>
+                        <!-- TODO: MAKE DATE FUNCTION (1/11/2009) -->
+                        <h3 class ="pro-review-title bold">{{ title }}</h3>
                     </div>
                 </div>
-                <div class = "pro-review-text">
-                    This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews. This is what a max length review looks like, anything longer would be truncated and need to be clicked.
-                </div>
+                <div class = "pro-review-text">{{ body }}</div>
             </div>
+            {{#if hasOr}}
             <div class="pro-or-box">
                 <div class = "pro-or-header">
                     <span class="icon pro-crown-i"></span>
-                    <span class = "bold">Owner Response • <span class="pro-or-date">(01/13/2009)</span></span>
+                    <span class = "bold">Owner Response • <span class="pro-or-date" data-date="{{ ownersResponse.lastUpdated }}"></span></span>
                 </div>
-                <div class = "pro-or-text">
-                    This is purely placeholder text. Hi sir! This is not one of our 3 "real" sample pieces of data. Any content here is purely to show off how the website would handle multiple users and/or reviews.    
-                </div>
+                <div class = "pro-or-text">{{ ownersResponse.body }}</div>
             </div>
+            {{/if}}
         </li>
+
+        {{/each}}
+
     </ul> 
 </div>
+
+<script src="/js/rating.js"></script>
