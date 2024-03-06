@@ -1,0 +1,89 @@
+[
+    {
+        "_id": "5fc36b43e1f20c5d8fdeab7f",
+        "restoId": "5fc36b23e1f20c5d8fdeab7c",
+        "profileId": "5fc36b01e1f20c5d8fdeab79",
+        "title": "This Place is Awful!!",
+        "body": "i took my son here and he died!!! I will eat your burgers no more!!!! My cat also died and my house burnt down. I have diarrhea and migraines and i cant feel any of my limbs..... i have been hospitalized and my wife left me!!",
+        "lastUpdated": "1991/1/11",
+        "likes": [],
+        "dislikes": [],
+        "stars": 3.5,
+        "ownersResponse": {
+            "lastUpdated": "2009/1/13",
+            "body": "Hi Bob! I’m sorry to hear that! I hope he gets better soon. You and your remaining family are entitled to a free pack of breadsticks on your next visit. Check your email for the coupon code!"
+        },
+        "hasOr": true
+    },
+    {
+        "_id": "5fc36b4ee1f20c5d8fdeab80",
+        "restoId": "5fc36b23e1f20c5d8fdeab7c",
+        "profileId": "5fc36b18e1f20c5d8fdeab7b",
+        "title": "terrible, what happened??",
+        "body": "I used to go here back in the day all the time. What happened? the food quality is really bad, and there's a weird stink coming from the locked back room, and there's this gross darkish liquid near it. I'd much rather eat at mcwonalds at this point!",
+        "lastUpdated": "2007/8/22",
+        "likes": [],
+        "dislikes": [],
+        "stars": 2,
+        "ownersResponse": null,
+        "hasOr": false
+    },
+    {
+        "_id": "5fc36b59e1f20c5d8fdeab81",
+        "restoId": "5fc36b23e1f20c5d8fdeab7c",
+        "profileId": "5fc36b0ee1f20c5d8fdeab7a",
+        "title": "Wretched, terrible, disgusting place",
+        "body": "I've had the absolute worst parts of my life in this disgusting establishment. I think the world would be better if this place spontaneously burst into flames. God willing I will never see this place or you ever again.",
+        "lastUpdated": "2004/8/13",
+        "likes": [],
+        "dislikes": [],
+        "stars": 1,
+        "ownersResponse": {
+            "lastUpdated": "2004/8/15",
+            "body": "..."
+        },
+        "hasOr": true
+    },
+    {
+        "_id": "5fc36b64e1f20c5d8fdeab82",
+        "restoId": "5fc36b2ee1f20c5d8fdeab7d",
+        "profileId": "5fc36b0ee1f20c5d8fdeab7a",
+        "title": "Good stuff!",
+        "body": "Brought the family here to relax! The service was terrific and the yogurt is like nothing else in this town! Lots of memories made here!",
+        "lastUpdated": "1990/5/5",
+        "likes": [],
+        "dislikes": [],
+        "stars": 5,
+        "ownersResponse": null,
+        "hasOr": false
+    },
+    {
+        "_id": "5fc36b6fe1f20c5d8fdeab83",
+        "restoId": "5fc36b39e1f20c5d8fdeab7e",
+        "profileId": "5fc36b18e1f20c5d8fdeab7b",
+        "title": "Great food! Kids loved it",
+        "body": "Took my kids here for a birthday party. The town never had a McWonalds so this was a new experience for us! We only had that other burger place but its quality has been going down for a while.",
+        "lastUpdated": "2008/8/14",
+        "likes": [],
+        "dislikes": [],
+        "stars": 4.5,
+        "ownersResponse": {
+            "lastUpdated": "2008/8/30",
+            "body": "Thank you :)"
+        },
+        "hasOr": true
+    },
+    {
+        "_id": "5fc36b7ae1f20c5d8fdeab84",
+        "restoId": "5fc36b39e1f20c5d8fdeab7e",
+        "profileId": "5fc36b01e1f20c5d8fdeab79",
+        "title": "Tasteless chicken, just bad",
+        "body": "title says all",
+        "lastUpdated": "2009/3/23",
+        "likes": [],
+        "dislikes": [],
+        "stars": 1,
+        "ownersResponse": null,
+        "hasOr": false
+    }
+]

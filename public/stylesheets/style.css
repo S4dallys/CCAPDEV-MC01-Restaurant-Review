@@ -370,7 +370,7 @@ body {
 }
 
 .p1-reviews {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #b4b9b9;
     margin-left: 10px;
 }
@@ -916,8 +916,6 @@ body {
     transform: scale(0.8);
     margin-right: 0px;
 }
-
-/* TODO: make specific styles based on parent, use these styles */
 
 .ed-main {
     justify-content: center;

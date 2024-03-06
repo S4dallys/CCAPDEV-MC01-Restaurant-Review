@@ -23,7 +23,14 @@ app.set('view engine', 'handlebars')
 
 // homepage get request
 app.get('/', async (req, res) => {
-    const restos = await getRestos({})
+    const filter = req.query.filter
+    let restos = []
+    if (filter) {
+        const filterObj = { name: { $regex: filter, $options: 'i' } }
+        restos = await getRestos(filterObj)
+    } else {
+        restos = await getRestos()
+    }
 
     if (restos) {
         restos.forEach(async (r) => {
@@ -35,10 +42,10 @@ app.get('/', async (req, res) => {
         })
 
         res.render('home', { restos: restos })
-        console.log(`ROUTE -> index: filter = '${req.query.filter}'`)
+        console.log(`ROUTE -> index: filter = '${filter}'`)
     } else {
         res.send('Homepage error! Please refresh.')
-        console.log(`FAILED -> index: filter = '${req.query.filter}'`)
+        console.log(`FAILED -> index: filter = '${filter}'`)
     }
 })
 
