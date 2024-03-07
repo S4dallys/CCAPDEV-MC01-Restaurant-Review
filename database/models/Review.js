@@ -13,12 +13,12 @@ const ownersResponseSchema = new mongoose.Schema({
 
 const reviewSchema = new mongoose.Schema({
     restoId: {
-        type: mongoose.SchemaTypes.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Resto",
         required: true
     },
     profileId: {
-        type: mongoose.SchemaTypes.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Profile",
         required: true
     },

@@ -23,23 +23,21 @@ app.set('view engine', 'handlebars')
 
 // homepage get request
 app.get('/', async (req, res) => {
+
     const filter = req.query.filter
-    let restos = []
-    if (filter) {
-        const filterObj = { name: { $regex: filter, $options: 'i' } }
-        restos = await getRestos(filterObj)
-    } else {
-        restos = await getRestos()
-    }
+    const filterObj = (filter) ? { name: { $regex: filter, $options: 'i' } } : {} 
+    const restos = await getRestos(filterObj);
 
     if (restos) {
-        restos.forEach(async (r) => {
-            const reviews = await Review.find({ restoId: r._id }, { stars: 1 })
-            const reviewCount = reviews.length
+        await Promise.all(restos.map(async (r) => {
+            const reviews = await getReviews({ restoId: r._id });
+            const reviewCount = reviews.length;
 
-            r.reviewCount = reviewCount
-            r.stars = reviews.reduce((total, rev) => { return total + rev.stars }, 0) / reviewCount
-        })
+            console.log(reviews)
+
+            r.reviewCount = reviewCount;
+            r.stars = reviewCount > 0 ? reviews.reduce((total, rev) => total + rev.stars, 0) / reviewCount : 0;
+        }));
 
         res.render('home', { restos: restos })
         console.log(`ROUTE -> index: filter = '${filter}'`)
@@ -126,9 +124,15 @@ async function getRestos(filter) {
 }
 
 async function getReviews(filter) {
-    return await Review.find(filter)
-        .populate("restoId")
-        .populate("profileId")
+return await Review.find(filter)
+        .populate({
+            path: 'restoId',
+            model: 'Resto'  
+        })
+        .populate({
+            path: 'profileId',
+            model: 'Profile'  
+        })
         .lean()
 }
 

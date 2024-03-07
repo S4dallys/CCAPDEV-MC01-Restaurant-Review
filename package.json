@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
-    "populate": "mongoimport --db ccapdev --collection profiles --file ./populate/profiles.json --jsonArray && mongoimport --db ccapdev --collection restos --file ./populate/restos.json --jsonArray && mongoimport --db ccapdev --collection reviews --file ./populate/reviews.json --jsonArray"
+    "populate": "node ./populate/run.js"
   },
   "repository": {
     "type": "git",
