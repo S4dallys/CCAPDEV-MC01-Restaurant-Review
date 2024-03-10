@@ -2,19 +2,19 @@
     {
         "_id": "5fc36b23e1f20c5d8fdeab7c",
         "name": "Burger Man",
-        "picture": null,
+        "poster": "burger-man.jpg",
         "description": "Burger Man is the product of a 100% American father's love for fun, family, and some good old-fashioned food! Based in Edgeville." 
     },
     {
         "_id": "5fc36b2ee1f20c5d8fdeab7d",
         "name": "Fred's Froyo",
-        "picture": null,
+        "poster": "freds-froyo.jpg",
         "description": "Get your froyo (frozen yogurt) at Fred's, here we serve the best frozen treats in Edgeville! Been the best around since '89!" 
     },
     {
         "_id": "5fc36b39e1f20c5d8fdeab7e",
         "name": "McWonald's",
-        "picture": null,
+        "poster": "mcwonalds.jpg",
         "description": "Burgers and chicken galore! Get your favorite snacks from McWonald's today! 20% off for children under 13 until the end of September." 
     }
 ]

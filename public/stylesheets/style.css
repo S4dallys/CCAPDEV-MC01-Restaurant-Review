@@ -67,7 +67,7 @@
 
 /* main background */
 body {
-    background-image: url("/imgs/bgs/blackwall.jpg"); 
+    background-image: url("/imgs/blackwall.jpg"); 
     background-size: 100%;
     background-attachment: fixed; 
 }
@@ -429,6 +429,20 @@ body {
     margin-top: -3px;
     margin-bottom: 3px;
     font-size: 1.4rem;
+}
+
+.pro-review-images {
+    display: flex;
+    justify-content: flex-start;
+    margin: auto;
+    margin-block: 20px;
+    width: 80%;
+}
+
+.pro-review-images > img {
+    margin-right: 10px;
+    max-width: 15%;
+    aspect-ratio: 1;
 }
 
 .pro-actions {

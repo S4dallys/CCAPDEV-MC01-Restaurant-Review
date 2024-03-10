@@ -1,22 +1,29 @@
 [
     {
+        "_id": "5fc36b01e1f20c5d8fdefb79",
+        "name": "anonymous",
+        "avatar": "default_avatar.png",
+        "description": "An anonymous user..",
+        "totalErms": 0
+    },
+    {
         "_id": "5fc36b01e1f20c5d8fdeab79",
         "name": "Bob123",
-        "picture": null,
+        "avatar": "bob123.jpg",
         "description": "i took my son here and he died!!! I will eat your burgers no more!!!! My cat also died and my house burnt down. I have diarrhea and migraines and i cant feel any of my limbs..... i have been hospitalized and my wife left me!!",
         "totalErms": 4
     },
     {
         "_id": "5fc36b0ee1f20c5d8fdeab7a",
         "name": "Sarah Townsend",
-        "picture": null,
+        "avatar": "sarah.jpg",
         "description": "very exhausted with all of this and hungry for some good food.",
         "totalErms": 65
     },
     {
         "_id": "5fc36b18e1f20c5d8fdeab7b",
         "name": "bean_eater_420",
-        "picture": null,
+        "avatar": "bean.jpg",
         "description": "biggest foodie in edgeville! havent been here in years!!",
         "totalErms": 11
     }

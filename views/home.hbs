@@ -1,0 +1,39 @@
+<div id="p1-content">
+    <div id="p1-label-container">
+        <div id="p1-label-left">
+            <span class="icon icon-lg p1-star-i"></span>
+            <h1 class="p1-label">Rate and Review!</h1>
+        </div>
+        <div id="p1-label-right">
+            <h1 class="p1-label">Sort</h1>
+            <span class="icon icon-lg p1-filter-i hov2"></span>
+        </div>
+    </div>
+    <div id="p1-restaurants-container">
+        <ul id="p1-restaurants-list">
+
+            {{#each restos}}
+
+            <li>
+                <div class="p1-card hov1">
+                    <a href="/resto/id/{{ name }}">
+                        <img class="p1-card-img" src="/imgs/posters/{{ poster }}" alt="">
+                    </a>
+                    <div class="p1-card-info">
+                        <a href="/resto/id/{{ name }}">
+                            <h2 class="p1-resto-name">{{ name }}</h2>
+                        </a>
+                        <div class="p1-card-middle">
+                            <ul class="cr-star-group" data-stars="{{ stars }}"></ul>
+                            <span class="p1-reviews">({{ reviewCount }} reviews)</span>
+                        </div>
+                        <p class="p1-description">{{ description }}</p>
+                    </div>
+                </div>
+            </li>
+
+            {{/each}}
+
+        </ul>
+    </div>
+</div>

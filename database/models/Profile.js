@@ -5,10 +5,10 @@ const profileSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    picture: {
+    avatar: {
         // TODO: Use actual image!!
         type: String,
-        default: () => { null }
+        default: "default_avatar.png"
     },
     description: {
         type: String,
@@ -20,8 +20,9 @@ const profileSchema = new mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        default: () => { Date.now() }
-    }
+        default: () => { Date.now() },
+        immutable: true
+     }
 })
 
 module.exports = mongoose.model("Profile", profileSchema);

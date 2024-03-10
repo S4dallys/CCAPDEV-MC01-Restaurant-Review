@@ -5,15 +5,15 @@ const restoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    picture: {
-        // TODO: Use actual image!!
+    poster: {
         type: String,
-        default: () => { null }
+        // TODO: add default poster
+        default: "default_poster.png"
     },
     description: {
         type: String,
         default: "No description."
-    },
+    }
 })
 
 module.exports = mongoose.model("Resto", restoSchema);

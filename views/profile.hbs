@@ -1,0 +1,60 @@
+<div class = "pro-main">
+    <div class ="pro-sidebar">
+        <div class ="pro-sidebar-bg">
+            <h2 class="sb-name">{{ sb.name }}</h2>
+            <div class="sb-pic hov1">
+                <!--TODO: Replace when can -->
+                <img src="/imgs/avatars/{{ sb.avatar }}" alt="">
+            </div>
+            <p class="sb-description">{{ sb.description }}</p>        
+            <div class="sb-stats">
+                <p class="reviews"><span class="orange-bold">{{ sb.reviewCount }}</span> reviews</p>
+                <p class="erms"><span class="orange-bold">{{ sb.totalErms }}</span> erms</p>
+            </div>
+        </div>
+    </div>
+    <div class ="pro-review-holder">
+        <ul id="pro-review-ul">
+           
+            {{#each reviews}}
+
+            <li class="pro-review-li">
+                <div class="pro-review-box">
+                    <div class="pro-actions">
+                        <ul class="cr-star-group" data-stars="{{ stars }}"></ul>
+                        <div class="pro-actions-like">
+                            <span class="icon pro-like"></span>
+                            <span class="pro-like-count">{{ likeCount }}</span>
+                            <span class="icon pro-dislike"></span>
+                        </div>
+                    </div>
+                    <a href="/profile/id/{{ profileId.name }}"><img class="pro-review-icon" src ="/imgs/avatars/{{ profileId.avatar }}"> 
+                        </img></a>
+                    <div class = "pro-review-header">
+                        <div>
+                            <p class="pro-review-location"><a href="/profile/id/{{ profileId.name }}" class="pro-user-link thov1">{{ profileId.name }}</a> on <a href="/resto/id/{{ restoId.name }}" class="pro-location-link bitalics thov1">{{ restoId.name }}</a> • <span class="pro-user-date" data-date="{{ lastUpdated }}"></span></p>
+                            <!-- TODO: MAKE DATE FUNCTION (1/11/2009) -->
+                            <h3 class ="pro-review-title bold">{{ title }}</h3>
+                        </div>
+                    </div>
+                    <div class = "pro-review-text">{{ body }}</div>
+                    <div class = "pro-review-images">
+                    {{#each uploads}} <img src="/imgs/uploads/{{ this }}"> {{/each}}
+                    </div>
+                </div>
+                {{#if hasOr}}
+                <div class="pro-or-box">
+                    <div class = "pro-or-header">
+                        <span class="icon pro-crown-i"></span>
+                        <span class = "bold">Owner Response • <span class="pro-or-date" data-date="{{ ownersResponse.lastUpdated }}"></span></span>
+                    </div>
+                    <div class = "pro-or-text">{{ ownersResponse.body }}</div>
+                </div>
+                {{/if}}
+            </li>
+
+            {{/each}}
+
+        </ul> 
+    </div>
+</div>

@@ -30,6 +30,10 @@ const reviewSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    uploads: {
+        type: [String],
+        default: []
+    },
     lastUpdated: {
         type: Date,
         required: true
