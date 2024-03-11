@@ -18,5 +18,6 @@ file.addEventListener("change", function() {
     } else {
         label.style.color = "var(--col-error)"
         icon.style.backgroundPosition = errorIcon
+        label.innerText = "MAX 4 IMGS"
     }
 });
