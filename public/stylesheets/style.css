@@ -15,6 +15,7 @@
     /* --col-sec: #1a2614; */
     --col-owner-prim: #FFCF00;
     --col-owner-sec: #FFF0AD;
+    --col-error: #e64747;
 
     --col-sec: #163826;
     --col-white: #f7f4f2;
@@ -895,6 +896,28 @@ body {
 
 .cr-cancel, .cr-post {
     width: 100px;
+}
+
+#cr-file {
+    display: none;
+}
+
+#cr-file-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #23593c;
+    padding: 8px 30px;
+    border-radius: 20px;
+}
+
+.cr-img-i {
+    background-position: -40px -80px;
+}
+
+#cr-upload-text {
+    font-weight: bold;
 }
 
 .cr-cancel {

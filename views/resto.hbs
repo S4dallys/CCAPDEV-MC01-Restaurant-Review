@@ -12,7 +12,10 @@
             <ul id="g-ul-clickable" class="cr-star-group hov3" data-stars="5"> </ul>
             <input type="hidden" id="cr-star-input" name="rv-stars" value="5">
             <!-- TODO: uh image yes -->
-            <input type="file" name="rv-images" multiple>
+            <input id="cr-file" type="file" name="rv-images" accept="image/*" multiple>
+            <label id="cr-file-label" for="cr-file" class="hov1">
+                <span class="icon icon-md cr-img-i"></span><span id="cr-upload-text">0 IMGS</span>
+            </label>
             <div class="cr-button-group">
                 <button id="cr-cancel" type="button" class="popup-button cr-cancel hov1">CANCEL</button>
                 <button id="cr-post" type="submit" class="popup-button cr-post hov1">POST</button>
@@ -91,3 +94,4 @@
 </div>
 
 <script src="/js/rating.js"></script>
+<script src="/js/upload.js"></script>
