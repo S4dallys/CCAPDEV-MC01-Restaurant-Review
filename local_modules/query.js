@@ -32,7 +32,7 @@ const query = {
             profileId: data.profileId,
             title: data.title,
             body: data.body,
-            images: data.images,
+            uploads: data.uploads,
             lastUpdated: data.lastUpdated,
             stars: data.stars,
         })

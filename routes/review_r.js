@@ -26,7 +26,7 @@ router.post("/:restoId/new", upload.array("rv-images", maxuploads), async(req, r
         profileId: profile._id,
         title: req.body["rv-title"],
         body: req.body["rv-body"],
-        images: req.files.map((i) => {
+        uploads: req.files.map((i) => {
             return i.filename
         }),
         lastUpdated: new Date(),
