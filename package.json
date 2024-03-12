@@ -4,8 +4,8 @@
   "description": "MEMBERS:\r LIM, RYDEL \r NGO, RENDELL\r KO, CARL",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
+    "start": "node index.js",
+    "devStart": "nodemon index.js",
     "populate": "node ./populate/run.js"
   },
   "repository": {
