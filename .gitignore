@@ -1,4 +1,4 @@
-./public/images/uploads/*
-./public/images/avatars/*
-./public/images/posters/*
+public/images/uploads/*
+public/images/avatars/*
+public/images/posters/*
 node_modules
