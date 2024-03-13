@@ -20,8 +20,6 @@ router.get('/id/:restoId', async(req, res) => {
             })
         }
 
-        console.log(data)
-
         res.render('resto', data)
         console.log(`ROUTE -> resto: ${req.params.restoId}`)
 

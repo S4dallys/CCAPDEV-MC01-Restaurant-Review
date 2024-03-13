@@ -33,10 +33,12 @@ router.post("/:restoId/new", upload.array("rv-images", maxuploads), async(req, r
         stars: req.body["rv-stars"],
     }
 
-    query.insertReview(data)
+    const newReview = await query.insertReview(data)
+
     res.redirect(`/resto/id/${restoId}`)
 
     console.log(`POST -> ${ resto.name } - ${ req.body["rv-title"] }`)
+    console.log(`\n--- UPLOAD ---\n${newReview}\n--------------\n`)
 })
 
 module.exports = router

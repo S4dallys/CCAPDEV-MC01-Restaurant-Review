@@ -17,9 +17,6 @@ function rateStars(star) {
     let i = stars.indexOf(star);
     const currentStarRating = starInput.getAttribute("value")
 
-    console.log(currentStarRating)
-    console.log(i)
-
     if (i == currentStarRating - 1) {
         stars[i].className = halfClass
         starInput.setAttribute("value", `${i + 0.5}`)
