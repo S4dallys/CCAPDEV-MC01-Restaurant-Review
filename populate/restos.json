@@ -20,19 +20,19 @@
     {
         "_id": "5fc36b4ee1f20c5d8fdeab8b",
         "name": "Chum Casket",
-        "poster": "mcwonalds.jpg",
+        "poster": "chum.png",
         "description": "Welcome to the Chum Casket, the real place to get real CHUMmy with. Serving customers for over 15 years, we seek to give you a new experience (unlike the restaurant in front of us)." 
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab8c",
         "name": "Nuka-Cola Cafeteria",
-        "poster": "mcwonalds.jpg",
+        "poster": "nuka_cola.jpg",
         "description": "Proudly serving the best burger and cola combination since 1856. If even a nuclear apocalypse can't stop us, then nothing will!" 
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab8d",
         "name": "Shoney's Family Diner",
-        "poster": "mcwonalds.jpg",
+        "poster": "shoney.png",
         "description": "Bring your kids, bring your friends, here at Shoney's Family Diner! We seek to provide a unique homely experience away from home." 
     }
 ]
