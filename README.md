@@ -1,7 +1,7 @@
 # 🖊️ CCAPDEV MC01/MC02 (wip)
 A repo for a restaurant review site.   
    
-Contains 3 pieces of sample data for users and restaurants, as well as multiple sample reviews. Placeholder users/reviews/reastaurants are purely to show off scrolling/what the site would look like if it were fully populated.
+Contains numerous pieces of sample data for users and restaurants, as well as multiple sample reviews. Placeholder users/reviews/reastaurants are purely to show off scrolling/what the site would look like if it were fully populated.
 
 ## ⭐ Members
 - LIM, RYDEL   
