@@ -1,4 +1,7 @@
-# 🖊️ CCAPDEV MC01/MC02 (wip)
+# 🖊️ CCAPDEV Machine Course Output Website
+> 2/16/2024: MCO1 Completed.   
+> 3/15/2024: MCO2 Completed.
+
 A repo for a restaurant review site.   
    
 Contains numerous pieces of sample data for users and restaurants, as well as multiple sample reviews. Placeholder users/reviews/reastaurants are purely to show off scrolling/what the site would look like if it were fully populated.
@@ -11,13 +14,14 @@ Contains numerous pieces of sample data for users and restaurants, as well as mu
 ## 🔭 Dependencies
 - [MongoDB Community Server](https://www.mongodb.com/try/download/community)  
 - [Node.js](https://nodejs.org/en)
-  
+
 ## 👇 Installation
 ```
 mkdir CCAPDEV_NgoLimKo
 cd CCAPDEV_NgoLimKo
 git clone https://github.com/S4dallys/CCAPDEV-MCO1-Restaurant-Review.git .
 ```
+
 ## ⌚ Quickstart
 ```
 npm ci
