@@ -1,20 +1,38 @@
 [
     {
-        "_id": "5fc36b23e1f20c5d8fdeab7c",
+        "_id": "5fc36b4ee1f20c5d8fdeab7c",
         "name": "Burger Man",
         "poster": "burger-man.jpg",
         "description": "Burger Man is the product of a 100% American father's love for fun, family, and some good old-fashioned food! Based in Edgeville." 
     },
     {
-        "_id": "5fc36b2ee1f20c5d8fdeab7d",
+        "_id": "5fc36b4ee1f20c5d8fdeab7d",
         "name": "Fred's Froyo",
         "poster": "freds-froyo.jpg",
         "description": "Get your froyo (frozen yogurt) at Fred's, here we serve the best frozen treats in Edgeville! Been the best around since '89!" 
     },
     {
-        "_id": "5fc36b39e1f20c5d8fdeab7e",
+        "_id": "5fc36b4ee1f20c5d8fdeab7e",
         "name": "McWonald's",
         "poster": "mcwonalds.jpg",
         "description": "Burgers and chicken galore! Get your favorite snacks from McWonald's today! 20% off for children under 13 until the end of September." 
+    },
+    {
+        "_id": "5fc36b4ee1f20c5d8fdeab8b",
+        "name": "Chum Casket",
+        "poster": "mcwonalds.jpg",
+        "description": "Welcome to the Chum Casket, the real place to get real CHUMmy with. Serving customers for over 15 years, we seek to give you a new experience (unlike the restaurant in front of us)." 
+    },
+    {
+        "_id": "5fc36b4ee1f20c5d8fdeab8c",
+        "name": "Nuka-Cola Cafeteria",
+        "poster": "mcwonalds.jpg",
+        "description": "Proudly serving the best burger and cola combination since 1856. If even a nuclear apocalypse can't stop us, then nothing will!" 
+    },
+    {
+        "_id": "5fc36b4ee1f20c5d8fdeab8d",
+        "name": "Shoney's Family Diner",
+        "poster": "mcwonalds.jpg",
+        "description": "Bring your kids, bring your friends, here at Shoney's Family Diner! We seek to provide a unique homely experience away from home." 
     }
 ]
