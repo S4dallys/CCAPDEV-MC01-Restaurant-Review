@@ -25,7 +25,7 @@ npm run populate
 npm start
 ```
 
-# NOTE!
+### NOTE!
 - Server runs locally on Port 3000
 - Running `npm run populate` empties and populates a local db named *ccapdev_ngolimko*
 
