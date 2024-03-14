@@ -1,5 +1,5 @@
 {
-  "name": "ccapdev-mc01-restaurant-review",
+  "name": "CCAPDEV-MCO-NgoLimKo",
   "version": "1.0.0",
   "description": "MEMBERS:\r LIM, RYDEL \r NGO, RENDELL\r KO, CARL",
   "main": "index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/S4dallys/CCAPDEV-MC01-Restaurant-Review.git"
+    "url": "git+https://github.com/S4dallys/CCAPDEV-MCO-NgoLimKo.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/S4dallys/CCAPDEV-MC01-Restaurant-Review/issues"
+    "url": "https://github.com/S4dallys/CCAPDEV-MCO-NgoLimKo/issues"
   },
-  "homepage": "https://github.com/S4dallys/CCAPDEV-MC01-Restaurant-Review#readme",
+  "homepage": "https://github.com/S4dallys/CCAPDEV-MCO-NgoLimKo#readme",
   "dependencies": {
     "express": "^4.18.3",
     "express-handlebars": "^7.1.2",

@@ -19,7 +19,7 @@ Contains numerous pieces of sample data for users and restaurants, as well as mu
 ```
 mkdir CCAPDEV_NgoLimKo
 cd CCAPDEV_NgoLimKo
-git clone https://github.com/S4dallys/CCAPDEV-MCO1-Restaurant-Review.git .
+git clone https://github.com/S4dallys/CCAPDEV-MCO-NgoLimKo.git .
 ```
 
 ## ⌚ Quickstart
