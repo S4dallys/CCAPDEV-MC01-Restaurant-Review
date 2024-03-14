@@ -24,11 +24,14 @@ npm ci
 npm run populate
 npm start
 ```
-NOTE: go to port 3000 to see the site!
+
+# NOTE!
+- Server runs locally on Port 3000
+- Running `npm run populate` empties and populates a local db named *ccapdev_ngolimko*
 
 ## 🌵 Todo
 - [ ] Session information / capabilities
-- [ ] Add more sample data 
+- [x] Add more sample data 
 - [ ] Like / Dislike functionality
 - [ ] Error handling (like any at all)
 - [ ] Find out what happened to bob123

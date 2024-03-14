@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const Profile = require("../database/models/Profile")
 const Resto = require("../database/models/Resto")
 const Review = require("../database/models/Review")
-mongoose.connect("mongodb://localhost/ccapdev");
+mongoose.connect("mongodb://localhost/ccapdev_ngolimko");
 
 const query = {
     getProfile: async(filter) => {

@@ -109,6 +109,7 @@
         "lastUpdated": "2005/11/4",
         "likes": [],
         "dislikes": [],
+        "uploads": ["doktor.jpg", "raiden.jpg"],
         "stars": 4.5,
         "ownersResponse": null,
         "hasOr": false
@@ -118,7 +119,7 @@
         "restoId": "5fc36b4ee1f20c5d8fdeab8b",
         "profileId": "5fc36b4ee1f20c5d8fdeab7a",
         "title": "What am I even eating?!",
-        "body": "the institution has got to be one of the most putrid I've ever been to, not to mention their 'food'",
+        "body": "This institution has got to be one of the most putrid I've ever been to, not to mention their \"food\". I sincerely hope the owners have plans to renovate the exterior and change most if not all of the recipes. I will not be dining here again!",
         "lastUpdated": "2008/6/12",
         "likes": [],
         "dislikes": [],
@@ -135,6 +136,7 @@
         "lastUpdated": "2001/3/15",
         "likes": [],
         "dislikes": [],
+        "uploads": [ "octane.jpg" ],
         "stars": 4,
         "ownersResponse": null,
         "hasOr": false
@@ -149,8 +151,11 @@
         "likes": [],
         "dislikes": [],
         "stars": 5,
-        "ownersResponse": null,
-        "hasOr": false
+        "ownersResponse": {
+            "lastUpdated": "2010/11/5",
+            "body": "ඞ"
+        },
+        "hasOr": true
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab92",
@@ -162,8 +167,11 @@
         "likes": [],
         "dislikes": [],
         "stars": 4.5,
-        "ownersResponse": null,
-        "hasOr": false
+        "ownersResponse": {
+            "lastUpdated": "2000/1/7",
+            "body": "Thank you, I can always rely on the medic!"
+        },
+        "hasOr": true
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab93",
@@ -175,8 +183,11 @@
         "likes": [],
         "dislikes": [],
         "stars": 2.5,
-        "ownersResponse": null,
-        "hasOr": false
+        "ownersResponse": {
+            "lastUpdated": "2009/8/25",
+            "body": "Very sorry sir. Please accept this 20% off coupon the next time you eat at this establishment. Cheers."
+        },
+        "hasOr": true
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab94",
@@ -266,6 +277,19 @@
         "likes": [],
         "dislikes": [],
         "stars": 1,
+        "ownersResponse": null,
+        "hasOr": false
+    },
+    {
+        "_id": "5fc36b4ee1f20c5d8fdeac9b",
+        "restoId": "5fc36b4ee1f20c5d8fdeab8b",
+        "profileId": "5fc36b4ee1f20c5d8fdeab79",
+        "title": "SO BAD",
+        "body": "ahahahahah my wife would've absolutely hated this",
+        "lastUpdated": "1992/12/5",
+        "likes": [],
+        "dislikes": [],
+        "stars": 1.5,
         "ownersResponse": null,
         "hasOr": false
     }

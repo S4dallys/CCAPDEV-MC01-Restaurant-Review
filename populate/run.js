@@ -6,7 +6,7 @@ const path = require("path")
 const fs = require('fs');
 const { ObjectId } = mongoose.Types;
 
-mongoose.connect("mongodb://localhost/ccapdev");
+mongoose.connect("mongodb://localhost/ccapdev_ngolimko");
 
 // Load JSON files
 const profilesData = JSON.parse(fs.readFileSync(`${__dirname + '\\profiles.json'}`, 'utf-8'));
