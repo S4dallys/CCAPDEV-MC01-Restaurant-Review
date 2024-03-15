@@ -1,4 +1,4 @@
-// TODO: uhhh this??
+// TODO: uhhh this?? change classnames...
 const toggleLike = (like) => {
     like.className = (like.className === "icon pro-like") ? "icon pro-toggle-like" : "icon pro-like";
 }
