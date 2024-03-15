@@ -1,6 +1,3 @@
-// this is chatgpt'd :(
-// converts all ids in json files to ObjectIds instead of strings
-    
 const mongoose = require('mongoose');
 const path = require("path")
 const fs = require('fs');

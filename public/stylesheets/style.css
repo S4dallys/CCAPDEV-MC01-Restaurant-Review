@@ -845,7 +845,7 @@ body {
     justify-content: space-evenly;
     padding-inline: 40px;
     height: 65%;
-    width: 45%;
+    min-width: 45%;
     background-color: var(--col-sec);
     border-radius: 20px;
 }
@@ -896,6 +896,10 @@ body {
 
 .cr-cancel, .cr-post {
     width: 100px;
+}
+
+.required-error {
+    border: 3px solid var(--col-error);
 }
 
 #cr-file {

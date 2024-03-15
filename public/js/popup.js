@@ -5,6 +5,10 @@ const setUpPopup = (toggler, popup) => {
     if (tog && po) {
         tog.addEventListener("click", () => {
             po.style.display = (po.style.display == "flex") ? "none" : "flex";
+
+            Array.from(po.getElementsByClassName("required-field")).forEach(e => {
+               e.classList.remove("required-error") 
+            });
         })
     }
 }
