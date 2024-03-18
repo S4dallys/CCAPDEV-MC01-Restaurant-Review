@@ -1,11 +1,22 @@
 const express = require("express")
 const router = express.Router()
 const query = require("../local_modules/query")
+const error = require("../local_modules/error")
 
 router.get('/id/:profileId', async(req, res) => {
-    const profile = await query.getProfile({ name: req.params.profileId })
-    if (profile) {
+    try {
+        const profile = await query.getProfile({ name: req.params.profileId })
+
+        if (!profile) {
+            error.throwProfileError()
+        }
+
         const reviews = await query.getReviews({ profileId: profile._id })
+
+        if (!reviews) {
+            error.throwReviewFetchError()
+        }
+
         const data = {
             sb: { ...profile, reviewCount: reviews.length },
             reviews: reviews.map((r) => {
@@ -14,12 +25,17 @@ router.get('/id/:profileId', async(req, res) => {
             })
         }
 
-        res.render('profile', data)
         console.log(`ROUTE -> profile: ${req.params.profileId}`)
-    } else {
-        // TODO: Nicer error page?
-        res.send('User not found!')
-        console.log(`FAILED -> profile: ${req.params.profileId}`)
+        res.render('profile', data)
+    } catch (err) {
+        if (err.name === "ProfileError" || err.name === "ReviewFetchError") {
+            console.log(`ERROR! ${err.message}`)
+        } else {
+            console.log(`ERROR! ${err.message}`)
+            err = error.getUnknownError()
+        }
+
+        res.render("error", { message: err.message })
     }
 })
 

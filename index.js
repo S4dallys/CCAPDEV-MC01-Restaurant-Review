@@ -4,6 +4,7 @@ const path = require("path")
 const express = require("express")
 const exphbs = require("express-handlebars")
 const query = require("./local_modules/query")
+const error = require("./local_modules/error")
 
 // express settings
 const app = new express()
@@ -25,22 +26,36 @@ app.use("/review", reviewRouter)
 
 // homepage get request
 app.get('/', async (req, res) => {
-    const filter = req.query.filter
-    const filterObj = (filter) ? { name: { $regex: filter, $options: 'i' } } : {} 
-    const restos = await query.getRestos(filterObj);
+    try {
+        const filter = req.query.filter
+        const filterObj = (filter) ? 
+            { name: { $regex: filter, $options: 'i' } } 
+            : {} 
 
-    if (restos) {
+        const restos = await query.getRestos(filterObj);
+
+        if (!restos) {
+            error.throwRestoFetchError()
+        }
+
         await Promise.all(restos.map(async (r) => {
             const reviews = await query.getReviews({ restoId: r._id });
             const reviewCount = reviews.length;
             r.reviewCount = reviewCount;
             r.stars = reviewCount > 0 ? reviews.reduce((total, rev) => total + rev.stars, 0) / reviewCount : 0;
         }));
-        res.render('home', { restos: restos })
+
         console.log(`ROUTE -> index: filter = '${filter}'`)
-    } else {
-        res.send('Homepage error! Please refresh.')
-        console.log(`FAILED -> index: filter = '${filter}'`)
+        res.render('home', { restos: restos })
+    } catch (err) {
+        if (err.name === "RestoFetchError") {
+            console.log(`ERROR! ${err.message}`)
+        } else {
+            console.log(`ERROR! ${err.message}`)
+            err = error.getUnknownError()
+        }
+
+        res.render("error", { message: err.message })
     }
 })
 

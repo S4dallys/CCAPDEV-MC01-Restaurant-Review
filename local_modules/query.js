@@ -29,13 +29,6 @@ const query = {
     insertReview: (data) => {
         return Review.create({
             ...data
-            // restoId: data.restoId,
-            // profileId: data.profileId,
-            // title: data.title,
-            // body: data.body,
-            // uploads: data.uploads,
-            // lastUpdated: data.lastUpdated,
-            // stars: data.stars,
         })
     }
 }

@@ -1,18 +1,32 @@
 const express = require("express")
 const router = express.Router()
 const query = require("../local_modules/query")
+const error = require("../local_modules/error")
 
 router.get('/id/:restoId', async(req, res) => {
-    const resto = await query.getResto({ name: req.params.restoId })
-    if (resto) {
+    try {
+        const resto = await query.getResto({ name: req.params.restoId })
+
+        if (!resto) {
+            error.throwRestoError()
+        }
+
         const reviews = await query.getReviews({ restoId: resto._id })
+
+        if (!reviews) {
+            error.throwReviewFetchError()
+        }
+
         const reviewCount = reviews.length
-        const stars = (reviews.reduce((total, rev) => { return total + rev.stars }, 0) / reviewCount).toFixed(2)
+        const stars = (reviewCount > 0) 
+            ? (reviews.reduce((total, rev) => { return total + rev.stars }, 0) / reviewCount).toFixed(2)
+            : 0
+
         const data = { 
             sb: {
                 ...resto, 
                 reviewCount: reviewCount,
-                stars: (isNaN(stars)) ? 0 : stars
+                stars: stars
             },
             reviews: reviews.map((r) => {
                 r.likeCount = r.likes.length - r.dislikes.length
@@ -20,13 +34,17 @@ router.get('/id/:restoId', async(req, res) => {
             })
         }
 
-        res.render('resto', data)
         console.log(`ROUTE -> resto: ${req.params.restoId}`)
+        res.render('resto', data)
+    } catch (err) {
+        if (err.name === "RestoError" || err.name === "ReviewFetchError") {
+            console.log(`ERROR! ${err.message}`)
+        } else {
+            console.log(`ERROR! ${err.message}`)
+            err = error.getUnknownError()
+        }
 
-        req.restoId = req.params.restoId
-    } else {
-        res.send('Restaurant not found!')
-        console.log(`FAILED -> profile: ${req.params.restoId}`)
+        res.render("error", { message: err.message })
     }
 })
 
