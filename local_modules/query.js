@@ -5,17 +5,17 @@ const Review = require("../database/models/Review")
 mongoose.connect("mongodb://localhost/ccapdev_ngolimko");
 
 const query = {
-    getProfile: async(filter) => {
-        return await Profile.findOne(filter).lean()
+    getProfile: (filter) => {
+        return Profile.findOne(filter).lean()
     },
-    getResto: async(filter) => {
-        return await Resto.findOne(filter).lean()
+    getResto: (filter) => {
+        return Resto.findOne(filter).lean()
     },
-    getRestos: async(filter) => {
-        return await Resto.find(filter).lean()
+    getRestos: (filter) => {
+        return Resto.find(filter).lean()
     },
-    getReviews: async(filter) => {
-        return await Review.find(filter)
+    getReviews: (filter) => {
+        return Review.find(filter)
             .populate({
                 path: 'restoId',
                 model: 'Resto'  
