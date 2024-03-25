@@ -2,12 +2,9 @@
     <div id="p1-label-container">
         <div id="p1-label-left">
             <span class="icon icon-lg p1-star-i"></span>
-            <h1 class="p1-label">Rate and Review!</h1>
+            <h1 id="p1-label">Rate and Review!</h1>
         </div>
-        <div id="p1-label-right">
-            <h1 class="p1-label">Sort</h1>
-            <span class="icon icon-lg p1-filter-i hov2"></span>
-        </div>
+        {{> sortfilter}}
     </div>
     <div id="p1-restaurants-container">
         <ul id="p1-restaurants-list">
@@ -25,7 +22,7 @@
                         </a>
                         <div class="p1-card-middle">
                             <ul class="cr-star-group" data-stars="{{ stars }}"></ul>
-                            <span class="p1-reviews">({{ reviewCount }} reviews)</span>
+                            <span class="p1-reviews" data-reviews="{{ reviewCount }}">({{ reviewCount }} reviews)</span>
                         </div>
                         <p class="p1-description">{{ description }}</p>
                     </div>

@@ -1,8 +1,8 @@
 const express = require("express")
 const router = express.Router()
 const multer = require("multer")
-const query = require("../local_modules/query")
-const error = require("../local_modules/error")
+const query = require("../utility/query")
+const error = require("../utility/error")
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {

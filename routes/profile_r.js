@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
-const query = require("../local_modules/query")
-const error = require("../local_modules/error")
+const query = require("../utility/query")
+const error = require("../utility/error")
 
 router.get('/id/:profileId', async(req, res) => {
     try {

@@ -2,9 +2,9 @@
 // node requires
 const path = require("path")
 const express = require("express")
-const exphbs = require("express-handlebars")
-const query = require("./local_modules/query")
-const error = require("./local_modules/error")
+const hbs = require("hbs")
+const query = require("./utility/query")
+const error = require("./utility/error")
 
 // express settings
 const app = new express()
@@ -12,8 +12,10 @@ app.use(express.json()) // use json
 app.use(express.urlencoded( {extended: true})); // files consist of more than strings
 app.use(express.static('public')) // we'll add a static directory named "public"
 
-app.engine('hbs', exphbs.engine({ defaultLayout: 'header.hbs' }))
+hbs.registerPartials(__dirname + "/views/partials")
+app.set('views', __dirname + "/views")
 app.set('view engine', 'hbs')
+app.set('view options', { layout: '/layouts/header' });
 
 // routes
 const profileRouter = require("./routes/profile_r")

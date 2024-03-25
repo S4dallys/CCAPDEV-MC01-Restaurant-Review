@@ -1,0 +1,21 @@
+<div id="sf-actions">
+    <label for="sf-sort-list" id="sf-sort-list">
+        <span class="icon sort-desc-i icon-md" id="sf-sort-flip" data-flip="desc"></span>
+        Sort:
+        <select id="sf-sort-select" name="sortby">
+            <option value="relevance">Relevance</option>
+            <option value="stars">Stars</option>
+            <option value="reviews">Reviews</option>
+        </select>
+    </label>
+    <label id="sf-filter-list">Stars:
+        <div class="sf-list">
+            <label for="lstar" class="sf-abs-label">Min</label>
+            <input id="lstar" type="number" min="0" max="5" name="lstar" value="0">
+        </div>
+        <div class="sf-list">
+            <label for="hstar" class="sf-abs-label">Max</label>
+            <input id="hstar" type="number" min="0" max="5" name="hstar" value="5">
+        </div>
+    </label>
+</div>
