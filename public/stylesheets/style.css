@@ -1,5 +1,6 @@
 /* Montserrat font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:wght@900&display=swap');
+/* TODO: download font */
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:wght@900&display=swap'); */
 
 /* reset */
 *,
@@ -17,7 +18,7 @@
     /* --col-sec: #1a2614; */
     --col-owner-prim: #FFCF00;
     --col-owner-sec: #FFF0AD;
-    --col-error: #fc7474;
+    --col-error: #ff3454;
 
     --col-sec: #163826;
     --col-white: #f7f4f2;
@@ -153,10 +154,10 @@ body {
     cursor: pointer;
 }
 
-#lor-log-alr, #lor-reg-alr {
+.lor-err {
+    margin-left: 20px;
     color: var(--col-error);
-    font-size: 0.8rem;
-    font-style: italic;
+    font-size: 1rem;
     display: inline;
 }
 

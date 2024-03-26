@@ -12,6 +12,11 @@ const restoSchema = new mongoose.Schema({
     description: {
         type: String,
         default: "No description."
+    },
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Profile',
+        required: true
     }
 })
 

@@ -3,7 +3,8 @@
         "_id": "5fc36b4ee1f20c5d8fdeab7c",
         "name": "Burger Man",
         "poster": "burger-man.jpg",
-        "description": "Burger Man is the product of a 100% American father's love for fun, family, and some good old-fashioned food! Based in Edgeville." 
+        "description": "Burger Man is the product of a 100% American father's love for fun, family, and some good old-fashioned food! Based in Edgeville.",
+        "owner": "5fc36b4ee1f20c5d8fdeab79"
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab7d",

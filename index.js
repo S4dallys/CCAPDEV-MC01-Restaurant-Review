@@ -85,6 +85,10 @@ app.get('/', checkAuthenticate, async (req, res) => {
     }
 })
 
+app.get("/error", (req, res) => {
+    res.render("error", { message: "Unknown Error. Please Retry." })
+})
+
 // listen! :3
 var server = app.listen(3000, function () {
     console.log('SERVER IS UP!');
