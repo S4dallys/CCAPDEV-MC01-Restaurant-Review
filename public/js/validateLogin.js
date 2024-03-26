@@ -1,4 +1,3 @@
-// TODO: login and register validation
 // frontend validation
 const regForm = document.getElementById('lor-register-form')
 const regUsername = document.getElementById('lor-register-username')

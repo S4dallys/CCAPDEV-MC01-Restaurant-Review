@@ -7,7 +7,6 @@ const profileSchema = new mongoose.Schema({
         unique: true
     },
     avatar: {
-        // TODO: Use actual image!!
         type: String,
         default: "default_avatar.png"
     },

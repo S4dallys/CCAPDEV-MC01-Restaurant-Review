@@ -1,6 +1,5 @@
 <!-- create review popup -->
 <div id="cr-container" class="popup">
-    <!-- TODO: POST request for CR -->
     <form id="cr-form" class="cr-popup" method="post" enctype="multipart/form-data" action="/review/{{ sb.name }}/new">
         <div class="cr-header">
             <h1 class="cr-label">Create Review</h1>
@@ -11,7 +10,6 @@
         <div class="cr-actions">
             <ul id="g-ul-clickable" class="cr-star-group hov3" data-stars="5"> </ul>
             <input type="hidden" id="cr-star-input" name="rv-stars" value="5">
-            <!-- TODO: uh image yes -->
             <input id="cr-file" type="file" name="rv-images" accept="image/*" multiple>
             <label id="cr-file-label" for="cr-file" class="hov1">
                 <span class="icon icon-md cr-img-i"></span><span id="cr-upload-text">0 IMGS</span>

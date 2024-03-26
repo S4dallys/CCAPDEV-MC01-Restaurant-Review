@@ -1109,3 +1109,33 @@ body {
     margin-bottom: 10px;
     margin-left: auto;
 }
+
+/* error.hbs */
+#err-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 40px;
+}
+
+#err-title {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+#err-msg {
+    font-style: italic;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 40%;
+    padding: 10px;
+    border: 3px solid var(--col-owner-prim);
+}
+
+#err-img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+}

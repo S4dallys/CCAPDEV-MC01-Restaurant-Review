@@ -2,7 +2,6 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
 
-// TODO: variable html titles
 // node requires
 const path = require("path")
 const express = require("express")

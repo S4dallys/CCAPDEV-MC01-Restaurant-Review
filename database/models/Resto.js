@@ -7,7 +7,6 @@ const restoSchema = new mongoose.Schema({
     },
     poster: {
         type: String,
-        // TODO: add default poster
         default: "default_poster.png"
     },
     description: {
