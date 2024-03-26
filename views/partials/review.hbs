@@ -1,0 +1,43 @@
+<ul id="pro-review-ul">
+    {{#each this}}
+    <li class="pro-review-li">
+        <div class="pro-review-box">
+            <div class="pro-actions">
+                <ul class="cr-star-group" data-stars="{{ stars }}"></ul>
+                <div class="pro-actions-like">
+                    <span class="icon pro-like"></span>
+                    <span class="pro-like-count" data-likes="{{ likeCount }}">{{ likeCount }}</span>
+                    <span class="icon pro-dislike"></span>
+                </div>
+            </div>
+            <a href="/profile/id/{{ profileId.name }}"><img class="pro-review-icon"
+                    src="/imgs/avatars/{{ profileId.avatar }}">
+                </img></a>
+            <div class="pro-review-header" data-erms="{{ erms }}">
+                <div>
+                    <p class="pro-review-location"><a href="/profile/id/{{ profileId.name }}"
+                            class="pro-user-link thov1">{{
+                            profileId.name }}</a> on <a href="/resto/id/{{ restoId.name }}"
+                            class="pro-location-link bitalics thov1">{{ restoId.name }}</a> • <span
+                            class="pro-user-date" data-date="{{ lastUpdated }}"></span></p>
+                    <h3 class="pro-review-title bold">{{ title }}</h3>
+                </div>
+            </div>
+            <div class="pro-review-text">{{ body }}</div>
+            <div class="pro-review-images">
+                {{#each uploads}} <img src="/imgs/uploads/{{ this }}"> {{/each}}
+            </div>
+        </div>
+        {{#if hasOr}}
+        <div class="pro-or-box">
+            <div class="pro-or-header">
+                <span class="icon pro-crown-i"></span>
+                <span class="bold">Owner Response • <span class="pro-or-date"
+                        data-date="{{ ownersResponse.lastUpdated }}"></span></span>
+            </div>
+            <div class="pro-or-text">{{ ownersResponse.body }}</div>
+        </div>
+        {{/if}}
+    </li>
+    {{/each}}
+</ul>
