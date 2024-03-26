@@ -10,30 +10,35 @@
         "_id": "5fc36b4ee1f20c5d8fdeab7d",
         "name": "Fred's Froyo",
         "poster": "freds-froyo.jpg",
-        "description": "Get your froyo (frozen yogurt) at Fred's, here we serve the best frozen treats in Edgeville! Been the best around since '89!" 
+        "description": "Get your froyo (frozen yogurt) at Fred's, here we serve the best frozen treats in Edgeville! Been the best around since '89!",
+        "owner": "5fc36b4ee1f20c5d8fdeab79"
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab7e",
         "name": "McWonald's",
         "poster": "mcwonalds.jpg",
-        "description": "Burgers and chicken galore! Get your favorite snacks from McWonald's today! 20% off for children under 13 until the end of September." 
+        "description": "Burgers and chicken galore! Get your favorite snacks from McWonald's today! 20% off for children under 13 until the end of September.",
+        "owner": "5fc36b4ee1f20c5d8fdeab79"
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab8b",
         "name": "Chum Casket",
         "poster": "chum.png",
-        "description": "Welcome to the Chum Casket, the real place to get real CHUMmy with. Serving customers for over 15 years, we seek to give you a new experience (unlike the restaurant in front of us)." 
+        "description": "Welcome to the Chum Casket, the real place to get real CHUMmy with. Serving customers for over 15 years, we seek to give you a new experience (unlike the restaurant in front of us).",
+        "owner": "5fc36b4ee1f20c5d8fdeab79"
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab8c",
         "name": "Nuka-Cola Cafeteria",
         "poster": "nuka_cola.jpg",
-        "description": "Proudly serving the best burger and cola combination since 1856. If even a nuclear apocalypse can't stop us, then nothing will!" 
+        "description": "Proudly serving the best burger and cola combination since 1856. If even a nuclear apocalypse can't stop us, then nothing will!",
+        "owner": "5fc36b4ee1f20c5d8fdeab79"
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab8d",
         "name": "Shoney's Family Diner",
         "poster": "shoney.png",
-        "description": "Bring your kids, bring your friends, here at Shoney's Family Diner! We seek to provide a unique homely experience away from home." 
+        "description": "Bring your kids, bring your friends, here at Shoney's Family Diner! We seek to provide a unique homely experience away from home.",
+        "owner": "5fc36b4ee1f20c5d8fdeab79"
     }
 ]
