@@ -48,7 +48,7 @@ app.get('/', async (req, res) => {
         }));
 
         console.log(`ROUTE -> index: filter = '${filter}'`)
-        res.render('home', { restos: restos })
+        res.render('home', { restos: restos, home: true })
     } catch (err) {
         if (err.name === "RestoFetchError") {
             console.log(`ERROR! ${err.message}`)

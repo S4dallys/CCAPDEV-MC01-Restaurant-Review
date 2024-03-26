@@ -10,10 +10,6 @@ if (filter) {
 // Sort by: relevance/stars/reviews/release date
 // Filter by: stars/reviewcount
 
-// Reviews
-// Sort by: relevance (user karma)/stars/post date
-// Filter by: stars
-
 // TODO: pagination 20 revs
 
 // filter results
@@ -104,8 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
         minStars, maxStars, minRevs, maxRevs
     )
 
-    // attach eventlisteners to sortby / filterby
-    currentRestos = [...restos]
     const sortBy = document.getElementById('sf-sort-select')
     const filterMin = document.getElementById('lstar')
     const filterMax = document.getElementById('hstar')
@@ -142,23 +136,17 @@ document.addEventListener('DOMContentLoaded', function() {
         refresh(currentRestos)
     }
 
+    function filterFunction() {
+        currentRestos = restos.filter((e) => {
+            return e.stars >= filterMin.value && e.stars <= filterMax.value
+        })
+
+        sortFunction()
+    }
+
     sortBy.addEventListener('change', sortFunction)
-
-    filterMin.addEventListener('change', () => {
-        currentRestos = restos.filter((e) => {
-            return e.stars >= filterMin.value && e.stars <= filterMax.value
-        })
-
-        sortFunction()
-    })
-
-    filterMax.addEventListener('change', () => {
-        currentRestos = restos.filter((e) => {
-            return e.stars >= filterMin.value && e.stars <= filterMax.value
-        })
-
-        sortFunction()
-    })
+    filterMin.addEventListener('change', filterFunction)
+    filterMax.addEventListener('change', filterFunction)
 
     flip.addEventListener('click', () => {
         if (flip.getAttribute("data-flip") === "asc") {
@@ -172,11 +160,8 @@ document.addEventListener('DOMContentLoaded', function() {
         sortFunction()
     })
 
-    currentRestos.sort((a, b) => {
-        return b.relevance - a.relevance
-    })
-
-    refresh(currentRestos)
+    currentRestos = [...restos]
+    sortFunction()
 });
 
 

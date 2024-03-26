@@ -3,9 +3,15 @@
         <span class="icon sort-desc-i icon-md" id="sf-sort-flip" data-flip="desc"></span>
         Sort:
         <select id="sf-sort-select" name="sortby">
+            {{#if home}}
             <option value="relevance">Relevance</option>
             <option value="stars">Stars</option>
             <option value="reviews">Reviews</option>
+            {{else}}
+            <option value="date">Date</option>
+            <option value="relevance">Relevance</option>
+            <option value="likes">Likes</option>
+            {{/if}}
         </select>
     </label>
     <label id="sf-filter-list">Stars:

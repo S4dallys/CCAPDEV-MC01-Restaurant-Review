@@ -30,8 +30,10 @@ router.get('/id/:restoId', async(req, res) => {
             },
             reviews: reviews.map((r) => {
                 r.likeCount = r.likes.length - r.dislikes.length
+                r.erms = r.profileId.totalErms
                 return r
-            })
+            }),
+            home: false
         }
 
         console.log(`ROUTE -> resto: ${req.params.restoId}`)

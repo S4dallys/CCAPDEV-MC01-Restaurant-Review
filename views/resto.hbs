@@ -50,6 +50,9 @@
 </div>
 
 <div class ="pro-review-holder">
+    <div id="sortfilter">
+        {{> sortfilter}}
+    </div>
     <ul id="pro-review-ul">
 
         {{#each reviews}}
@@ -60,13 +63,13 @@
                     <ul class="cr-star-group" data-stars="{{ stars }}"></ul>
                     <div class="pro-actions-like">
                         <span class="icon pro-like"></span>
-                        <span class="pro-like-count">{{ likeCount }}</span>
+                        <span class="pro-like-count" data-likes="{{ likeCount }}">{{ likeCount }}</span>
                         <span class="icon pro-dislike"></span>
                     </div>
                 </div>
                 <a href="/profile/id/{{ profileId.name }}"><img class="pro-review-icon" src ="/imgs/avatars/{{ profileId.avatar }}">
                     </img></a>
-                <div class = "pro-review-header">
+                    <div class = "pro-review-header" data-erms="{{ erms }}">
                     <div>
                         <p class="pro-review-location"><a href="/profile/id/{{ profileId.name }}" class="pro-user-link thov1">{{ profileId.name }}</a> on <a href="/resto/id/{{ restoId.name }}" class="pro-location-link bitalics thov1">{{ restoId.name }}</a> • <span class="pro-user-date" data-date="{{ lastUpdated }}"></span></p>
                         <h3 class ="pro-review-title bold">{{ title }}</h3>
@@ -95,3 +98,4 @@
 
 <script src="/js/rating.js"></script>
 <script src="/js/validateReview.js"></script>
+<script src="/js/sf_resto.js"></script>
