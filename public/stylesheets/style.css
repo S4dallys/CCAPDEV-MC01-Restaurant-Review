@@ -171,6 +171,11 @@ body {
     border-radius: 50%;
     width: 40px;
     aspect-ratio: 1;
+    border: 2px solid var(--col-prim);
+}
+
+.lor-user-avatar:hover {
+    border-color: white;
 }
 
 /* end of header styles */
@@ -458,6 +463,13 @@ body {
     margin: auto;
     margin-block: 20px;
     width: 80%;
+}
+
+.pro-review-images img:active {
+    transform: scale(5);
+    transform-origin: bottom;
+    object-fit: contain;
+    z-index: 2;
 }
 
 .pro-review-images>img {
