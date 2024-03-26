@@ -29,7 +29,6 @@ router.post('/register', async (req, res) => {
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/error',
-    failureFlash: true
 }))
 
 router.get('/login', async(req, res) => {

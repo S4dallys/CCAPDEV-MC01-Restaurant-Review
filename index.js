@@ -20,7 +20,6 @@ app.set('views', __dirname + "/views")
 app.set('view engine', 'hbs')
 app.set('view options', { layout: '/layouts/header' });
 
-const flash = require("express-flash")
 const session = require("express-session")
 const passport = require('passport')
 const initPassport = require("./utility/passport_config")
@@ -31,7 +30,6 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))
-app.use(flash())
 app.use(passport.initialize())
 app.use(passport.session())
 initPassport(passport)
