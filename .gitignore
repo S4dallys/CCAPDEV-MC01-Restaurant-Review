@@ -2,4 +2,5 @@ public/imgs/uploads/*
 public/imgs/avatars/*
 public/imgs/posters/*
 node_modules/*
+.env
 todo_list.txt

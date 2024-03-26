@@ -30,6 +30,11 @@ const query = {
         return Review.create({
             ...data
         })
+    },
+    insertProfle: (data) => {
+        return Profile.create({
+            ...data
+        })
     }
 }
 

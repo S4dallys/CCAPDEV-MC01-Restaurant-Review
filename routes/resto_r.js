@@ -2,8 +2,9 @@ const express = require("express")
 const router = express.Router()
 const query = require("../utility/query")
 const error = require("../utility/error")
+const checkAuthenticate = require("../utility/checkauthenticate")
 
-router.get('/id/:restoId', async(req, res) => {
+router.get('/id/:restoId', checkAuthenticate, async(req, res) => {
     try {
         const resto = await query.getResto({ name: req.params.restoId })
 

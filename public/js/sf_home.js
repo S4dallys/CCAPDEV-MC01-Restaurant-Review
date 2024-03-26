@@ -163,8 +163,3 @@ document.addEventListener('DOMContentLoaded', function() {
     currentRestos = [...restos]
     sortFunction()
 });
-
-
-
-
-

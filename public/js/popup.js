@@ -19,3 +19,10 @@ setUpPopup('cr-popup-open', 'cr-container')
 setUpPopup('cr-popup-close', 'cr-container')
 setUpPopup('cr-cancel', 'cr-container')
 
+const logout = document.getElementById('lor-logout')
+const logoutform = document.getElementById('lor-logout-form')
+if (logoutform) {
+    logout.addEventListener("click", () => {
+        logoutform.submit()
+    })
+}

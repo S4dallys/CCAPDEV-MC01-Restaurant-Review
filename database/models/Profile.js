@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const profileSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     avatar: {
         // TODO: Use actual image!!
@@ -22,7 +23,12 @@ const profileSchema = new mongoose.Schema({
         type: Date,
         default: () => { Date.now() },
         immutable: true
-     }
+    },
+    password: {
+        type: String,
+        required: true,
+        immutable: true
+    }
 })
 
 module.exports = mongoose.model("Profile", profileSchema);

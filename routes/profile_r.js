@@ -2,8 +2,9 @@ const express = require("express")
 const router = express.Router()
 const query = require("../utility/query")
 const error = require("../utility/error")
+const checkAuthenticate = require("../utility/checkauthenticate")
 
-router.get('/id/:profileId', async(req, res) => {
+router.get('/id/:profileId', checkAuthenticate, async(req, res) => {
     try {
         const profile = await query.getProfile({ name: req.params.profileId })
 
@@ -40,7 +41,7 @@ router.get('/id/:profileId', async(req, res) => {
 })
 
 // TODO: UNDER CONTRUCTION
-router.get('/edit', (req, res) => {
+router.get('/edit', checkAuthenticate, (req, res) => {
     res.send("Under construction!")
     // res.render('edit_profile')
     console.log('ROUTE -> EDIT PROFILE (under construction)')

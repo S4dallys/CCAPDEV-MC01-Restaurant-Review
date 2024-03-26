@@ -146,16 +146,30 @@ body {
     top: 8px;
 }
 
-#lor-popup-open {
+#lor-popup-open, #lor-logout {
     font-size: 1.4rem;
     color: var(--col-prim);
     text-decoration: none;
     cursor: pointer;
 }
 
+#lor-log-alr, #lor-reg-alr {
+    color: var(--col-error);
+    font-size: 0.8rem;
+    font-style: italic;
+    display: inline;
+}
+
 .profile-i {
     margin-left: 40px;
     background-position: -40px -60px;
+}
+
+.lor-user-avatar {
+    margin-left: 20px;
+    border-radius: 50%;
+    width: 40px;
+    aspect-ratio: 1;
 }
 
 /* end of header styles */

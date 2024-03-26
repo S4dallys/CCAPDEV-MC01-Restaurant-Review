@@ -1,77 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
-        <title>Restaurant Reviews</title>
-    </head>
-    <body>
-        <div id="lor-container" class="popup">
-            <div id="lor-popup">
-                <span id="lor-popup-close" class="icon icon-md popup-x-i hov2"></span>
-                <div id="lor-login-box">
-                    <h2 id="lor-login-title">Login</h2>
-                    <!-- TODO: Make POST req for this -->
-                    <form id="lor-login-form" class="lor-form" method="GET" action="/">
-                        <label class="lor-label" for="lor-login-username">Username
-                            <input id="lor-login-username" class="lor-login-input" type="text">
-                        </label>
-                        <label class="lor-label" for="lor-login-password">Password
-                            <input id="lor-login-password" class="lor-login-input" type="password">
-                        </label>
-                        <input type="submit" value="LOGIN" class="popup-button hov1">
-                    </form>
-                </div>
-                <div id="lor-or-box">
-                    OR
-                </div>
-                <div id="lor-register-box">
-                    <p id="lor-register-prompt">Don't have an account?</p>
-                    <h2 id="lor-register-title">Register</h2>
-                    <form id="lor-register-form" class="lor-form" method="GET" action="/">
-                        <label class="lor-label" for="lor-register-username">Username
-                            <input id="lor-register-username" class="lor-register-input" type="text">
-                        </label>
-                        <label class="lor-label" for="lor-register-password">Password
-                            <input id="lor-register-password" class="lor-register-input" type="password">
-                        </label>
-                        <label class="lor-label" for="lor-register-confirm-password">Confirm Password
-                            <input id="lor-register-confirm-password" class="lor-register-input" type="password">
-                        </label>
-                        <input type="submit" value="REGISTER" class="popup-button hov1">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <title>Restaurant Reviews</title>
+</head>
+
+<body>
+    <div id="lor-container" class="popup">
+        <div id="lor-popup">
+            <span id="lor-popup-close" class="icon icon-md popup-x-i hov2"></span>
+            <div id="lor-login-box">
+                <h2 id="lor-login-title">Login</h2>
+                <!-- TODO: Make POST req for this -->
+                <form id="lor-login-form" class="lor-form" method="POST" action="/auth/login">
+                    <label class="lor-label" for="lor-login-username">Username <p id="lor-log-alr"></p>
+                        <input id="lor-login-username" name="username" class="lor-login-input" type="text">
+                    </label>
+                    <label class="lor-label" for="lor-login-password">Password
+                        <input id="lor-login-password" name="password" class="lor-login-input" type="password">
+                    </label>
+                    <input type="submit" value="LOGIN" class="popup-button hov1">
+                </form>
+            </div>
+            <div id="lor-or-box">
+                OR
+            </div>
+            <div id="lor-register-box">
+                <p id="lor-register-prompt">Don't have an account?</p>
+                <h2 id="lor-register-title">Register</h2>
+                <form id="lor-register-form" class="lor-form" method="POST" action="/auth/register">
+                    <label class="lor-label" for="lor-register-username">Username <p id="lor-reg-alr"></p>
+                        <input id="lor-register-username" name="username" class="lor-register-input" type="text">
+                    </label>
+                    <label class="lor-label" for="lor-register-password">Password
+                        <input id="lor-register-password" name="password" class="lor-register-input" type="password">
+                    </label>
+                    <label class="lor-label" for="lor-register-confirm-password">Confirm Password
+                        <input id="lor-register-confirm-password" name="confirm_password" class="lor-register-input"
+                            type="password">
+                    </label>
+                    <input type="submit" value="REGISTER" class="popup-button hov1">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="header-container">
+        <div id="header">
+            <div class="header-item">
+                <a href="/">
+                    <img id="logo" src="/imgs/logo.png">
+                </a>
+            </div>
+            <div class="header-item">
+                <div id="header-search-div">
+                    <form action="/" method="get">
+                        <input id="header-search-bar" type="text" name="filter" placeholder="Search restaurants...">
+                        <span class="icon icon-md search-i"></span>
                     </form>
                 </div>
             </div>
-        </div>
-        <div id="header-container">
-            <div id="header">
-                <div class="header-item">
-                    <a href="/">
-                        <img id="logo" src="/imgs/logo.png">
-                    </a> 
-                </div>
-                <div class="header-item">
-                    <div id="header-search-div">
-                        <form action="/" method="get">
-                            <input id="header-search-bar" type="text" name="filter" placeholder="Search restaurants...">
-                            <span class="icon icon-md search-i"></span>
-                        </form>
-                    </div>
-                </div>
-                <div class="header-item">
-                    <p id="lor-popup-open" class="thov3">LOGIN</p>
-                    <a href="/">
-                        <span class="icon icon-md profile-i hov2"></span>
-                    </a>
-                </div>
+            <div class="header-item">
+                {{#if user}}
+                <form id="lor-logout-form" method="GET" action="/auth/logout">
+                    <p id="lor-logout" class="thov3">LOG OUT</p>
+                </form>
+                <a href="/profile/id/{{ user.name }}">
+                    <img src="/imgs/avatars/{{ user.avatar }}" class="lor-user-avatar">
+                </a>
+                {{else}}
+                <p id="lor-popup-open" class="thov3">LOGIN</p>
+                {{/if}}
             </div>
         </div>
+    </div>
 
-        {{{ body }}}
+    {{{ body }}}
 
-        <!-- javascript -->
-        <script src="/js/generate.js"></script>
-        <script src="/js/popup.js"></script>
-    </body>
+    <!-- javascript -->
+    <script src="/js/generate.js"></script>
+    <script src="/js/popup.js"></script>
+    <script src="/js/validateLogin.js"></script>
+</body>
+
 </html>

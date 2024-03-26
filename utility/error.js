@@ -14,6 +14,12 @@ const error = {
     throwLoginError: () => {
         throw { name: "LoginError", message: "Login details could not be found." }
     },
+    throwLoginFailError: () => {
+        throw { name: "LoginFailError", message: "Failed to login, please retry!" }
+    },
+    throwRegisterFailError: () => {
+        throw { name: "RegisterFailError", message: "Failed to register, please retry!" }
+    },
     getUnknownError: () => {
         return { name: "UnknownError", message: "An unknown error occured." }
     },

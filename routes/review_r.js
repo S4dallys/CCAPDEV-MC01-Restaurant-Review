@@ -3,6 +3,7 @@ const router = express.Router()
 const multer = require("multer")
 const query = require("../utility/query")
 const error = require("../utility/error")
+const checkAuthenticate = require("../utility/checkauthenticate")
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -17,7 +18,7 @@ const storage = multer.diskStorage({
 const maxuploads = 4
 const upload = multer({ storage: storage })
 
-router.post("/:restoId/new", upload.array("rv-images", maxuploads), async(req, res) => {
+router.post("/:restoId/new", checkAuthenticate, upload.array("rv-images", maxuploads), async(req, res) => {
     try {
         const restoId = req.params.restoId
         const [profile, resto] = await Promise.all([

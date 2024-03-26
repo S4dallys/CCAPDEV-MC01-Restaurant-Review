@@ -4,62 +4,71 @@
         "name": "anonymous",
         "avatar": "default_avatar.png",
         "description": "An anonymous user..",
-        "totalErms": 0
+        "totalErms": 0,
+        "password": "$2b$10$E74wbh1mMxC6nzZayGyQyuasGxRiHBB7f6sgRKBwBL9WZ1ccLAePa"
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab79",
         "name": "Bob123",
         "avatar": "bob123.jpg",
         "description": "Hello! My name is Bob123, I'm an aspiring chef, food aficionado, and love trying out different restaurants until the incident.",
-        "totalErms": 4
+        "totalErms": 4,
+        "password": "$2b$10$E74wbh1mMxC6nzZayGyQyuasGxRiHBB7f6sgRKBwBL9WZ1ccLAePa"
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab7a",
         "name": "Sarah Townsend",
         "avatar": "sarah.jpg",
         "description": "very exhausted with all of this and hungry for some good food.",
-        "totalErms": 65
+        "totalErms": 65,
+        "password": "$2b$10$E74wbh1mMxC6nzZayGyQyuasGxRiHBB7f6sgRKBwBL9WZ1ccLAePa"
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab7b",
         "name": "bean_eater_420",
         "avatar": "bean.jpg",
         "description": "biggest foodie in edgeville! havent been here in years!!",
-        "totalErms": 11
+        "totalErms": 11,
+        "password": "$2b$10$E74wbh1mMxC6nzZayGyQyuasGxRiHBB7f6sgRKBwBL9WZ1ccLAePa"
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab86",
         "name": "xXRAIDENXx",
         "avatar": "raiden.jpg",
         "description": "It's time for Jack...TO LET HER RIP (food apart)",
-        "totalErms": 42
+        "totalErms": 42,
+        "password": "$2b$10$E74wbh1mMxC6nzZayGyQyuasGxRiHBB7f6sgRKBwBL9WZ1ccLAePa"
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab87",
         "name": "Wilson P. Higgsbury",
         "avatar": "wilson.jpg",
         "description": "In search of a new scientific breakthrough for comestibles!",
-        "totalErms": 58
+        "totalErms": 58,
+        "password": "$2b$10$E74wbh1mMxC6nzZayGyQyuasGxRiHBB7f6sgRKBwBL9WZ1ccLAePa"
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab88",
         "name": "sussus amogus",
         "avatar": "amogus.png",
         "description": "What's so funny...about SUSSUS AMOGUS?",
-        "totalErms": 101
+        "totalErms": 101,
+        "password": "$2b$10$E74wbh1mMxC6nzZayGyQyuasGxRiHBB7f6sgRKBwBL9WZ1ccLAePa"
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab89",
         "name": "Dr. Ludwig Humboldt",
         "avatar": "medic.png",
         "description": "Eating's just as rewarding as ze hurting.",
-        "totalErms": 30
+        "totalErms": 30,
+        "password": "$2b$10$E74wbh1mMxC6nzZayGyQyuasGxRiHBB7f6sgRKBwBL9WZ1ccLAePa"
     },
     {
         "_id": "5fc36b4ee1f20c5d8fdeab8a",
         "name": "Octavio Silva",
         "avatar": "octane.jpg",
         "description": "RUN FAST, WIN FAST, EAT FAST",
-        "totalErms": 71
+        "totalErms": 71,
+        "password": "$2b$10$E74wbh1mMxC6nzZayGyQyuasGxRiHBB7f6sgRKBwBL9WZ1ccLAePa"
     }
 ]

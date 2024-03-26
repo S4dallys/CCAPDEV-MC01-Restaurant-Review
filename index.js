@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+}
+
 // TODO: variable html titles
 // node requires
 const path = require("path")
@@ -17,17 +21,38 @@ app.set('views', __dirname + "/views")
 app.set('view engine', 'hbs')
 app.set('view options', { layout: '/layouts/header' });
 
+const flash = require("express-flash")
+const session = require("express-session")
+const passport = require('passport')
+const initPassport = require("./utility/passport_config")
+const checkAuthenticate = require("./utility/checkauthenticate")
+
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}))
+app.use(flash())
+app.use(passport.initialize())
+app.use(passport.session())
+initPassport(passport)
+
 // routes
 const profileRouter = require("./routes/profile_r")
 const restoRouter = require("./routes/resto_r")
 const reviewRouter = require("./routes/review_r")
+const authRouter = require("./routes/auth")
 
 app.use("/profile", profileRouter)
 app.use("/resto", restoRouter)
 app.use("/review", reviewRouter)
+app.use("/auth", authRouter)
+
+// global data
+app.locals.user = null
 
 // homepage get request
-app.get('/', async (req, res) => {
+app.get('/', checkAuthenticate, async (req, res) => {
     try {
         const filter = req.query.filter
         const filterObj = (filter) ? 
