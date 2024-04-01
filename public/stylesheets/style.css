@@ -793,14 +793,12 @@ body {
 
 .sb-pic {
     width: 180px;
-    aspect-ratio: 1;
 }
 
 .sb-pic img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1;
     border-radius: 50%;
-    object-fit: cover;
     border: 2px solid #ffffff;
     box-shadow: 7px 10px 7px rgba(0, 0, 0, 0.5);
 }
@@ -1151,4 +1149,17 @@ body {
     width: 250px;
     height: 180px;
     object-fit: cover;
+}
+
+#edit-name {
+    border-radius: 10px;
+    padding: 10px;
+    width: 250px;
+}
+
+#edit-description {
+    padding: 10px;
+    border-radius: 10px;
+    width: 250px;
+    height: 100px;
 }

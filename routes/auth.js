@@ -54,8 +54,10 @@ router.get('/login', async(req, res) => {
 
 router.get('/logout', (req, res) => {
     req.logOut((err) => {
-        console.log(err)
+        res.redirect('/error?errorMsg=Failed to logout.')
+        return
     })
+
     res.redirect('/')
 })
 

@@ -72,19 +72,19 @@ app.get('/', checkAuthenticate, async (req, res) => {
         console.log(`ROUTE -> index: filter = '${filter}'`)
         res.render('home', { restos: restos, home: true })
     } catch (err) {
-        if (err.name === "RestoFetchError") {
-            console.log(`ERROR! ${err.message}`)
-        } else {
-            console.log(`ERROR! ${err.message}`)
-            err = error.getUnknownError()
-        }
+        console.log(`ERROR! ${err.message}`)
 
-        res.render("error", { message: err.message })
+        if (err.name !== "RestoFetchError") {
+            res.redirect(`/error`)
+        } else {
+            res.redirect(`/error?errorMsg=${err.message}`)
+        }
     }
 })
 
 app.get("/error", (req, res) => {
-    res.render("error", { message: "Unknown Error. Please Retry." })
+    const err = req.query.errorMsg
+    res.render("error", { message: err || "Unknown error. Please retry!" })
 })
 
 // listen! :3

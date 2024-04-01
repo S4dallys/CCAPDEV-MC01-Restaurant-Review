@@ -40,14 +40,13 @@ router.get('/id/:restoId', checkAuthenticate, async(req, res) => {
         console.log(`ROUTE -> resto: ${req.params.restoId}`)
         res.render('resto', data)
     } catch (err) {
-        if (err.name === "RestoError" || err.name === "ReviewFetchError") {
-            console.log(`ERROR! ${err.message}`)
-        } else {
-            console.log(`ERROR! ${err.message}`)
-            err = error.getUnknownError()
-        }
+        console.log(`ERROR! ${err.message}`)
 
-        res.render("error", { message: err.message })
+        if (err.name !== "RestoError" && err.name != "ReviewFetchError") {
+            res.redirect(`/error`)
+        } else {
+            res.redirect(`/error?errorMsg=${err.message}`)
+        }
     }
 })
 

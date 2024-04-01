@@ -53,17 +53,13 @@ router.post("/:restoId/new", checkAuthenticate, upload.array("rv-images", maxupl
         console.log(`POST -> ${ resto.name } - ${ req.body["rv-title"] }`)
         console.log(`\n--- UPLOAD ---\n${newReview}\n--------------\n`)
     } catch (err) {
-        if (err.name === "LoginError" || err.name === "RestoError") {
-            console.log(`ERROR! ${err.message}`)
-        } else if (err.name === "ValidationError") {
-            console.log(`ERROR! ${err.message}`)
-            err = error.getInsertError()
-        } else {
-            console.log(`ERROR! ${err.message}`)
-            err = error.getUnknownError()
-        }
+        console.log(`ERROR! ${err.message}`)
 
-        res.render("error", { message: err.message })
+        if (err.name !== "LoginError" && err.name !== "RestoError") {
+            res.redirect(`/error`)
+        } else {
+            res.redirect(`/error?errorMsg=${err.message}`)
+        }
     }
 })
 

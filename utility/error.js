@@ -20,9 +20,6 @@ const error = {
     throwRegisterFailError: () => {
         throw { name: "RegisterFailError", message: "Failed to register, please retry!" }
     },
-    getUnknownError: () => {
-        return { name: "UnknownError", message: "An unknown error occured." }
-    },
     getInsertError: () => {
         return { name: "InsertError", message: "Could not create review." }
     }

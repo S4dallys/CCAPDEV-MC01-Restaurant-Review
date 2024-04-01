@@ -30,22 +30,27 @@ router.get('/id/:profileId', checkAuthenticate, async(req, res) => {
         console.log(`ROUTE -> profile: ${req.params.profileId}`)
         res.render('profile', data)
     } catch (err) {
-        if (err.name === "ProfileError" || err.name === "ReviewFetchError") {
-            console.log(`ERROR! ${err.message}`)
-        } else {
-            console.log(`ERROR! ${err.message}`)
-            err = error.getUnknownError()
-        }
+        console.log(`ERROR! ${err.message}`)
 
-        res.render("error", { message: err.message })
+        if (err.name !== "ProfileError" && err.name !== "ReviewFetchError") {
+            res.redirect(`/error`)
+        } else {
+            res.redirect(`/error?errorMsg=${err.message}`)
+        }
     }
 })
 
 // TODO: UNDER CONTRUCTION
 router.get('/edit', checkAuthenticate, (req, res) => {
-    res.send("Under construction!")
-    // res.render('edit_profile')
-    console.log('ROUTE -> EDIT PROFILE (under construction)')
+    const user = req.user
+
+    if (!user) {
+        res.redirect("/error?errorMsg=Login details could not be found.")
+        return
+    }
+
+    console.log(`ROUTE -> EDIT PROFILE (${user.name})`)
+    res.render("edit", user)
 })
 
 module.exports = router
