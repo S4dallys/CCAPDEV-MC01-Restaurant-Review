@@ -39,11 +39,13 @@ const profileRouter = require("./routes/profile_r")
 const restoRouter = require("./routes/resto_r")
 const reviewRouter = require("./routes/review_r")
 const authRouter = require("./routes/auth")
+const editRouter = require("./routes/edit")
 
 app.use("/profile", profileRouter)
 app.use("/resto", restoRouter)
 app.use("/review", reviewRouter)
 app.use("/auth", authRouter)
+app.use("/edit", authRouter)
 
 // global data
 app.locals.user = null
