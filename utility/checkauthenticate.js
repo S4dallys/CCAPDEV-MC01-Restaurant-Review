@@ -1,6 +1,3 @@
-const express = require('express')
-const app = express()
-
 function checkAuthenticate(req, res, next) {
     if (req.isAuthenticated()) {
         req.app.locals.user = req.user
