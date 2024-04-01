@@ -30,7 +30,6 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))
-app.use(passport.initialize())
 app.use(passport.session())
 initPassport(passport)
 
@@ -48,7 +47,7 @@ app.use("/auth", authRouter)
 app.use("/edit", editRouter)
 
 // global data
-app.locals.user = null
+app.locals.currentUser = null
 
 // homepage get request
 app.get('/', checkAuthenticate, async (req, res) => {

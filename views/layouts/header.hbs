@@ -62,12 +62,12 @@
                 </div>
             </div>
             <div class="header-item">
-                {{#if user}}
+                {{#if currentUser}}
                 <form id="lor-logout-form" method="GET" action="/auth/logout">
                     <p id="lor-logout" class="thov3">LOG OUT</p>
                 </form>
-                <a href="/profile/id/{{ user.name }}">
-                    <img src="/imgs/avatars/{{ user.avatar }}" class="lor-user-avatar">
+                <a id="lor-user-avatar-link" href="/profile/id/{{ currentUser.name }}">
+                    <img id="lor-user-avatar" src="/imgs/avatars/{{ currentUser.avatar }}">
                 </a>
                 {{else}}
                 <p id="lor-popup-open" class="thov3">LOGIN</p>

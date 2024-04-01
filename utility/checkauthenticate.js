@@ -1,8 +1,8 @@
 function checkAuthenticate(req, res, next) {
     if (req.isAuthenticated()) {
-        req.app.locals.user = req.user
+        req.app.locals.currentUser = req.user
     } else {
-        req.app.locals.user = null
+        req.app.locals.currentUser = null
     }
 
     return next()

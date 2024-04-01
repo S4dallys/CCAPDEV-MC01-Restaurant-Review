@@ -54,12 +54,13 @@ router.get('/login', async (req, res) => {
 })
 
 router.get('/logout', (req, res) => {
-    req.logOut((err) => {
-        console.log(err)
-        res.redirect('/error?errorMsg=Failed to logout.')
+    req.logout((err) => {
+        if (err) {
+            res.redirect('/error?errorMsg=Failed to logout.')
+        } else {
+            res.redirect('/')
+        }
     })
-
-    // res.redirect('/')
 })
 
 router.get('/register', async (req, res) => {

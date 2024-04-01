@@ -4,13 +4,18 @@ const avatar = document.getElementById('edit-avatar')
 const msg = document.getElementById('edit-msg')
 const cancel = document.getElementById('edit-cancel')
 const save = document.getElementById('edit-save')
+const img = document.getElementById('lor-user-avatar-link')
 
+function emptyMsg() {
+    msg.innerHTML = ""
+}
+
+name.addEventListener('keyup', emptyMsg)
+desc.addEventListener('keyup', emptyMsg)
 save.addEventListener("click", () => {
     let xhttp = new XMLHttpRequest()
     xhttp.open("GET", `/auth/register?username=${name.value}`, true)
     xhttp.send()
-
-    console.log(name.value)
 
     if (name.value === "") {
         name.classList.add("required-error")
@@ -34,11 +39,12 @@ save.addEventListener("click", () => {
 
             send.onreadystatechange = () => {
                 // TODO: fix json error
-                console.log(send.response)
                 const res2 = JSON.parse(send.response)
 
                 if (res2.success) {
-                    msg.innerHTML = "v Profile Saved."
+                    msg.innerHTML = "✅ Profile Saved."
+                    img.setAttribute("href", `/profile/id/${name.value}`)
+                    cancel.setAttribute("href", `/profile/id/${name.value}`)
                 } else {
                     msg.innerHTML = "❌ Failed to update. Pleaser Try Again."
                 }

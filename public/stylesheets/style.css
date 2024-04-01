@@ -1,6 +1,6 @@
 /* Montserrat font */
 /* TODO: download font */
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:wght@900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:wght@900&display=swap');
 
 /* reset */
 *,
@@ -166,7 +166,7 @@ body {
     background-position: -40px -60px;
 }
 
-.lor-user-avatar {
+#lor-user-avatar {
     margin-left: 20px;
     border-radius: 50%;
     width: 40px;
