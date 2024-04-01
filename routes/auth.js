@@ -4,6 +4,7 @@ const query = require('../utility/query');
 const error = require("../utility/error")
 const bcrypt = require("bcrypt")
 const passport = require('passport');
+const checkAuthenticate = require('../utility/checkauthenticate');
 
 router.post('/register', async (req, res) => {
     try {
@@ -22,7 +23,7 @@ router.post('/register', async (req, res) => {
         res.redirect("/")
     } catch (err) {
         // ...
-        res.render("error", { message: err.message })
+        res.redirect(`/error?errorMsg=${err.message}`)
     }
 })
 
@@ -31,7 +32,7 @@ router.post('/login', passport.authenticate('local', {
     failureRedirect: '/error',
 }))
 
-router.get('/login', async(req, res) => {
+router.get('/login', async (req, res) => {
     const username = req.query.username
     const password = req.query.password
     const user = await query.getProfile({ name: username })
@@ -47,25 +48,33 @@ router.get('/login', async(req, res) => {
         } else {
             res.send({ success: false })
         }
-    } catch(err) {
+    } catch (err) {
         res.send({ success: false })
     }
 })
 
 router.get('/logout', (req, res) => {
     req.logOut((err) => {
+        console.log(err)
         res.redirect('/error?errorMsg=Failed to logout.')
-        return
     })
 
-    res.redirect('/')
+    // res.redirect('/')
 })
 
 router.get('/register', async (req, res) => {
     const results = await query.getProfile({ name: req.query.username })
-    res.send({
-        exists: (results) ? true : false
-    })
+
+    if (req.user) {
+        // updating profile
+        res.send({
+            exists: (results && req.user.name !== results.name) ? true : false
+        })
+    } else {
+        res.send({
+            exists: (results) ? true : false
+        })
+    }
 })
 
 module.exports = router

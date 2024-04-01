@@ -40,17 +40,5 @@ router.get('/id/:profileId', checkAuthenticate, async(req, res) => {
     }
 })
 
-// TODO: UNDER CONTRUCTION
-router.get('/edit', checkAuthenticate, (req, res) => {
-    const user = req.user
-
-    if (!user) {
-        res.redirect("/error?errorMsg=Login details could not be found.")
-        return
-    }
-
-    console.log(`ROUTE -> EDIT PROFILE (${user.name})`)
-    res.render("edit", user)
-})
 
 module.exports = router

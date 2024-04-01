@@ -35,6 +35,9 @@ const query = {
         return Profile.create({
             ...data
         })
+    },
+    updateProfile: (field, set) => {
+        return Profile.updateOne(field, set)
     }
 }
 

@@ -17,21 +17,31 @@ router.get('/', checkAuthenticate, (req, res) => {
     res.render("edit", user)
 })
 
-router.post('/', checkAuthenticate, (req, res) => {
-    const user = req.user
+router.get('/update', checkAuthenticate, async (req, res) => {
+    try {
+        const user = req.user
+        const name = req.query.username
+        const desc = req.query.description
 
-    if (!user) {
-        res.redirect('/error?errorMsg=Login details not found.')
-        return
-    }
+        console.log("desc", req.query)
 
-    // TODO: do validation
+        if (!user || name === "") {
+            res.json({ success: false })
+            return
+        }
 
-    if (true) {
-        console.log(`ROUTE -> UPDATED PROFILE (${user.name})`)
-        res.json({ success: true })
-    } else {
-        console.log(`ROUTE -> FAILED TO UPDATE PROFILE`)
+        const found = await query.getProfile({ name: name })
+        if (name === user.name || !found) {
+            await query.updateProfile({ _id: user._id }, { $set: { name: name, description: desc } })
+
+            console.log(`ROUTE -> UPDATED PROFILE (${user.name})`)
+            res.json({ success: true })
+        } else {
+            console.log(`ROUTE -> FAILED TO UPDATE PROFILE`)
+            res.json({ success: false })
+        }
+    } catch (err) {
+        console.log(`ERROR! ${err.message}`)
         res.json({ success: false })
     }
 })

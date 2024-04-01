@@ -45,7 +45,7 @@ app.use("/profile", profileRouter)
 app.use("/resto", restoRouter)
 app.use("/review", reviewRouter)
 app.use("/auth", authRouter)
-app.use("/edit", authRouter)
+app.use("/edit", editRouter)
 
 // global data
 app.locals.user = null
