@@ -23,7 +23,8 @@ router.get('/id/:profileId', checkAuthenticate, async(req, res) => {
             reviews: reviews.map((r) => {
                 r.likeCount = r.likes.length - r.dislikes.length
                 return r
-            })
+            }),
+            isCurrentUser: req.isAuthenticated() && (req.user.name == profile.name)
         }
 
         console.log(`ROUTE -> profile: ${req.params.profileId}`)

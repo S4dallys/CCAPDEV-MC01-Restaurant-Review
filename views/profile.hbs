@@ -10,6 +10,14 @@
                 <p class="reviews"><span class="orange-bold">{{ sb.reviewCount }}</span> reviews</p>
                 <p class="erms"><span class="orange-bold">{{ sb.totalErms }}</span> erms</p>
             </div>
+            {{#if isCurrentUser}}
+            <div class="edit-div">
+                <a class="edit-user hov1" href="/profile/edit">
+                    <span class="icon icon-md edit-i"></span>
+                    <p class="edit-user-text">EDIT USER</p>
+                </a>
+            </div>
+            {{/if}}
         </div>
     </div>
     <div class="pro-review-holder">
