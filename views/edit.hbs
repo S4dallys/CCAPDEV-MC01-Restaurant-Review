@@ -1,24 +1,29 @@
-<div class = "pro-main ed-main">            
-    <div class ="pro-sidebar ed-midbar">
-        <div class ="pro-sidebar-bg ed-midbar-bg">
+<div class="pro-main ed-main">
+    <form enctype="multipart/form-data" id="edit-form" class="ed-midbar" method="POST">
+        <div class="ed-midbar-bg">
             <h2 class="sb-name">
-                <input id="edit-name" value="{{ name }}" placeholder="Enter name...">
+                <input name="name" id="edit-name" value="{{ name }}" placeholder="Enter name...">
             </h2>
             <div class="sb-pic hov1">
-                <img id="edit-avatar" src="/imgs/avatars/{{ avatar }}">
+                <label for="edit-avatar">
+                    <img id="edit-avatar-img" src="/imgs/avatars/{{ avatar }}">
+                </label>
+                <input name="avatar" id="edit-avatar" type="file" accept="image/*">
             </div>
-            <textarea id="edit-description" placeholder="Enter description...">{{ description }}</textarea>
+            <textarea name="description" id="edit-description" placeholder="Enter description...">{{ description
+                }}</textarea>
             <div class="ed-div">
                 <a id="edit-cancel" class="edit-user ed-cancel hov1" href="/profile/id/{{ name }}">
                     <p class="ed-cancel-text">CANCEL</p>
                 </a>
-                <a id="edit-save" class="edit-user ed-save hov1">
+                <label for="edit-submit"id="edit-save" class="edit-user ed-save hov1">
                     <p class="ed-save-text">SAVE</p>
-                </a>
+                    <input id="edit-submit" type="submit">
+                </label>
             </div>
             <p id="edit-msg"></p>
         </div>
-    </div>
+    </form>
 </div>
 
 <script src="/js/editprofile.js"></script>

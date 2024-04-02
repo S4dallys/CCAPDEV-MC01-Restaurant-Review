@@ -23,6 +23,10 @@ regUsername.addEventListener("keyup", () => {
     xhttp.send()
 
     xhttp.onreadystatechange = () => {
+        if (xhttp.readyState != 4) {
+            return
+        }
+
         // TODO: fix json error
         const res = JSON.parse(xhttp.response)
 
@@ -80,6 +84,10 @@ function logValidateContent(e) {
     xhttp.send()
 
     xhttp.onreadystatechange = () => {
+        if (xhttp.readyState != 4) {
+            return
+        }
+
         // TODO: fix json error
         const res = JSON.parse(xhttp.response)
 

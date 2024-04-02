@@ -1014,8 +1014,7 @@ body {
 .ed-midbar {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-right: 10px;
+    justify-content: space-between;
     position: fixed;
     height: 90%;
     width: 25%;
@@ -1030,16 +1029,13 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: var(--padd-lg);
-
-
     border: 1px solid #ffffff;
+    padding: var(--padd-big);
 }
 
 .ed-div {
     display: flex;
     flex-direction: row;
-    padding-bottom: 25px;
 }
 
 .ed-cancel {
@@ -1168,3 +1164,8 @@ body {
     background-color: #afffb5;
     font-size: 1rem;
 }
+
+#edit-avatar, #edit-submit {
+    display: none;
+}
+

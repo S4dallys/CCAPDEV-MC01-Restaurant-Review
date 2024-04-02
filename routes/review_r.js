@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 const maxuploads = 4
 const upload = multer({ storage: storage })
 
-router.post("/:restoId/new", checkAuthenticate, upload.array("rv-images", maxuploads), async(req, res) => {
+router.post("/:restoId/new", upload.array("rv-images", maxuploads), async(req, res) => {
     try {
         const restoId = req.params.restoId
         const [profile, resto] = await Promise.all([
