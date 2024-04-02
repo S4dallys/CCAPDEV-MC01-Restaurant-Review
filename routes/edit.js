@@ -47,8 +47,8 @@ router.post('/update', upload.single("avatar"), async (req, res) => {
         if (name === user.name || !found) {
             const oldAvatar = user.avatar
             const updateObj = { name: name, description: desc }
-            if (avatar) { 
-                updateObj.avatar = avatar.filename 
+            if (avatar) {
+                updateObj.avatar = avatar.filename
                 fs.unlink("./public/imgs/avatars/" + oldAvatar, (err) => {
                     if (err) {
                         console.log(err)

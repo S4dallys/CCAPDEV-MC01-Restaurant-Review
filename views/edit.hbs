@@ -1,4 +1,4 @@
-<div class="pro-main ed-main">
+<div class="ed-main">
     <form enctype="multipart/form-data" id="edit-form" class="ed-midbar" method="POST">
         <div class="ed-midbar-bg">
             <h2 class="sb-name">
@@ -8,17 +8,17 @@
                 <label for="edit-avatar">
                     <img id="edit-avatar-img" src="/imgs/avatars/{{ avatar }}">
                 </label>
-                <input name="avatar" id="edit-avatar" type="file" accept="image/*">
+                <input name="avatar" class="input-hidden" id="edit-avatar" type="file" accept="image/*">
             </div>
-            <textarea name="description" id="edit-description" placeholder="Enter description...">{{ description
-                }}</textarea>
+            <textarea name="description" id="edit-description" placeholder="Enter description...">{{ description }}
+            </textarea>
             <div class="ed-div">
                 <a id="edit-cancel" class="edit-user ed-cancel hov1" href="/profile/id/{{ name }}">
                     <p class="ed-cancel-text">CANCEL</p>
                 </a>
-                <label for="edit-submit"id="edit-save" class="edit-user ed-save hov1">
+                <label for="edit-submit" id="edit-save" class="edit-user ed-save hov1">
                     <p class="ed-save-text">SAVE</p>
-                    <input id="edit-submit" type="submit">
+                    <input id="edit-submit" class="input-hidden" type="submit">
                 </label>
             </div>
             <p id="edit-msg"></p>

@@ -5,9 +5,20 @@
             <div class="pro-actions">
                 <ul class="cr-star-group" data-stars="{{ stars }}"></ul>
                 <div class="pro-actions-like">
-                    <span class="icon pro-like"></span>
-                    <span class="pro-like-count" data-likes="{{ likeCount }}">{{ likeCount }}</span>
-                    <span class="icon pro-dislike"></span>
+                    <form class="vote-form" data-review="{{ _id }}">
+                        <label class="icon icon-lg pro-like">
+                            <input class="input-hidden"
+                                type="radio" name="vote" value="like">
+                        </label>
+
+                        <span class="pro-like-count" data-likes="{{ likeCount }}">{{ likeCount }}</span>
+
+                        <label class="icon icon-lg pro-dislike">
+                            <input class="input-hidden"
+                                type="radio" name="vote" value="dislike">
+                        </label>
+
+                    </form>
                 </div>
             </div>
             <a href="/profile/id/{{ profileId.name }}"><img class="pro-review-icon"
@@ -41,3 +52,5 @@
     </li>
     {{/each}}
 </ul>
+
+<script src="/js/likes.js"></script>

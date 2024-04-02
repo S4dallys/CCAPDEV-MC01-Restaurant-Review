@@ -1,6 +1,6 @@
 /* Montserrat font */
 /* TODO: download font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:wght@900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:wght@900&display=swap'); */
 
 /* reset */
 *,
@@ -147,7 +147,8 @@ body {
     top: 8px;
 }
 
-#lor-popup-open, #lor-logout {
+#lor-popup-open,
+#lor-logout {
     font-size: 1.4rem;
     color: var(--col-prim);
     text-decoration: none;
@@ -801,6 +802,7 @@ body {
     border-radius: 50%;
     border: 2px solid #ffffff;
     box-shadow: 7px 10px 7px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
 }
 
 .sb-resto img {
@@ -1008,14 +1010,18 @@ body {
 }
 
 .ed-main {
+    width: auto;
+    height: auto;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    margin-top: 30px;
 }
 
 .ed-midbar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: fixed;
     height: 90%;
     width: 25%;
 }
@@ -1029,8 +1035,9 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #ffffff;
+    gap: 32px;
     padding: var(--padd-big);
+
 }
 
 .ed-div {
@@ -1120,8 +1127,8 @@ body {
 /* error.hbs */
 #err-container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     margin-top: 50px;
     gap: 40px;
@@ -1165,7 +1172,6 @@ body {
     font-size: 1rem;
 }
 
-#edit-avatar, #edit-submit {
+.input-hidden {
     display: none;
 }
-
