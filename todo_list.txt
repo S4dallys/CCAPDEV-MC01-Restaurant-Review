@@ -13,3 +13,4 @@
 [ ] 13. Add more data: likes and resto owners
 [ ] 14. message for empty reviews section
 [ ] 15. about page
+[ ] 16. better names for files
