@@ -19,25 +19,23 @@ logForm.addEventListener('submit', logValidateContent)
 
 regUsername.addEventListener("keyup", () => {
     let xhttp = new XMLHttpRequest()
-    xhttp.open("GET", `/auth/register?username=${regUsername.value}`, true)
-    xhttp.send()
+    xhttp.open("POST", `/auth/nametaken`, true)
+    xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8")
 
     xhttp.onreadystatechange = () => {
+        console.log(xhttp)
         if (xhttp.readyState != 4) {
             return
         }
 
-        // TODO: fix json error
-        const res = JSON.parse(xhttp.response)
-
-        if (res.exists) {
-            // say no!
-            regAlr.innerHTML = "❌ Already Taken."
-        } else {
+        if (xhttp.status == 200) {
             regAlr.innerHTML = ""
+        } else {
+            regAlr.innerHTML = "❌ Already Taken."
         }
     }
 
+    xhttp.send(JSON.stringify({ "username": regUsername.value, }))
     resetReg()
 })
 
@@ -80,24 +78,27 @@ function logValidateContent(e) {
     e.preventDefault()
 
     let xhttp = new XMLHttpRequest()
-    xhttp.open("GET", `/auth/login?username=${logUsername.value}&password=${logPassword.value}`, true)
-    xhttp.send()
+    xhttp.open("POST", `/auth/validatecredentials`, true)
+    xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8")
 
     xhttp.onreadystatechange = () => {
         if (xhttp.readyState != 4) {
             return
         }
 
-        // TODO: fix json error
-        const res = JSON.parse(xhttp.response)
-
-        if (!res.success) {
+        if (xhttp.status == 200) {
+            logAlr.innerHTML = ""
+            logForm.submit()
+        } else {
             logAlr.innerHTML = "❌ Invalid username or password."
             logUsername.classList.add("required-error")
             logPassword.classList.add("required-error")
-        } else {
-            logAlr.innerHTML = ""
-            logForm.submit()
         }
     }
+
+    xhttp.send(JSON.stringify({
+        "username": logUsername.value,
+        "password": logPassword.value
+    }))
+
 }

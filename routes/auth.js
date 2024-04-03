@@ -32,24 +32,24 @@ router.post('/login', passport.authenticate('local', {
     failureRedirect: '/error',
 }))
 
-router.get('/login', async (req, res) => {
-    const username = req.query.username
-    const password = req.query.password
+router.post('/validatecredentials', async (req, res) => {
+    const username = req.body.username
+    const password = req.body.password
     const user = await query.getProfile({ name: username })
 
     if (!user) {
-        res.send({ success: false })
+        res.status(400).send("Bad Credentials")
         return
     }
 
     try {
         if (await bcrypt.compare(password, user.password)) {
-            res.send({ success: true })
+            res.status(200).send("Success!")
         } else {
-            res.send({ success: false })
+            res.status(400).send("Bad Credentials")
         }
     } catch (err) {
-        res.send({ success: false })
+        res.status(500).send("Internal Error")
     }
 })
 
@@ -63,18 +63,13 @@ router.get('/logout', (req, res) => {
     })
 })
 
-router.get('/register', async (req, res) => {
-    const results = await query.getProfile({ name: req.query.username })
+router.post('/nametaken', async (req, res) => {
+    const results = await query.getProfile({ name: req.body.username })
 
-    if (req.user) {
-        // updating profile
-        res.send({
-            exists: (results && req.user.name !== results.name) ? true : false
-        })
+    if (results) {
+        res.status(409).send("Username Taken.")
     } else {
-        res.send({
-            exists: (results) ? true : false
-        })
+        res.status(200).send("Success!")
     }
 })
 
