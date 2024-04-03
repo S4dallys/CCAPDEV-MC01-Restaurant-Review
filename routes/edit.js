@@ -39,7 +39,7 @@ router.post('/update', upload.single("avatar"), async (req, res) => {
         const avatar = req.file
 
         if (!user || name === "") {
-            res.json({ success: false })
+            res.status(400).send("Bad Data.")
             return
         }
 
@@ -61,14 +61,14 @@ router.post('/update', upload.single("avatar"), async (req, res) => {
             await query.updateProfile({ _id: user._id }, { $set: updateObj })
 
             console.log(`ROUTE -> UPDATED PROFILE (${user.name})`)
-            res.json({ success: true })
+            res.status(200).send("Success!")
         } else {
             console.log(`ROUTE -> FAILED TO UPDATE PROFILE`)
-            res.json({ success: false })
+            res.status(409).send("Bad Credentials.")
         }
     } catch (err) {
         console.log(`ERROR! ${err.message}`)
-        res.json({ success: false })
+        res.status(401).send("Failed to update.")
     }
 })
 

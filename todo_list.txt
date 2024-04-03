@@ -8,8 +8,8 @@
 [ ] 8. like and dislike functionality
 [ ] 9. erms functionality
 [ ] 10. editing posts and owner posts
-[ ] 11. deleting posts / owner posts
-[ ] 12. Add more data: likes and resto owners
-[ ] 13. ajax for sorting / filtering, res.json instead of res.render
+[ ] 11. truncate posts and click to expand
+[ ] 12. deleting posts / owner posts
+[ ] 13. Add more data: likes and resto owners
 [ ] 14. message for empty reviews section
 [ ] 15. about page

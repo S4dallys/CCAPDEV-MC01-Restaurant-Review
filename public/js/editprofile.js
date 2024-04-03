@@ -19,43 +19,42 @@ avatar.addEventListener('change', () => {
     const newAvatar = URL.createObjectURL(data.get("avatar"))
     imgShown.setAttribute("src", newAvatar)
 })
+
 form.addEventListener("submit", (e) => {
     e.preventDefault()
     const data = new FormData(form)
     let xhttp = new XMLHttpRequest()
+    xhttp.open("POST", `/auth/register`, true)
 
     xhttp.onreadystatechange = () => {
         if (xhttp.readyState != 4) {
             return
         }
 
-        // TODO: fix json error
-        const res = JSON.parse(xhttp.response)
-
-        if (res.exists) {
-            msg.innerHTML = "❌ Name Already Taken."
-        } else {
+        if (xhttp.status == 200) {
             let send = new XMLHttpRequest()
-            send.onload = () => {
-                // TODO: fix json error
-                const res2 = JSON.parse(send.response)
+            send.onreadystatechange = () => {
+                if (send.readyState != 4) {
+                    return
+                }
 
-                if (res2.success) {
+                if (send.status == 200) {
                     msg.innerHTML = "✅ Profile Saved."
                     img.setAttribute("href", `/profile/id/${name.value}`)
                     cancel.setAttribute("href", `/profile/id/${name.value}`)
                 } else {
-                    msg.innerHTML = "❌ Failed to update. Pleaser Try Again."
+                    msg.innerHTML = "❌ Failed to update. Please Try Again."
                 }
             }
 
             send.open("POST", `/edit/update`, true)
             send.send(data)
+        } else {
+            msg.innerHTML = "❌ Name Already Taken."
         }
     }
 
-    xhttp.open("GET", `/auth/register?username=${name.value}`, true)
-    xhttp.send()
+    xhttp.send(JSON.stringify({ "username": name.value }))
 
     if (name.value === "") {
         name.classList.add("required-error")

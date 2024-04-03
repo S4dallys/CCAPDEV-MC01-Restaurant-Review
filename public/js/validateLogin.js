@@ -23,7 +23,6 @@ regUsername.addEventListener("keyup", () => {
     xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8")
 
     xhttp.onreadystatechange = () => {
-        console.log(xhttp)
         if (xhttp.readyState != 4) {
             return
         }

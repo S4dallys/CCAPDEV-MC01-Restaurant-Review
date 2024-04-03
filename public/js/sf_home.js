@@ -10,9 +10,6 @@ if (filter) {
 // Sort by: relevance/stars/reviews/release date
 // Filter by: stars/reviewcount
 
-// TODO: pagination 20 revs
-
-// filter results
 const relevance = {
     minStars: 0,
     maxStars: 5,
