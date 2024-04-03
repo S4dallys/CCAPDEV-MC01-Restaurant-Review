@@ -1,11 +1,20 @@
 const express = require("express")
 const router = express.Router()
 const query = require("../utility/query")
+const { sortFilterReviews } = require("../utility/sfHelper")
 const error = require("../utility/error")
 const checkAuthenticate = require("../utility/checkauthenticate")
 
-router.get('/id/:restoId', checkAuthenticate, async(req, res) => {
+router.get('/id/:restoId', checkAuthenticate, async (req, res) => {
     try {
+        const q = req.query
+
+        const sort = q.sort || "relevance"
+        const order = q.order || "desc"
+        const min = q.min || 0
+        const max = q.max || 5
+        const page = q.page || 1
+
         const resto = await query.getResto({ name: req.params.restoId })
 
         if (!resto) {
@@ -13,32 +22,21 @@ router.get('/id/:restoId', checkAuthenticate, async(req, res) => {
         }
 
         const reviews = await query.getReviews({ restoId: resto._id })
+        const reviewCount = reviews.length
 
         if (!reviews) {
             error.throwReviewFetchError()
         }
 
-        const reviewCount = reviews.length
-        const stars = (reviewCount > 0) 
-            ? (reviews.reduce((total, rev) => { return total + rev.stars }, 0) / reviewCount).toFixed(2)
-            : 0
-
-        const data = { 
-            sb: {
-                ...resto, 
-                reviewCount: reviewCount,
-                stars: stars
-            },
-            reviews: reviews.map((r) => {
-                r.likeCount = r.likes.length - r.dislikes.length
-                r.erms = r.profileId.totalErms
-                return r
-            }),
-            home: false
+        const sb = {
+            ...resto, reviewCount: reviews.length,
+            stars: (reviewCount > 0) ? (reviews.reduce((total, rev) => { return total + rev.stars }, 0) / reviewCount).toFixed(2) : 0
         }
 
+        const sfReviews = await sortFilterReviews(reviews, min, max, sort, order, page)
+
         console.log(`ROUTE -> resto: ${req.params.restoId}`)
-        res.render('resto', data)
+        res.render('resto', { sb: sb, reviews: sfReviews  })
     } catch (err) {
         console.log(`ERROR! ${err.message}`)
 

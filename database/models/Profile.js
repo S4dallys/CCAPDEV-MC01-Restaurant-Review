@@ -14,7 +14,7 @@ const profileSchema = new mongoose.Schema({
         type: String,
         default: "Say something about yourself!"
     },
-    totalErms: {
+    erms: {
         type: Number,
         default: 0
     },

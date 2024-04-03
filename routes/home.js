@@ -24,8 +24,6 @@ router.get('/', checkAuthenticate, async (req, res) => {
 
         const sfRestos = await sortFilterHome(restos, min, max, sort, order)
 
-        console.log(sfRestos)
-
         console.log(`ROUTE -> index`)
         console.log(`Sort: ${sort}\nOrder: ${order}\nMin: ${min}\nMax: ${max}\nFilter: ${filter}`)
         res.render('home', { restos: sfRestos, home: true })

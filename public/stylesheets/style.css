@@ -419,19 +419,23 @@ body {
 .pro-review-holder {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-right: 10px;
-
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 28%;
     height: auto;
     width: 70%;
-
     color: black;
 }
 
+#pro-review-ul {
+    width: 100%;
+}
 .pro-review-li {
     list-style-type: none;
+    width: 80%;
+    margin: auto;
 }
 
 .pro-review-search {
@@ -456,6 +460,7 @@ body {
     margin-top: -3px;
     margin-bottom: 3px;
     font-size: 1.4rem;
+    max-width: 90%;
 }
 
 .pro-review-images {
@@ -499,14 +504,21 @@ body {
 }
 
 .pro-like-count {
-    margin-top: 5px;
     margin-left: -5px;
+    display: inline-block;
+    text-align: center;
 }
 
 .pro-actions span {
     background-size: 100px;
-    width: 25px;
+    width: 50px;
     height: 25px;
+}
+
+.vote-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hov1 {
@@ -602,7 +614,6 @@ body {
 
 .pro-review-box {
     list-style-type: none;
-    width: 80%;
     min-height: 20vh;
     margin-top: 3vh;
     margin-left: auto;
@@ -1078,15 +1089,23 @@ body {
     align-items: center;
 }
 
+#sf-page-list {
+    display: flex;
+    align-items: center;
+}
+
 #sf-sort {
     height: 30px;
     padding: 5px;
     border-radius: 5px;
     margin-left: 10px;
+}
+
+.sf-label:not(:last-child) {
     margin-right: 30px;
 }
 
-#sf-filter-list input {
+#sf-filter-list input, #sf-page-list input {
     width: 50px;
     border-radius: 5px;
     height: 30px;
@@ -1105,24 +1124,24 @@ body {
     left: 10px;
 }
 
-.sort-desc-i {
-    background-position: -20px -40px;
+#sf-order-label {
     margin-right: 10px;
     margin-top: 5px
 }
 
+.sort-desc-i {
+    background-position: -20px -40px;
+}
+
 .sort-asc-i {
     background-position: -20px -80px;
-    margin-right: 10px;
 }
 
 #sortfilter {
     color: white;
-    width: 70%;
     display: flex;
     margin-top: 30px;
     margin-bottom: 10px;
-    margin-left: auto;
 }
 
 /* error.hbs */
