@@ -1,4 +1,4 @@
-[x] 1. sort / filter funtionality
+[x] 1. sort / filter funtionality (optimized)
 [x] 2. login and register routing
 [x] 3. login and register verification with ajax
 [x] 4. edit_profile route

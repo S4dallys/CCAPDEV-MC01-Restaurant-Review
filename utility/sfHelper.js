@@ -32,11 +32,11 @@ async function sortFilterHome(restos, min, max, sort, order) {
         maxRevs = Math.min(maxRevs, r.reviewCount)
     }))
 
+    const relevance = new Relevance(minStars, maxStars, minRevs, MaxRevs)
     let newRestos = restos.filter(r => r.stars >= min && r.stars <= max)
 
     newRestos.sort((a, b) => {
         if (sort === "relevance") {
-            const relevance = new Relevance(minStars, maxStars, minRevs, MaxRevs)
             return relevance.getRelevance(b.stars, b.reviewCount) - relevance.getRelevance(a.stars, a.reviewcount)
         } else if (sort === "reviews") {
             return b.reviewCount - a.reviewCount

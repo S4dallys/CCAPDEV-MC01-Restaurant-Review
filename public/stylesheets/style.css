@@ -121,7 +121,7 @@ body {
     width: 180px;
 }
 
-#header-search-bar {
+#sf-filter {
     width: 100%;
     height: 100%;
     border-radius: 20px;
@@ -1078,7 +1078,7 @@ body {
     align-items: center;
 }
 
-#sf-sort-select {
+#sf-sort {
     height: 30px;
     padding: 5px;
     border-radius: 5px;

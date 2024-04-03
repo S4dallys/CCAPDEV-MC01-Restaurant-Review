@@ -16,10 +16,13 @@
                 <h2 id="lor-login-title">Login</h2>
                 <form id="lor-login-form" class="lor-form" method="POST" action="/auth/login">
                     <label class="lor-label" for="lor-login-username">Username <p id="lor-log-alr" class="lor-err"></p>
-                        <input placeholder="..." id="lor-login-username" name="username" class="lor-login-input" type="text">
+                        <input placeholder="..." id="lor-login-username" name="username" class="lor-login-input"
+                            type="text">
                     </label>
-                    <label class="lor-label" for="lor-login-password">Password <p id="lor-log-confirm" class="lor-err"></p>
-                        <input placeholder="..." id="lor-login-password" name="password" class="lor-login-input" type="password">
+                    <label class="lor-label" for="lor-login-password">Password <p id="lor-log-confirm" class="lor-err">
+                        </p>
+                        <input placeholder="..." id="lor-login-password" name="password" class="lor-login-input"
+                            type="password">
                     </label>
                     <input type="submit" value="LOGIN" class="popup-button hov1">
                 </form>
@@ -31,15 +34,19 @@
                 <p id="lor-register-prompt">Don't have an account?</p>
                 <h2 id="lor-register-title">Register</h2>
                 <form id="lor-register-form" class="lor-form" method="POST" action="/auth/register">
-                    <label class="lor-label" for="lor-register-username">Username <p id="lor-reg-alr" class="lor-err"></p>
-                        <input placeholder="..." id="lor-register-username" name="username" class="lor-register-input" type="text">
+                    <label class="lor-label" for="lor-register-username">Username <p id="lor-reg-alr" class="lor-err">
+                        </p>
+                        <input placeholder="..." id="lor-register-username" name="username" class="lor-register-input"
+                            type="text">
                     </label>
-                    <label class="lor-label" for="lor-register-password">Password <p id="lor-reg-con" class="lor-err"></p>
-                        <input placeholder="..." id="lor-register-password" name="password" class="lor-register-input" type="password">
+                    <label class="lor-label" for="lor-register-password">Password <p id="lor-reg-con" class="lor-err">
+                        </p>
+                        <input placeholder="..." id="lor-register-password" name="password" class="lor-register-input"
+                            type="password">
                     </label>
                     <label class="lor-label" for="lor-register-confirm-password">Confirm Password
-                        <input placeholder="..." id="lor-register-confirm-password" name="confirm_password" class="lor-register-input"
-                            type="password">
+                        <input placeholder="..." id="lor-register-confirm-password" name="confirm_password"
+                            class="lor-register-input" type="password">
                     </label>
                     <input type="submit" value="REGISTER" class="popup-button hov1">
                 </form>
@@ -55,8 +62,8 @@
             </div>
             <div class="header-item">
                 <div id="header-search-div">
-                    <form action="/" method="get">
-                        <input id="header-search-bar" type="text" name="filter" placeholder="Search restaurants...">
+                    <form id="header-search-bar-form">
+                        <input id="sf-filter" type="text" name="filter" placeholder="Search restaurants...">
                         <span class="icon icon-md search-i"></span>
                     </form>
                 </div>
