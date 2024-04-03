@@ -14,6 +14,7 @@ router.get('/id/:profileId', checkAuthenticate, async(req, res) => {
         const min = q.min || 0
         const max = q.max || 5
         const page = q.page || 1
+        const or = q.or || "noor"
 
         const profile = await query.getProfile({ name: req.params.profileId })
 
@@ -29,7 +30,7 @@ router.get('/id/:profileId', checkAuthenticate, async(req, res) => {
 
         const sb = { ...profile, reviewCount: reviews.length } 
 
-        const sfReviews = await sortFilterReviews(reviews, min, max, sort, order, page)
+        const sfReviews = await sortFilterReviews(reviews, min, max, sort, order, page, or)
 
         console.log(`ROUTE -> profile: ${req.params.profileId}`)
         res.render('profile', { sb: sb, reviews: sfReviews })

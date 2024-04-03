@@ -25,7 +25,6 @@ router.get('/', checkAuthenticate, async (req, res) => {
         const sfRestos = await sortFilterHome(restos, min, max, sort, order)
 
         console.log(`ROUTE -> index`)
-        console.log(`Sort: ${sort}\nOrder: ${order}\nMin: ${min}\nMax: ${max}\nFilter: ${filter}`)
         res.render('home', { restos: sfRestos, home: true })
     } catch (err) {
         console.log(`ERROR! ${err.message}`)

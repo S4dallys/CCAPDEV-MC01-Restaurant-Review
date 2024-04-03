@@ -14,15 +14,13 @@ file.addEventListener("change", validateFilesLength);
 form.addEventListener('submit', validateReviewContent)
 
 function validateReviewContent(e) {
-    if (title.value == "" || body.value == "" ){
+    if (title.value == ""){
         // disable button
         e.preventDefault()
         title.classList.add("required-error")
-        body.classList.add("required-error")
     } else {
         // enable button
         title.classList.remove("required-error")
-        body.classList.remove("required-error")
     }
 
     if (file.files.length > 4) {

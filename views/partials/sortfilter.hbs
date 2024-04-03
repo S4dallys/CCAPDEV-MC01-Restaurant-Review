@@ -1,4 +1,9 @@
 <form id="sf-form">
+    {{#unless home}}
+    <label class="icon sort-noor-i icon-md" id="sf-or-label">
+        <input id="sf-or" type="checkbox" class="input-hidden" name="or" value="noor">
+    </label>
+    {{/unless}}
     <label class="icon sort-desc-i icon-md" id="sf-order-label">
         <input id="sf-order" type="checkbox" class="input-hidden" name="order" value="asc">
     </label>

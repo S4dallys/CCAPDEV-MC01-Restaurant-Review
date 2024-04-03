@@ -28,7 +28,7 @@ const reviewSchema = new mongoose.Schema({
     },
     body: {
         type: String,
-        required: true
+        default: ""
     },
     uploads: {
         type: [String],
