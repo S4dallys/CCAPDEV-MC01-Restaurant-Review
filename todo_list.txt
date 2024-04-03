@@ -1,0 +1,15 @@
+[x] 1. sort / filter funtionality
+[x] 2. login and register routing
+[x] 3. login and register verification with ajax
+[x] 4. edit_profile route
+[x] 5. edit_profile functionalty + validation
+[x] 6. session handling
+[x] 7. change pfp inn edit profile
+[ ] 8. like and dislike functionality
+[ ] 9. erms functionality
+[ ] 10. editing posts and owner posts
+[ ] 11. deleting posts / owner posts
+[ ] 12. Add more data: likes and resto owners
+[ ] 13. ajax for sorting / filtering, res.json instead of res.render
+[ ] 14. message for empty reviews section
+[ ] 15. about page
