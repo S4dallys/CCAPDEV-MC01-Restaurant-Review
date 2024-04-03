@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router()
 const query = require("../utility/query")
 const error = require("../utility/error")
-const sfHelper = require("../utility/sfHelper")
+const { sortFilterHome } = require("../utility/sfHelper")
 const checkAuthenticate = require('../utility/checkauthenticate');
 
 router.get('/', checkAuthenticate, async (req, res) => {
@@ -22,12 +22,12 @@ router.get('/', checkAuthenticate, async (req, res) => {
             error.throwRestoFetchError()
         }
 
-        const sfRestos = await sfHelper.sortFilterHome(restos, min, max, sort, order)
+        const sfRestos = await sortFilterHome(restos, min, max, sort, order)
 
         console.log(sfRestos)
 
         console.log(`ROUTE -> index`)
-        console.log(`Sort: ${sort}\nMin: ${min}\nMax: ${max}\nFilter: ${filter}`)
+        console.log(`Sort: ${sort}\nOrder: ${order}\nMin: ${min}\nMax: ${max}\nFilter: ${filter}`)
         res.render('home', { restos: sfRestos, home: true })
     } catch (err) {
         console.log(`ERROR! ${err.message}`)

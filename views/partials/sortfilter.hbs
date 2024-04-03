@@ -1,27 +1,28 @@
-<div id="sf-actions">
+<form id="sf-form">
+    <label class="icon sort-desc-i icon-md" id="sf-order-label">
+        <input id="sf-order" type="checkbox" class="input-hidden" name="order" value="asc">
+    </label>
     <label for="sf-sort-list" id="sf-sort-list">
-        <span class="icon sort-desc-i icon-md" id="sf-sort-flip" data-flip="desc"></span>
         Sort:
-        <select id="sf-sort-select" name="sortby">
+        <select id="sf-sort-select" name="sort">
             {{#if home}}
             <option value="relevance">Relevance</option>
-            <option value="stars">Stars</option>
             <option value="reviews">Reviews</option>
             {{else}}
-            <option value="date">Date</option>
             <option value="relevance">Relevance</option>
             <option value="likes">Likes</option>
+            <option value="date">Date</option>
             {{/if}}
         </select>
     </label>
     <label id="sf-filter-list">Stars:
         <div class="sf-list">
-            <label for="lstar" class="sf-abs-label">Min</label>
-            <input id="lstar" type="number" min="0" max="5" name="lstar" value="0">
+            <label for="sf-min" class="sf-abs-label">Min</label>
+            <input id="sf-min" type="number" min="0" max="5" name="min" value="0">
         </div>
         <div class="sf-list">
-            <label for="hstar" class="sf-abs-label">Max</label>
-            <input id="hstar" type="number" min="0" max="5" name="hstar" value="5">
+            <label for="sf-max" class="sf-abs-label">Max</label>
+            <input id="sf-max" type="number" min="0" max="5" name="max" value="5">
         </div>
     </label>
-</div>
+</form>
