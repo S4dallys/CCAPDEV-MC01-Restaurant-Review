@@ -10,8 +10,9 @@
 [ ] 10. erms functionality
 [ ] 11. editing posts and owner posts
 [ ] 12. truncate posts and click to expand
-[ ] 13. deleting posts / owner posts
+[ ] 13. deleting posts / owner posts / editing profile
 [ ] 14. Add more data: likes and resto owners
 [ ] 15. message for empty reviews section
 [ ] 16. about page
 [ ] 17. better names for files
+[ ] 18. protect post requests against unauthorized posts
