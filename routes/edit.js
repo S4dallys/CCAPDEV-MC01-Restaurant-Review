@@ -18,7 +18,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 
-// TODO: UNDER CONTRUCTION
 router.get('/', checkAuthenticate, (req, res) => {
     const user = req.user
 
