@@ -55,12 +55,26 @@ async function sortFilterHome(restos, min, max, sort, order) {
     }
 }
 
-async function sortFilterReviews(reviews, min, max, sort, order, page, or) {
+async function sortFilterReviews(reviews, min, max, sort, order, page, or, user) {
     let [minLikes, maxLikes, minlastUpdated, maxlastUpdated] = [null, null, null, null]
 
     reviews.map((r) => {
         r.likeCount = r.likes.length - r.dislikes.length
         r.erms = r.profileId.erms
+
+        if (user) {
+            if (r.likes.map(l => l.toString()).includes(user._id.toString())) {
+                console.log("in likes")
+                r.state = "like"
+            } else if (r.dislikes.map(l => l.toString()).includes(user._id.toString())) {
+                console.log("in dislikes")
+                r.state = "dislike"
+            } else {
+                r.state = "none"
+            }
+        } else {
+            r.state = "none"
+        }
 
         // first run
         if (minLikes == null) {

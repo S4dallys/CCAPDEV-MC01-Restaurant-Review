@@ -40,11 +40,29 @@ const query = {
         return Profile.updateOne(field, set)
     },
     updateLikes: async (reviewId, profileId, vote) => {
+        const review = await Review.findOne({ _id: reviewId })
+        const returnCount = Array.from(review.likes).length - Array.from(review.dislikes).length
+        console.log(returnCount)
+
         if (vote === "like") {
-            await Review.updateOne({ _id: reviewId }, { $push: { likes: profileId }, $pull: {  dislikes: profileId } })
+            if (review.likes.includes(profileId)) {
+                await Review.updateOne({ _id: review._id }, { $pull: { dislikes: profileId } })
+                return returnCount
+            }
+
+            await Review.updateOne({ _id: review._id }, { $pull: { dislikes: profileId } })
+            return returnCount + 1
         } else if (vote === "dislike") {
-            await Review.updateOne({ _id: reviewId }, { $push: { dislikes: profileId }, $pull: {  likes: profileId } })
+            if (review.dislikes.includes(profileId)) {
+                await Review.updateOne({ _id: review._id }, { $pull: { likes: profileId } })
+                return returnCount
+            }
+
+            await Review.updateOne({ _id: review._id }, { $push: { dislikes: profileId }, $pull: { likes: profileId } })
+            return returnCount - 1
         }
+
+        return returnCount
     }
 }
 

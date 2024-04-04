@@ -71,10 +71,10 @@ router.post("/vote", async (req, res) => {
         }
 
         const { id, vote } = req.body
-        await query.updateLikes(id, req.user._id, vote)
+        const curLikes = await query.updateLikes(id, req.user._id, vote)
 
         console.log(`REVIEW: ${id} gains a ${vote}.`)
-        res.status(200).send("Success!")
+        res.status(200).send(curLikes.toString())
     } catch (err) {
         console.log(err)
         res.status(400).send("Bad Request.")

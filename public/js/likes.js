@@ -11,10 +11,13 @@ function selectVote(form, value) {
     } else if (value === "dislike") {
         likeButton.classList.remove(likeOn)
         dislikeButton.classList.add(dislikeOn)
+    } else {
+        likeButton.classList.remove(likeOn)
+        dislikeButton.classList.remove(dislikeOn)
     }
 }
 
-function castVote(id, vote) {
+function castVote(id, vote, el) {
     const xhttp = new XMLHttpRequest()
     xhttp.open("POST", "/review/vote", true) 
     xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8")
@@ -24,9 +27,9 @@ function castVote(id, vote) {
         }
 
         if (xhttp.status == 200) {
+            el.innerHTML = xhttp.response
             console.log(xhttp.response)
         } else {
-            console.log(xhttp.response)
             console.log("Server side error!")
         }
     }
@@ -53,7 +56,7 @@ window.onload = function() {
                 if (xhttp.status == 200) {
                     input.addEventListener("change", (e) => {
                         selectVote(forms[i], e.target.value)
-                        castVote(forms[i].getAttribute("data-review"), e.target.value)
+                        castVote(forms[i].getAttribute("data-review"), e.target.value, forms[i].getElementsByClassName("pro-like-count")[0])
                     })
                 } else {
                     setUpPopup(input, lor_container)
@@ -63,4 +66,8 @@ window.onload = function() {
     }
 
     xhttp.send()
+
+    forms.forEach(f => {
+        selectVote(f, f.getAttribute("data-state"))    
+    })
 }

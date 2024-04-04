@@ -34,7 +34,7 @@ router.get('/id/:restoId', checkAuthenticate, async (req, res) => {
             stars: (reviewCount > 0) ? (reviews.reduce((total, rev) => { return total + rev.stars }, 0) / reviewCount).toFixed(2) : 0
         }
 
-        const sfReviews = await sortFilterReviews(reviews, min, max, sort, order, page, or)
+        const sfReviews = await sortFilterReviews(reviews, min, max, sort, order, page, or, req.user)
 
         console.log(`ROUTE -> resto: ${req.params.restoId}`)
         res.render('resto', { sb: sb, reviews: sfReviews  })
