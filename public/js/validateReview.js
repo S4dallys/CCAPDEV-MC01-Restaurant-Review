@@ -7,9 +7,6 @@ const file = document.getElementById("cr-file")
 const label = document.getElementById("cr-upload-text")
 const icon = document.getElementsByClassName("cr-img-i")[0]
 
-const normalIcon = "-40px -80px";
-const errorIcon = "-60px -80px";
-
 file.addEventListener("change", validateFilesLength);
 form.addEventListener('submit', validateReviewContent)
 

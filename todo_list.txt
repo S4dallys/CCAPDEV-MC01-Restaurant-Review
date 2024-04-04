@@ -5,7 +5,7 @@
 [x] 5. edit_profile functionalty + validation
 [x] 6. session handling
 [x] 7. change pfp inn edit profile
-[ ] 8. only allowed to like / create post if authenticated
+[x] 8. only allowed to like / create post if authenticated
 [ ] 9. like and dislike functionality
 [ ] 10. erms functionality
 [ ] 11. editing posts and owner posts

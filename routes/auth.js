@@ -73,4 +73,12 @@ router.post('/nametaken', async (req, res) => {
     }
 })
 
+router.get('/authorized', (req, res) => {
+    if (req.isAuthenticated()) {
+        res.status(200).send("User is authenticated.")
+    } else {
+        res.status(206).send("User is not authenticated.")
+    }
+})
+
 module.exports = router
