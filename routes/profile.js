@@ -35,7 +35,7 @@ router.get('/id/:profileId', checkAuthenticate, async (req, res) => {
             isCurrentUser = profile._id.equals(req.user._id) 
         }
 
-        const sfReviews = await sortFilterReviews(reviews, min, max, sort, order, page, or)
+        const sfReviews = await sortFilterReviews(reviews, min, max, sort, order, page, or, req.user)
 
         console.log(`ROUTE -> profile: ${req.params.profileId}`)
         res.render('profile', { sb: sb, reviews: sfReviews, isCurrentUser: isCurrentUser })

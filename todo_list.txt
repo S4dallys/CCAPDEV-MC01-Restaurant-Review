@@ -6,8 +6,8 @@
 [x] 6. session handling
 [x] 7. change pfp inn edit profile
 [x] 8. only allowed to like / create post if authenticated
-[ ] 9. like and dislike functionality
-[ ] 10. erms functionality
+[x] 9. like and dislike functionality
+[x] 10. erms functionality
 [ ] 11. editing posts and owner posts also deleting
 [ ] 12. truncate posts and click to expand
 [ ] 13. deleting posts / owner posts / editing profile
@@ -19,4 +19,3 @@
 [ ] 19. cookies
 [ ] 20. mvc
 [ ] 21. deploy
-

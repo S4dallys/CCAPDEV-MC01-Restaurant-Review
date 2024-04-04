@@ -70,5 +70,13 @@
         "description": "RUN FAST, WIN FAST, EAT FAST",
         "erms": 71,
         "password": "$2b$10$E74wbh1mMxC6nzZayGyQyuasGxRiHBB7f6sgRKBwBL9WZ1ccLAePa"
+    },
+    {
+        "_id": "660e6a7fa01523ec4280333a",
+        "name": "James Ruiz",
+        "avatar": "jamesruiz.jpg",
+        "description": "Alan Turing yaoi enjoyer",
+        "erms": 42,
+        "password": "$2b$10$E74wbh1mMxC6nzZayGyQyuasGxRiHBB7f6sgRKBwBL9WZ1ccLAePa"
     }
 ]

@@ -20,15 +20,14 @@ const upload = multer({ storage: storage })
 
 router.post("/:restoId/new", upload.array("rv-images", maxuploads), async (req, res) => {
     try {
-        const restoId = req.params.restoId
-        const [profile, resto] = await Promise.all([
-            query.getProfile({ name: "anonymous" }),
-            query.getResto({ name: restoId })
-        ])
-
-        if (!profile) {
-            error.throwLoginError()
+        if (!req.isAuthenticated()) {
+            res.redirect("/error?errorMsg=User not logged in.")
+            return
         }
+
+        const restoId = req.params.restoId
+        const resto = await query.getResto({ name: restoId })
+        const profile = req.user
 
         if (!resto) {
             error.throwRestoError()

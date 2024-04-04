@@ -46,19 +46,27 @@ const query = {
 
         if (vote === "like") {
             if (review.likes.includes(profileId)) {
-                await Review.updateOne({ _id: review._id }, { $pull: { dislikes: profileId } })
                 return returnCount
+            } else if (review.dislikes.includes(profileId)) {
+                await Review.updateOne({ _id: review._id }, { $push: { likes: profileId }, $pull: { dislikes: profileId } })
+                await Profile.updateOne({ _id: review.profileId._id }, { $inc: { erms: 3 } })
+                return returnCount + 2
             }
 
-            await Review.updateOne({ _id: review._id }, { $pull: { dislikes: profileId } })
+            await Review.updateOne({ _id: review._id }, { $push: { likes: profileId } })
+            await Profile.updateOne({ _id: review.profileId._id }, { $inc: { erms: 2 } })
             return returnCount + 1
         } else if (vote === "dislike") {
             if (review.dislikes.includes(profileId)) {
-                await Review.updateOne({ _id: review._id }, { $pull: { likes: profileId } })
                 return returnCount
+            } else if (review.likes.includes(profileId)) {
+                await Review.updateOne({ _id: review._id }, { $push: { dislikes: profileId }, $pull: { likes: profileId } })
+                await Profile.updateOne({ _id: review.profileId._id }, { $inc: { erms: -3 } })
+                return returnCount - 2
             }
 
-            await Review.updateOne({ _id: review._id }, { $push: { dislikes: profileId }, $pull: { likes: profileId } })
+            await Review.updateOne({ _id: review._id }, { $push: { dislikes: profileId } })
+            await Profile.updateOne({ _id: review.profileId._id }, { $inc: { erms: -1 } })
             return returnCount - 1
         }
 
