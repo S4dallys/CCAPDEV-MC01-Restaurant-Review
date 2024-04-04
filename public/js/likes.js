@@ -14,6 +14,30 @@ function selectVote(form, value) {
     }
 }
 
+function castVote(id, vote) {
+    const xhttp = new XMLHttpRequest()
+    xhttp.open("POST", "/review/vote", true) 
+    xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8")
+    xhttp.onreadystatechange = () => {
+        if (xhttp.readyState != 4) {
+            return
+        }
+
+        if (xhttp.status == 200) {
+            console.log(xhttp.response)
+        } else {
+            console.log(xhttp.response)
+            console.log("Server side error!")
+        }
+    }
+
+    xhttp.send(JSON.stringify({
+        "id": id,
+        "vote": vote
+    }))
+}
+
+
 window.onload = function() {
     const forms = Array.from(document.getElementsByClassName('vote-form'))
 
@@ -29,6 +53,7 @@ window.onload = function() {
                 if (xhttp.status == 200) {
                     input.addEventListener("change", (e) => {
                         selectVote(forms[i], e.target.value)
+                        castVote(forms[i].getAttribute("data-review"), e.target.value)
                     })
                 } else {
                     setUpPopup(input, lor_container)

@@ -18,11 +18,11 @@ const query = {
         return Review.find(filter)
             .populate({
                 path: 'restoId',
-                model: 'Resto'  
+                model: 'Resto'
             })
             .populate({
                 path: 'profileId',
-                model: 'Profile'  
+                model: 'Profile'
             })
             .lean()
     },
@@ -38,6 +38,13 @@ const query = {
     },
     updateProfile: (field, set) => {
         return Profile.updateOne(field, set)
+    },
+    updateLikes: async (reviewId, profileId, vote) => {
+        if (vote === "like") {
+            await Review.updateOne({ _id: reviewId }, { $push: { likes: profileId }, $pull: {  dislikes: profileId } })
+        } else if (vote === "dislike") {
+            await Review.updateOne({ _id: reviewId }, { $push: { dislikes: profileId }, $pull: {  likes: profileId } })
+        }
     }
 }
 
