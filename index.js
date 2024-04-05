@@ -27,7 +27,11 @@ const initPassport = require("./utility/passport_config")
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    cookie: {
+        secure: false,
+        maxAge: 360000000 // 100 hours
+    }
 }))
 app.use(passport.session())
 initPassport(passport)

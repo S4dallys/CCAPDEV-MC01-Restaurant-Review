@@ -9,13 +9,13 @@
 [x] 9. like and dislike functionality
 [x] 10. erms functionality
 [ ] 11. editing posts and owner posts also deleting
-[ ] 12. truncate posts and click to expand (maybe add read more button?)
+[x] 12. truncate posts and click to expand (maybe add read more button?)
 [ ] 13. deleting posts / owner posts / editing profile
 [ ] 14. Add more data: likes and resto owners
 [ ] 15. message for empty reviews section
 [ ] 16. about page
 [ ] 17. better names for files
 [ ] 18. protect post requests against unauthorized posts
-[ ] 19. cookies
-[ ] 20. mvc
+[x] 19. cookies
+[x] 20. mvc
 [ ] 21. deploy
