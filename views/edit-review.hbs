@@ -1,0 +1,35 @@
+<div class="ed-main">
+    <form enctype="multipart/form-data" id="edit-form" class="ed-midbar" method="POST">
+        <div class="ed-midbar-bg">
+            <h1>Edit Review</h1>
+            <h2 class="sb-title">
+                <input name="name" id="edit-title" value="{{ name }}" placeholder="Enter title...">
+            </h2>
+            <textarea name="description" id="edit-content" placeholder="Enter content...">{{ description }}
+            </textarea>
+            <div id="ed-bottom">
+                <div class="cr-rev-actions">
+                    <ul id="g-ul-clickable" class="cr-star-group hov3" data-stars="5"> </ul>
+                    <input type="hidden" id="cr-star-input" name="rv-stars" value="5">
+                    <input id="cr-file" type="file" name="rv-images" accept="image/*" multiple>
+                    <label id="cr-file-label" for="cr-file" class="hov1">
+                        <span class="icon icon-md cr-img-i"></span><span id="cr-upload-text">0 IMGS</span>
+                    </label>
+                </div>
+                <div class="ed-rev-div">
+                    <a id="edit-cancel" class="edit-user ed-cancel hov1" href="/profile/id/{{ name }}">
+                        <p class="ed-cancel-text">CANCEL</p>
+                    </a>
+                    <label for="edit-submit" id="edit-save" class="edit-user ed-save hov1">
+                        <p class="ed-save-text">SAVE</p>
+                        <input id="edit-submit" class="input-hidden" type="submit">
+                    </label>
+                </div>
+            </div>
+            <p id="edit-msg"></p>
+        </div>
+    </form>
+</div>
+
+<script src="/js/editprofile.js"></script>
+<script src="/js/rating.js"></script>

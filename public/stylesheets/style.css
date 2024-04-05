@@ -148,11 +148,13 @@ body {
 }
 
 #lor-popup-open,
-#lor-logout {
+#lor-logout,
+#lor-about {
     font-size: 1.4rem;
     color: var(--col-prim);
     text-decoration: none;
     cursor: pointer;
+    margin-left: 30px;
 }
 
 .lor-err {
@@ -462,6 +464,18 @@ body {
     margin-bottom: 3px;
     font-size: 1.4rem;
     max-width: 90%;
+    display: inline-block;
+}
+
+.pro-post-edit {
+    margin-left: 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    background-color: #356aab;
+    color: var(--col-white);
+    padding: 5px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .pro-review-images {
@@ -807,9 +821,24 @@ body {
     box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
 
+@media only screen and (max-width: 1100px) {
+    .pro-review-holder {
+        margin-left: auto;
+        width: auto;
+    }
+
+    .pro-sidebar {
+        display: none;
+    }
+}
+
 .sb-name {
     font-size: 2.5rem;
     text-align: center;
+}
+
+.sb-title {
+    font-size: 2.5rem;
 }
 
 .sb-pic {
@@ -935,6 +964,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+}
+
+.cr-rev-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
 }
 
 .cr-actions .cr-star-group li {
@@ -1042,8 +1080,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 90%;
-    width: 25%;
 }
 
 .ed-midbar-bg {
@@ -1056,23 +1092,38 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 32px;
-    padding: var(--padd-big);
+    padding: var(--padd-big) 40px;
 
 }
 
 .ed-div {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.ed-rev-div {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
 }
 
 .ed-cancel {
     display: flex;
-    margin: 0px 40px 0px 0px;
 }
 
 .ed-save {
     display: flex;
-    margin: 0px 0px 0px 40px;
+}
+
+#ed-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #p1-card-hidden * {
@@ -1202,11 +1253,29 @@ body {
     font-size: 1.5rem;
 }
 
+#edit-title {
+    border-radius: 10px;
+    padding: 10px;
+    width: 650px;
+    background-color: #afffb5;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
 #edit-description {
     padding: 10px;
     border-radius: 10px;
     width: 280px;
     height: 150px;
+    background-color: #afffb5;
+    font-size: 1rem;
+}
+
+#edit-content {
+    padding: 10px;
+    border-radius: 10px;
+    width: 650px;
+    height: 250px;
     background-color: #afffb5;
     font-size: 1rem;
 }

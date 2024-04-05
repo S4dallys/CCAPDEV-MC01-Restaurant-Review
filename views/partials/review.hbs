@@ -7,15 +7,13 @@
                 <div class="pro-actions-like">
                     <form class="vote-form" data-review="{{ _id }}" data-state="{{ state }}">
                         <label class="icon icon-lg pro-like">
-                            <input class="input-hidden"
-                                type="radio" name="vote" value="like">
+                            <input class="input-hidden" type="radio" name="vote" value="like">
                         </label>
 
                         <span class="pro-like-count">{{ likeCount }}</span>
 
                         <label class="icon icon-lg pro-dislike">
-                            <input class="input-hidden"
-                                type="radio" name="vote" value="dislike">
+                            <input class="input-hidden" type="radio" name="vote" value="dislike">
                         </label>
 
                     </form>
@@ -26,18 +24,23 @@
                 </img></a>
             <div class="pro-review-header"">
                 <div>
-                    <p class="pro-review-location"><a href="/profile/id/{{ profileId.name }}"
-                            class="pro-user-link thov1">{{
-                            profileId.name }}</a> on <a href="/resto/id/{{ restoId.name }}"
-                            class="pro-location-link bitalics thov1">{{ restoId.name }}</a> • <span
-                            class="pro-user-date" data-date="{{ lastUpdated }}"></span></p>
+                    <p class=" pro-review-location"><a href="/profile/id/{{ profileId.name }}"
+                    class="pro-user-link thov1">{{
+                    profileId.name }}</a> on <a href="/resto/id/{{ restoId.name }}"
+                    class="pro-location-link bitalics thov1">{{ restoId.name }}</a> • <span class="pro-user-date"
+                    data-date="{{ lastUpdated }}"></span></p>
+                <div class="pro-review-title-div">
                     <h3 class="pro-review-title bold">{{ title }}</h3>
+                    {{#if edit}}
+                    <a href="/edit/review/{{ _id }}" class="pro-post-edit hov3">edit</a>
+                    {{/if}}
                 </div>
             </div>
-            <div class="pro-review-text">{{ body }}</div>
-            <div class="pro-review-images">
-                {{#each uploads}} <img src="/imgs/uploads/{{ this }}"> {{/each}}
-            </div>
+        </div>
+        <div class="pro-review-text">{{ body }}</div>
+        <div class="pro-review-images">
+            {{#each uploads}} <img src="/imgs/uploads/{{ this }}"> {{/each}}
+        </div>
         </div>
         {{#if hasOr}}
         <div class="pro-or-box">

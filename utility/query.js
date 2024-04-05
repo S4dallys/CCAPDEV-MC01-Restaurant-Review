@@ -11,8 +11,11 @@ const query = {
     getResto: (filter) => {
         return Resto.findOne(filter).lean()
     },
-    getRestos: (filter = {}) => {
+    getRestos: (filter) => {
         return Resto.find(filter).lean()
+    },
+    getReview: (filter) => {
+        return Review.findOne(filter).lean()
     },
     getReviews: (filter) => {
         return Review.find(filter)

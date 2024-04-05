@@ -42,4 +42,8 @@ router.get("/error", (req, res) => {
     res.render("error", { message: err || "Unknown error. Please retry!" })
 })
 
+router.get("/about", (req, res) => {
+    res.render("about")
+})
+
 module.exports = router

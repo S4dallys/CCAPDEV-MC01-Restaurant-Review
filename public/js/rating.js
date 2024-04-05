@@ -1,4 +1,3 @@
-// under construction! doesn't work for now :)
 const starInput = document.getElementById("cr-star-input")
 
 const activeClass = "icon icon-md g-star";
