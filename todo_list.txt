@@ -8,14 +8,16 @@
 [x] 8. only allowed to like / create post if authenticated
 [x] 9. like and dislike functionality
 [x] 10. erms functionality
-[ ] 11. editing posts and owner posts also deleting
-[x] 12. truncate posts and click to expand (maybe add read more button?)
-[ ] 13. deleting posts / owner posts / editing profile
-[ ] 14. Add more data: likes and resto owners
-[ ] 15. message for empty reviews section
-[ ] 16. about page
-[ ] 17. better names for files
-[ ] 18. protect post requests against unauthorized posts
-[x] 19. cookies
-[x] 20. mvc
+[x] 11. truncate posts and click to expand (maybe add read more button?)
+[x] 12. cookies
+[x] 13. mvc
+
+POST SUBMISSION CHECKLIST
+[ ] 14. editing posts and owner posts also deleting
+[ ] 15. deleting posts / owner posts / editing profile
+[ ] 16. Add more data: likes and resto owners
+[ ] 17. message for empty reviews section
+[ ] 18. about page
+[ ] 19. better names for files
+[ ] 20. protect post requests against unauthorized posts
 [ ] 21. deploy
