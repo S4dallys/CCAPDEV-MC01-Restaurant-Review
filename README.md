@@ -32,6 +32,8 @@ npm start
 ### NOTE!
 - Server runs locally on Port 3000
 - Running `npm run populate` empties and populates a local db named *ccapdev_ngolimko*
+  
+### Alternatively, view deployed site on [Render.com](https://ccapdev-mco-ngolimko.onrender.com) (under construction!)
 
 ## 🌵 Todo
 - [ ] Session information / capabilities
