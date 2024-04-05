@@ -468,8 +468,8 @@ body {
     display: flex;
     justify-content: flex-start;
     margin: auto;
-    margin-block: 20px;
     width: 80%;
+    padding-block: 15px;
 }
 
 .pro-review-images img:active {
@@ -615,11 +615,11 @@ body {
 
 .pro-review-box {
     list-style-type: none;
-    min-height: 20vh;
     margin-top: 3vh;
     margin-left: auto;
     margin-right: auto;
     padding: 10px 20px;
+    padding-bottom: 0px;
     font-size: 5vh;
     background-color: var(--col-white);
     border-radius: 10px;
@@ -627,18 +627,12 @@ body {
     position: relative;
 }
 
-.pro-review-image-box {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 1%;
-}
-
 .pro-review-image {
     width: 120px;
     aspect-ratio: 1;
     object-fit: cover;
     border: var(--col-sec) 1px solid;
+    margin-bottom: 5px;
 }
 
 .pro-user-date {
@@ -664,8 +658,13 @@ body {
 .pro-review-text {
     padding-top: .5vh;
     padding-left: 68px;
-    font-size: 1.8vh;
+    font-size: 1.2rem;
+    max-height: 4.8rem;
+    overflow-y: hidden;
+    padding-bottom: 1.2rem;
+    mask-image: linear-gradient(180deg, #000 60%, transparent);
 }
+
 
 .pro-review-icon {
     width: 60px;
@@ -679,17 +678,32 @@ body {
 
 .pro-or-box {
     width: 80%;
-    height: 16vh;
     margin-left: auto;
     margin-right: auto;
     margin-top: -.2vh;
     padding: 2vh;
-    font-size: 2vh;
+    font-size: 1.2rem;
     color: var(--col-owner-prim);
     background-color: var(--col-sec);
     border: 2px solid var(--col-owner-sec);
     border-radius: 0 0 15px 15px;
     position: relative;
+}
+
+.pro-or-text {
+    font-size: 2vh;
+    overflow: hidden;
+    margin-right: 1vh;
+    margin-top: 1vh;
+    mask-image: linear-gradient(180deg, #000 60%, transparent);
+    max-height: 5rem;
+    padding-bottom: 1.2rem;
+    color: var(--col-owner-sec);
+}
+
+.post-expanded {
+    max-height: none;
+    mask-image: none;
 }
 
 .pro-or-header {
@@ -714,12 +728,6 @@ body {
     height: 25px;
 }
 
-.pro-or-text {
-    font-size: 2vh;
-    margin-right: 1vh;
-    margin-top: 1vh;
-    color: var(--col-owner-sec);
-}
 
 .pro-or-auth-box {
     width: 20%;
@@ -1126,7 +1134,8 @@ body {
     left: 10px;
 }
 
-#sf-order-label, #sf-or-label {
+#sf-order-label,
+#sf-or-label {
     margin-right: 10px;
     margin-top: 5px
 }
