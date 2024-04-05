@@ -36,8 +36,10 @@ npm start
 ### Alternatively, view deployed site on [Render.com](https://ccapdev-mco-ngolimko.onrender.com) (under construction!)
 
 ## 🌵 Todo
-- [ ] Session information / capabilities
-- [x] Add more sample data 
-- [ ] Like / Dislike functionality
-- [ ] Error handling (like any at all)
-- [ ] Find out what happened to bob123
+- [ ] Editing and deleting posts
+- [ ] Add more sample data
+- [ ] Add "no reviews :(" message (easy!)
+- [ ] About page
+- [ ] Better file and directory names
+- [ ] Double check post and get authorization
+- [ ] Finish deploying
