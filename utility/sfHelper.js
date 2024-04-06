@@ -65,10 +65,8 @@ async function sortFilterReviews(reviews, min, max, sort, order, page, or, user)
         if (user) {
             r.edit = user._id.equals(r.profileId._id)
             if (r.likes.map(l => l.toString()).includes(user._id.toString())) {
-                console.log("in likes")
                 r.state = "like"
             } else if (r.dislikes.map(l => l.toString()).includes(user._id.toString())) {
-                console.log("in dislikes")
                 r.state = "dislike"
             } else {
                 r.state = "none"

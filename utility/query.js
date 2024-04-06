@@ -15,7 +15,13 @@ const query = {
         return Resto.find(filter).lean()
     },
     getReview: (filter) => {
-        return Review.findOne(filter).lean()
+        return Review.findOne(filter).populate({
+            path: 'restoId',
+            model: 'Resto'
+        }).populate({
+            path: 'profileId',
+            model: 'Profile'
+        }).lean()
     },
     getReviews: (filter) => {
         return Review.find(filter)
@@ -41,6 +47,9 @@ const query = {
     },
     updateProfile: (field, set) => {
         return Profile.updateOne(field, set)
+    },
+    updateReview: (field, set) => {
+        return Review.updateOne(field, set)
     },
     updateLikes: async (reviewId, profileId, vote) => {
         const review = await Review.findOne({ _id: reviewId })
@@ -74,6 +83,9 @@ const query = {
         }
 
         return returnCount
+    },
+    deleteReview: (id) => {
+        return Review.deleteOne({ _id: id })
     }
 }
 

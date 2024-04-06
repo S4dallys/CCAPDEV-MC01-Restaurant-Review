@@ -16,7 +16,18 @@ const storage = multer.diskStorage({
     }
 })
 
-const upload = multer({ storage: storage })
+const storage2 = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, './public/imgs/uploads')
+    },
+    filename: function(req, file, cb) {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+        cb(null, uniqueSuffix + '-' + file.originalname)
+    }
+})
+
+const av = multer({ storage: storage })
+const up = multer({ storage: storage2 })
 
 router.get('/user', checkAuthenticate, (req, res) => {
     if (!req.isAuthenticated()) {
@@ -40,8 +51,9 @@ router.get("/review/:revId", checkAuthenticate, async (req, res) => {
             error.throwReviewFetchError()
         }
 
+        review.oldImages = review.uploads.length
+
         console.log(`ROUTE -> EDIT REVIEW (${review.title})`)
-        console.log(review)
         res.render("edit-review", review)
     } catch (err) {
         console.log(`ERROR! ${err.message}`)
@@ -54,7 +66,7 @@ router.get("/review/:revId", checkAuthenticate, async (req, res) => {
     }
 })
 
-router.post('/update', upload.single("avatar"), async (req, res) => {
+router.post('/profile', av.single("avatar"), async (req, res) => {
     try {
         const user = req.user
         const name = req.body.name
@@ -97,6 +109,94 @@ router.post('/update', upload.single("avatar"), async (req, res) => {
     } catch (err) {
         console.log(`ERROR! ${err.message}`)
         res.status(401).send("Failed to update.")
+    }
+})
+
+router.post('/review', up.array("images", 4), async (req, res) => {
+    try {
+        const user = req.user
+        const { title, content, stars, id } = req.body
+        const images = req.files
+
+        if (!user || title === "") {
+            res.status(400).send("Bad Data.")
+            return
+        }
+
+        const review = await query.getReview({ _id: id })
+
+        if (!review) {
+            res.status(400).send("Bad data.")
+        }
+
+        if (review.profileId._id.equals(user._id)) {
+            const oldImages = review.uploads
+            const updateObj = { title: title, body: content, stars: stars, lastUpdated: new Date() }
+            if (images) {
+                updateObj.uploads = images.map(i => { return i.filename })
+
+                oldImages.forEach(img => {
+                    fs.unlink("./public/imgs/uploads/" + img, (err) => {
+                        if (err) {
+                            console.log(err)
+                        } else {
+                            console.log("Deleted old image of " + id)
+                        }
+                    })
+                })
+            }
+
+            await query.updateReview({ _id: id }, { $set: updateObj })
+
+            console.log(`ROUTE -> UPDATED REVIEW (${id})`)
+            res.status(200).send("Success!")
+        } else {
+            console.log(`ROUTE -> FAILED TO UPDATE REVIEW`)
+            res.status(409).send("Bad Credentials.")
+        }
+    } catch (err) {
+        console.log(`ERROR! ${err.message}`)
+        res.status(401).send("Failed to update.")
+    }
+})
+
+router.post("/delete", async (req, res) => {
+    try {
+        const id = req.body.id
+        const review = await query.getReview({ _id: id })
+
+        if (!review) {
+            error.throwReviewFetchError()
+        }
+
+        if (!req.isAuthenticated() || !req.user._id.equals(review.profileId._id)) {
+            error.throwLoginFailError()
+        }
+
+        const oldImages = review.uploads
+
+        await query.deleteReview(id)
+
+        oldImages.forEach(img => {
+            fs.unlink("./public/imgs/uploads/" + img, (err) => {
+                if (err) {
+                    console.log(err)
+                } else {
+                    console.log("Deleted old image of " + id)
+                }
+            })
+        })
+
+        console.log("DELETED: " + review.name)
+        res.redirect(`/resto/id/${review.restoId.name}`)
+    } catch (err) {
+        console.log(`ERROR! ${err.message}`)
+
+        if (err.name != "ReviewFetchError" && err.name != "LoginFailError") {
+            res.redirect(`/error`)
+        } else {
+            res.redirect(`/error?errorMsg=${err.message}`)
+        }
     }
 })
 

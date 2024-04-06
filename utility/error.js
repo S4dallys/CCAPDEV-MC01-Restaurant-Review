@@ -15,7 +15,7 @@ const error = {
         throw { name: "LoginError", message: "Login details could not be found." }
     },
     throwLoginFailError: () => {
-        throw { name: "LoginFailError", message: "Failed to login, please retry!" }
+        throw { name: "LoginFailError", message: "Login details are incorrect." }
     },
     throwRegisterFailError: () => {
         throw { name: "RegisterFailError", message: "Failed to register, please retry!" }

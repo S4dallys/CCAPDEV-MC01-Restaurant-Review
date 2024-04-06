@@ -1,24 +1,44 @@
 <div class="ed-main">
-    <form enctype="multipart/form-data" id="edit-form" class="ed-midbar" method="POST">
+    <div id="delete-popup" class="popup">
+        <div id="delete-content">
+            <h2>Delete Post?</h2>
+            <div>
+                <span id="delete-no" class="edit-user ed-cancel hov1">
+                    <p class="ed-cancel-text">NO</p>
+                </span>
+                <form id="delete-yes" class="edit-user ed-cancel hov1" method="post" action="/edit/delete">
+                    <p id="ed-cancel-text" class="ed-cancel-text">YES</p>
+                    <input type="hidden" name="id" value="{{ _id }}">
+                </form>
+            </div>
+        </div>
+        <div id="delete-bg"></div>
+    </div>
+    <form enctype="multipart/form-data" id="edit-form" class="ed-midbar" method="POST" data-id="{{ _id }}">
         <div class="ed-midbar-bg">
-            <h1>Edit Review</h1>
+            <div id="edit-top">
+                <h1 id="edit-review-text">Edit Review</h1>
+                <span id="edit-delete" class="edit-user ed-cancel hov1">
+                    <p class="ed-cancel-text">DELETE</p>
+                </span>
+            </div>
             <h2 class="sb-title">
-                <input name="name" id="edit-title" value="{{ name }}" placeholder="Enter title...">
+                <input name="title" id="edit-title" value="{{ title }}" placeholder="Enter title...">
             </h2>
-            <textarea name="description" id="edit-content" placeholder="Enter content...">{{ description }}
-            </textarea>
+            <textarea name="content" id="edit-content" placeholder="Enter content...">{{ body }}</textarea>
             <div id="ed-bottom">
                 <div class="cr-rev-actions">
-                    <ul id="g-ul-clickable" class="cr-star-group hov3" data-stars="5"> </ul>
-                    <input type="hidden" id="cr-star-input" name="rv-stars" value="5">
-                    <input id="cr-file" type="file" name="rv-images" accept="image/*" multiple>
+                    <ul id="g-ul-clickable" class="cr-star-group hov3" data-stars="{{ stars }}"> </ul>
+                    <input type="hidden" id="cr-star-input" name="stars" value="{{ stars }}">
                     <label id="cr-file-label" for="cr-file" class="hov1">
-                        <span class="icon icon-md cr-img-i"></span><span id="cr-upload-text">0 IMGS</span>
+                        <span class="icon icon-md cr-img-i"></span><span data-oldImages="{{ oldImages }}"
+                            id="cr-upload-text">0 IMGS</span>
                     </label>
+                    <input class="input-hidden" id="cr-file" type="file" name="images" accept="image/*" multiple>
                 </div>
                 <div class="ed-rev-div">
-                    <a id="edit-cancel" class="edit-user ed-cancel hov1" href="/profile/id/{{ name }}">
-                        <p class="ed-cancel-text">CANCEL</p>
+                    <a id="edit-cancel" class="edit-user ed-cancel hov1" href="/resto/id/{{ restoId.name }}">
+                        <p class="ed-cancel-text">DONE</p>
                     </a>
                     <label for="edit-submit" id="edit-save" class="edit-user ed-save hov1">
                         <p class="ed-save-text">SAVE</p>
@@ -31,5 +51,5 @@
     </form>
 </div>
 
-<script src="/js/editprofile.js"></script>
+<script src="/js/editreview.js"></script>
 <script src="/js/rating.js"></script>

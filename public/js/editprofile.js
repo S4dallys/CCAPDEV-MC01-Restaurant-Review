@@ -47,7 +47,7 @@ form.addEventListener("submit", (e) => {
                 }
             }
 
-            send.open("POST", `/edit/update`, true)
+            send.open("POST", `/edit/profile`, true)
             send.send(data)
         } else {
             msg.innerHTML = "❌ Name Already Taken."
