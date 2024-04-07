@@ -54,31 +54,38 @@ const query = {
     updateLikes: async (reviewId, profileId, vote) => {
         const review = await Review.findOne({ _id: reviewId })
         const returnCount = Array.from(review.likes).length - Array.from(review.dislikes).length
-        console.log(returnCount)
 
         if (vote === "like") {
             if (review.likes.includes(profileId)) {
                 return returnCount
             } else if (review.dislikes.includes(profileId)) {
                 await Review.updateOne({ _id: review._id }, { $push: { likes: profileId }, $pull: { dislikes: profileId } })
-                await Profile.updateOne({ _id: review.profileId._id }, { $inc: { erms: 3 } })
+                if (!review.profileId.equals(profileId)) {
+                    await Profile.updateOne({ _id: review.profileId._id }, { $inc: { erms: 3 } })
+                }
                 return returnCount + 2
             }
 
             await Review.updateOne({ _id: review._id }, { $push: { likes: profileId } })
-            await Profile.updateOne({ _id: review.profileId._id }, { $inc: { erms: 2 } })
+            if (!review.profileId.equals(profileId)) {
+                await Profile.updateOne({ _id: review.profileId._id }, { $inc: { erms: 2 } })
+            }
             return returnCount + 1
         } else if (vote === "dislike") {
             if (review.dislikes.includes(profileId)) {
                 return returnCount
             } else if (review.likes.includes(profileId)) {
                 await Review.updateOne({ _id: review._id }, { $push: { dislikes: profileId }, $pull: { likes: profileId } })
-                await Profile.updateOne({ _id: review.profileId._id }, { $inc: { erms: -3 } })
+                if (!review.profileId.equals(profileId)) {
+                    await Profile.updateOne({ _id: review.profileId._id }, { $inc: { erms: -3 } })
+                }
                 return returnCount - 2
             }
 
             await Review.updateOne({ _id: review._id }, { $push: { dislikes: profileId } })
-            await Profile.updateOne({ _id: review.profileId._id }, { $inc: { erms: -1 } })
+            if (!review.profileId.equals(profileId)) {
+                await Profile.updateOne({ _id: review.profileId._id }, { $inc: { erms: -1 } })
+            }
             return returnCount - 1
         }
 
