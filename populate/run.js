@@ -11,8 +11,6 @@ async function connectDB() {
     await mongoose.connect(process.env.MONGO_URL);
 }
 
-connectDB()
-
 // Load JSON files
 const profilesData = JSON.parse(fs.readFileSync(__dirname + '/profiles.json', 'utf-8'));
 const restosData = JSON.parse(fs.readFileSync(__dirname + '/restos.json', 'utf-8'));
@@ -47,8 +45,6 @@ const Profile = require("../database/models/Profile")
 const Resto = require("../database/models/Resto")
 const Review = require("../database/models/Review")
 
-console.log(Profile, Resto, Review)
-
 async function deleteAllEntries() {
     await Profile.deleteMany({});
     await Resto.deleteMany({});
@@ -64,12 +60,15 @@ async function insertData() {
 }
 
 // Execute the function to insert data
-insertData().then(async () => {
-    console.log('Data inserted successfully.');
-    await mongoose.connection.close();
-}).catch(async (err) => {
-    console.error('Error inserting data:', err);
-    await mongoose.connection.close();
-});
+
+connectDB().then(() => {
+    insertData().then(async () => {
+        console.log('Data inserted successfully.');
+        await mongoose.connection.close();
+    }).catch(async (err) => {
+        console.error('Error inserting data:', err);
+        await mongoose.connection.close();
+    })
+})
 
 
