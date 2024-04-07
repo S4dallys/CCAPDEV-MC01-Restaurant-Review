@@ -27,10 +27,16 @@ router.post('/register', async (req, res) => {
     }
 })
 
-router.post('/login', passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/error',
-}))
+router.post('/login', passport.authenticate('local'), (req, res) => {
+    if (req.isAuthenticated()) {
+        if (req.body.rememberMe) {
+            req.session.cookie.maxAge = 1814400000
+        }
+        res.redirect('/')
+    } else {
+        res.redirect("/error?=Failed to log in, please try again!")
+    }
+})
 
 router.post('/validatecredentials', async (req, res) => {
     const username = req.body.username
@@ -58,7 +64,7 @@ router.get('/logout', (req, res) => {
         if (err) {
             res.redirect('/error?errorMsg=Failed to logout.')
         } else {
-            res.redirect('/')
+            res.clearCookie("restaurantReviewsCookie").redirect('/')
         }
     })
 })

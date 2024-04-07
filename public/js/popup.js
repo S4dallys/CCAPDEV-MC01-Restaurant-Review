@@ -14,6 +14,11 @@ const cr_container = document.getElementById('cr-container')
 const cr_popup_open = document.getElementById('cr-popup-open')
 const cr_popup_close = document.getElementById('cr-popup-close')
 const cr_cancel = document.getElementById('cr-cancel')
+const or_container = document.getElementById('or-container')
+const or_popup_open = Array.from(document.getElementsByClassName('or-popup-open'))
+const or_popup_close = document.getElementById('or-popup-close')
+const or_cancel = document.getElementById('or-cancel')
+const or_revId = document.getElementById('or-revId')
 const lor_container = document.getElementById('lor-container')
 const lor_popup_open = document.getElementById('lor-popup-open')
 const lor_popup_close = document.getElementById('lor-popup-close')
@@ -45,6 +50,15 @@ xhttp.send()
 
 setUpPopup(lor_popup_open, lor_container)
 setUpPopup(lor_popup_close, lor_container)
+
+or_popup_open.forEach(e => {
+    setUpPopup(e, or_container)
+    e.addEventListener("click", b => {
+        or_revId.value = e.getAttribute("data-id")
+    })
+})
+setUpPopup(or_popup_close, or_container)
+setUpPopup(or_cancel, or_container)
 
 if (logoutform) {
     logout.addEventListener("click", () => {

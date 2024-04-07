@@ -9,12 +9,13 @@ router.get('/id/:profileId', checkAuthenticate, async (req, res) => {
     try {
         const q = req.query
 
-        const sort = q.sort || "relevance"
+        const sort = q.sort || "date"
         const order = q.order || "desc"
         const min = q.min || 0
         const max = q.max || 5
         const page = q.page || 1
         const or = q.or || "noor"
+        const filter = q.filter || null
 
         const profile = await query.getProfile({ name: req.params.profileId })
 
@@ -35,7 +36,7 @@ router.get('/id/:profileId', checkAuthenticate, async (req, res) => {
             isCurrentUser = profile._id.equals(req.user._id) 
         }
 
-        const sfReviews = await sortFilterReviews(reviews, min, max, sort, order, page, or, req.user)
+        const sfReviews = await sortFilterReviews(reviews, min, max, sort, order, page, or, filter, req.user)
 
         console.log(`ROUTE -> profile: ${req.params.profileId}`)
         res.render('profile', { sb: sb, reviews: sfReviews, isCurrentUser: isCurrentUser })

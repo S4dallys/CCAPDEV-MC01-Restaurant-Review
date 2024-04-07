@@ -10,6 +10,7 @@ const logForm = document.getElementById('lor-login-form')
 const logUsername = document.getElementById('lor-login-username')
 const logPassword = document.getElementById('lor-login-password')
 const logAlr = document.getElementById('lor-log-alr')
+const logRememberMe = document.getElementById('lor-remember-me')
 
 const normalIcon = "-40px -80px";
 const errorIcon = "-60px -80px";
@@ -79,6 +80,7 @@ function logValidateContent(e) {
     let xhttp = new XMLHttpRequest()
     xhttp.open("POST", `/auth/validatecredentials`, true)
     xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8")
+    xhttp.withCredentials = true
 
     xhttp.onreadystatechange = () => {
         if (xhttp.readyState != 4) {
@@ -89,15 +91,18 @@ function logValidateContent(e) {
             logAlr.innerHTML = ""
             logForm.submit()
         } else {
-            logAlr.innerHTML = "❌ Invalid username or password."
+            logAlr.innerHTML = "❌ Invalid Credentials."
             logUsername.classList.add("required-error")
             logPassword.classList.add("required-error")
         }
     }
 
+    console.log(logRememberMe.checked)
+
     xhttp.send(JSON.stringify({
         "username": logUsername.value,
-        "password": logPassword.value
+        "password": logPassword.value,
+        "rememberMe": logRememberMe.checked
     }))
 
 }

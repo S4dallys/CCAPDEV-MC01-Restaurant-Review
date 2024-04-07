@@ -55,7 +55,7 @@ async function sortFilterHome(restos, min, max, sort, order) {
     }
 }
 
-async function sortFilterReviews(reviews, min, max, sort, order, page, or, user) {
+async function sortFilterReviews(reviews, min, max, sort, order, page, or, filter, user) {
     let [minLikes, maxLikes, minlastUpdated, maxlastUpdated] = [null, null, null, null]
 
     reviews.map((r) => {
@@ -90,7 +90,11 @@ async function sortFilterReviews(reviews, min, max, sort, order, page, or, user)
     })
 
     const relevance = new Relevance(minLikes, minLikes, minlastUpdated, maxlastUpdated, 0.6, 0.4)
-    let newReviews = reviews.filter(r => r.stars >= min && r.stars <= max && ((or === "or") ? r.hasOr : true))
+    const regex = filter ? new RegExp(filter, "i") : /./g
+    let newReviews = reviews.filter(r =>
+        r.stars >= min &&
+        r.stars <= max &&
+        ((or === "or") ? r.hasOr : true && (regex.test(r.body) || regex.test(r.title))))
 
     newReviews.sort((a, b) => {
         if (sort === "relevance") {

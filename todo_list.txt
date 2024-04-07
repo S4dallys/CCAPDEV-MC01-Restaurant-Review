@@ -14,9 +14,14 @@
 
 POST SUBMISSION CHECKLIST
 [ ] 14. Editing and deleting posts (including owner posts)
-[ ] 15. Add more sample data
-[ ] 16. Add "no reviews :(" message (easy!)
-[ ] 17. About page
-[ ] 18. Better file and directory names
-[ ] 19. Double check post and get authorization
-[ ] 20. Finish deploying
+[ ] 15. Remember me
+[ ] 16. Add more sample data
+[ ] 17. Add "no reviews :(" message (easy!)
+[ ] 18. About page
+[ ] 19. Better file and directory names
+[ ] 20. Double check post and get authorization
+[ ] 21. Finish deploying
+
+TODO: 
+disable erm farming
+add data stars only at review form, it is waht it is

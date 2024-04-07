@@ -131,7 +131,7 @@ router.post('/review', up.array("images", 4), async (req, res) => {
 
         if (review.profileId._id.equals(user._id)) {
             const oldImages = review.uploads
-            const updateObj = { title: title, body: content, stars: stars, lastUpdated: new Date() }
+            const updateObj = { title: title, body: content, stars: stars }
             if (images) {
                 updateObj.uploads = images.map(i => { return i.filename })
 
@@ -146,9 +146,16 @@ router.post('/review', up.array("images", 4), async (req, res) => {
                 })
             }
 
-            await query.updateReview({ _id: id }, { $set: updateObj })
+            if (images.length != 0 || updateObj.title !== review.title || updateObj.body !== review.body || updateObj.stars !== review.stars.toString()) {
+                updateObj.edited = true
+                updateObj.lastUpdated = new Date()
 
-            console.log(`ROUTE -> UPDATED REVIEW (${id})`)
+                console.log(`ROUTE -> UPDATED REVIEW (${id})`)
+                await query.updateReview({ _id: id }, { $set: updateObj })
+            } else {
+                console.log(`ROUTE -> NO CHANGES TO REVIEW (${id})`)
+            }
+
             res.status(200).send("Success!")
         } else {
             console.log(`ROUTE -> FAILED TO UPDATE REVIEW`)

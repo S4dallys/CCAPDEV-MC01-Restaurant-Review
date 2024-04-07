@@ -7,21 +7,39 @@ const file = document.getElementById("cr-file")
 const label = document.getElementById("cr-upload-text")
 const icon = document.getElementsByClassName("cr-img-i")[0]
 
+const orForm = document.getElementById('or-form')
+const orBody = document.getElementById('or-content')
+const orButton = document.getElementById('or-post')
+
 file.addEventListener("change", validateFilesLength);
 form.addEventListener('submit', validateReviewContent)
+orForm.addEventListener('submit', validateReplyContent)
 
 function validateReviewContent(e) {
-    if (title.value == ""){
+    if (title.value === "" || body.value === ""){
         // disable button
         e.preventDefault()
         title.classList.add("required-error")
+        body.classList.add("required-error")
     } else {
         // enable button
         title.classList.remove("required-error")
+        body.classList.remove("required-error")
     }
 
     if (file.files.length > 4) {
         e.preventDefault() 
+    }
+}
+
+function validateReplyContent(e) {
+    if (orBody.value == ""){
+        // disable button
+        e.preventDefault()
+        orBody.classList.add("required-error")
+    } else {
+        // enable button
+        orBody.classList.remove("required-error")
     }
 }
 

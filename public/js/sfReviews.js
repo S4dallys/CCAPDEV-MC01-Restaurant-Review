@@ -49,11 +49,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     filterForm.addEventListener("submit", (e) => {
         e.preventDefault()
-        window.location.href = `/?filter=${filter.value}`
+        somethingChanged()
     })
 
     function somethingChanged() {
         const path = window.location.origin + window.location.pathname
-        window.location.href = `${path}?sort=${sort.value}&order=${order.checked ? "asc" : "desc"}&min=${min.value}&max=${max.value}&page=${page.value}&or=${or.checked ? "or" : "noor"}`
+        window.location.href = `${path}?sort=${sort.value}&order=${order.checked ? "asc" : "desc"}&min=${min.value}&max=${max.value}&page=${page.value}&or=${or.checked ? "or" : "noor"}&filter=${filter.value}`
     }
 })

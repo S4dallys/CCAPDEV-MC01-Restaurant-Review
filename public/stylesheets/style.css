@@ -195,7 +195,7 @@ body {
     align-items: center;
 }
 
-#cr-container {
+#cr-container, #or-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -236,9 +236,20 @@ body {
     border-radius: 10px;
 }
 
+#lor-remember-me {
+    margin-left: 10px;
+    transform: scale(1.5);
+    position: relative;
+    top: 2px;
+}
+
+#lor-remember-me-label {
+    font-size: 1.2rem;
+}
+
 #lor-login-box {
     background-color: #292F33;
-    height: 350px;
+    height: 450px;
 }
 
 #lor-register-box {
@@ -250,7 +261,7 @@ body {
 #lor-login-title {
     color: var(--col-prim);
     font-size: 2.5rem;
-    height: 20%;
+    height: 15%;
 }
 
 #lor-register-title {
@@ -478,9 +489,18 @@ body {
     border-radius: 10px;
     background-color: #356aab;
     color: var(--col-white);
-    padding-inline: 5px;
+    padding: 5px;
     cursor: pointer;
     text-decoration: none;
+    height: 25px;
+    line-height: 1.2;
+}
+
+.or-reply-delete {
+    background-color: var(--col-owner-prim);
+    font-weight: bold;
+    color: black;
+    padding: 5px;
 }
 
 .pro-review-images {
@@ -592,7 +612,6 @@ body {
 
 .thov-auth {
     transition: color 0.2s ease;
-
 }
 
 .pro-like {
@@ -654,9 +673,8 @@ body {
     margin-bottom: 5px;
 }
 
-.pro-user-date {
+.pro-user-date, .pro-user-edited {
     font-style: italic;
-
 }
 
 .pro-or-date {
@@ -756,20 +774,16 @@ body {
 .pro-or-auth-box {
     width: 20%;
     height: auto;
-
+    cursor: pointer;
     margin-left: 65%;
     margin-right: auto;
     margin-top: -.2vh;
-
     padding: 1.7vh;
-
     font-size: 2vh;
     color: var(--col-owner-prim);
-
     background-color: var(--col-sec);
     border: 2px solid white;
     border-radius: 0 0 15px 15px;
-
     position: relative;
 }
 
@@ -976,6 +990,10 @@ body {
     border-radius: 20px;
 }
 
+.cr-popup-reply {
+    height: 50%;
+}
+
 .cr-header {
     display: flex;
     justify-content: space-between;
@@ -984,6 +1002,11 @@ body {
 
 .cr-label {
     font-size: 2.5rem;
+}
+
+.cr-reply {
+    font-style: 2.5rem;
+    color: var(--col-owner-prim);
 }
 
 .cr-x-i {
@@ -1027,6 +1050,14 @@ body {
 #cr-content {
     height: 200px;
     font-size: 1.1rem;
+    resize: none;
+}
+
+#cr-content, #or-content {
+    height: 150px;
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 10px;
     resize: none;
 }
 

@@ -28,7 +28,7 @@
                     class="pro-user-link thov1">{{
                     profileId.name }}</a> on <a href="/resto/id/{{ restoId.name }}"
                     class="pro-location-link bitalics thov1">{{ restoId.name }}</a> • <span class="pro-user-date"
-                    data-date="{{ lastUpdated }}"></span></p>
+                    data-date="{{ lastUpdated }}"></span>{{#if edited}}<span class="pro-user-edited"> &ltedited&gt<span>{{/if}}</p>
                 <div class="pro-review-title-div">
                     <h3 class="pro-review-title bold">{{ title }}</h3>
                     {{#if edit}}
@@ -48,9 +48,21 @@
                 <span class="icon pro-crown-i"></span>
                 <span class="bold">Owner Response • <span class="pro-or-date"
                         data-date="{{ ownersResponse.lastUpdated }}"></span></span>
+                {{#if isOwner}}
+                <a href="/edit/review/{{ _id }}" class="pro-post-edit or-reply-delete hov3">delete</a>
+                {{/if}}
             </div>
             <div class="pro-or-text">{{ ownersResponse.body }}</div>
         </div>
+        {{else}}
+        {{#if isOwner}}
+        <div class="or-popup-open pro-or-auth-box" data-id="{{ _id }}">
+            <div class="pro-or-auth-header">
+                <span class="icon icon-md pro-author-i"></span>
+                <span class="bold thov-auth">Reply</span>
+            </div>
+        </div>
+        {{/if}}
         {{/if}}
     </li>
     {{/each}}

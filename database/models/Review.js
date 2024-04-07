@@ -28,7 +28,7 @@ const reviewSchema = new mongoose.Schema({
     },
     body: {
         type: String,
-        default: ""
+        required: true
     },
     uploads: {
         type: [String],
@@ -37,6 +37,10 @@ const reviewSchema = new mongoose.Schema({
     lastUpdated: {
         type: Date,
         required: true
+    },
+    edited: {
+        type: Boolean,
+        default: false
     },
     likes: {
         type: [mongoose.SchemaTypes.ObjectId],

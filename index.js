@@ -15,6 +15,10 @@ app.use(express.json()) // use json
 app.use(express.urlencoded({ extended: true })); // files consist of more than strings
 app.use(express.static('public')) // we'll add a static directory named "public"
 
+// global data
+app.locals.currentUser = null
+
+// hbs
 hbs.registerPartials(__dirname + "/views/partials")
 app.set('views', __dirname + "/views")
 app.set('view engine', 'hbs')
@@ -30,9 +34,10 @@ app.use(session({
     saveUninitialized: false,
     cookie: {
         secure: false,
-        maxAge: 360000000 // 100 hours
+        maxAge: false 
     }
 }))
+
 app.use(passport.session())
 initPassport(passport)
 
@@ -51,8 +56,6 @@ app.use("/review", reviewRouter)
 app.use("/auth", authRouter)
 app.use("/edit", editRouter)
 
-// global data
-app.locals.currentUser = null
 
 // listen! :3
 const server = app.listen(3000, function() {

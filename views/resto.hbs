@@ -1,6 +1,6 @@
 <!-- create review popup -->
 <div id="cr-container" class="popup">
-    <form id="cr-form" class="cr-popup" method="post" enctype="multipart/form-data" action="/review/{{ sb.name }}/new">
+    <form id="cr-form" class="cr-popup" method="post" enctype="multipart/form-data" action="/review/new/{{ sb.name }}">
         <div class="cr-header">
             <h1 class="cr-label">Create Review</h1>
             <span id="cr-popup-close" class="icon icon-md popup-x-i cr-x-i hov2">
@@ -18,6 +18,25 @@
             <div class="cr-button-group">
                 <button id="cr-cancel" type="button" class="popup-button cr-cancel hov1">CANCEL</button>
                 <button id="cr-post" type="submit" class="popup-button cr-post hov1">POST</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- creater or popup -->
+<div id="or-container" class="popup">
+    <form id="or-form" class="cr-popup cr-popup-reply" method="post" action="/review/reply">
+        <input id="or-revId" type="hidden" name="reviewId" value="">
+        <div class="cr-header">
+            <h1 class="cr-reply">Reply to User</h1>
+            <span id="or-popup-close" class="icon icon-md popup-x-i cr-x-i hov2">
+        </div>
+        <textarea name="body" id="or-content" class="required-field"
+            placeholder="Enter reply..."></textarea>
+        <div class="cr-actions">
+            <div class="cr-button-group">
+                <button id="or-cancel" type="button" class="popup-button cr-cancel hov1">CANCEL</button>
+                <button id="or-post" type="submit" class="popup-button cr-post hov1">POST</button>
             </div>
         </div>
     </form>

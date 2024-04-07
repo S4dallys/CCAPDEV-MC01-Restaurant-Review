@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 const maxuploads = 4
 const upload = multer({ storage: storage })
 
-router.post("/:restoId/new", upload.array("rv-images", maxuploads), async (req, res) => {
+router.post("/new/:restoId", upload.array("rv-images", maxuploads), async (req, res) => {
     try {
         if (!req.isAuthenticated()) {
             res.redirect("/error?errorMsg=User not logged in.")
@@ -51,6 +51,54 @@ router.post("/:restoId/new", upload.array("rv-images", maxuploads), async (req, 
 
         console.log(`POST -> ${resto.name} - ${req.body["rv-title"]}`)
         console.log(`\n--- UPLOAD ---\n${newReview}\n--------------\n`)
+    } catch (err) {
+        console.log(`ERROR! ${err.message}`)
+
+        if (err.name !== "LoginError" && err.name !== "RestoError") {
+            res.redirect(`/error`)
+        } else {
+            res.redirect(`/error?errorMsg=${err.message}`)
+        }
+    }
+})
+
+router.post("/reply", async (req, res) => {
+    try {
+        if (!req.isAuthenticated()) {
+            res.redirect("/error?errorMsg=User not logged in.")
+            return
+        }
+        
+        const profile = req.user
+
+        const reviewId = req.body.reviewId
+        const review = await query.getReview({ _id: reviewId })
+
+        if (!review) {
+            error.throwReviewFetchError()
+        }
+
+        const resto = await query.getResto({ _id: review.restoId._id })
+
+        if (!resto) {
+            error.throwRestoError()
+        }
+
+        if (!profile._id.equals(resto.owner)) {
+            error.throwLoginFailError()
+        }
+
+        const data = {
+            lastUpdated: new Date(),
+            body: req.body.body
+        }
+
+        await query.updateReview({ _id: reviewId }, { $set: { ownersResponse: data, hasOr: true } })
+
+        res.redirect(`/resto/id/${resto.name}`)
+
+        console.log(`REPLY-> ${reviewId}`)
+        console.log(`\n--- REPLY ---\n${data}\n--------------\n`)
     } catch (err) {
         console.log(`ERROR! ${err.message}`)
 

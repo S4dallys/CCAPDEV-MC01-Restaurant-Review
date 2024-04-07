@@ -14,8 +14,8 @@ const query = {
     getRestos: (filter) => {
         return Resto.find(filter).lean()
     },
-    getReview: (filter) => {
-        return Review.findOne(filter).populate({
+    getReview: (filter, fields) => {
+        return Review.findOne(filter, fields).populate({
             path: 'restoId',
             model: 'Resto'
         }).populate({
