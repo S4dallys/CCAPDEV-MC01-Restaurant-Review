@@ -47,6 +47,8 @@ const Profile = require("../database/models/Profile")
 const Resto = require("../database/models/Resto")
 const Review = require("../database/models/Review")
 
+console.log(Profile, Resto, Review)
+
 async function deleteAllEntries() {
     await Profile.deleteMany({});
     await Resto.deleteMany({});
