@@ -28,13 +28,14 @@
                     class="pro-user-link thov1">{{
                     profileId.name }}</a> on <a href="/resto/id/{{ restoId.name }}"
                     class="pro-location-link bitalics thov1">{{ restoId.name }}</a> • <span class="pro-user-date"
-                    data-date="{{ lastUpdated }}"></span>{{#if edited}}<span class="pro-user-edited"> &ltedited&gt<span>{{/if}}</p>
-                <div class="pro-review-title-div">
-                    <h3 class="pro-review-title bold">{{ title }}</h3>
-                    {{#if edit}}
-                    <a href="/edit/review/{{ _id }}" class="pro-post-edit hov3">edit</a>
-                    {{/if}}
-                </div>
+                    data-date="{{ lastUpdated }}"></span>{{#if edited}}<span class="pro-user-edited">
+                    &ltedited&gt<span>{{/if}}</p>
+                        <div class="pro-review-title-div">
+                            <h3 class="pro-review-title bold">{{ title }}</h3>
+                            {{#if edit}}
+                            <a href="/edit/review/{{ _id }}" class="pro-post-edit hov3">edit</a>
+                            {{/if}}
+                        </div>
             </div>
         </div>
         <div class="pro-review-text">{{ body }}</div>
@@ -49,7 +50,11 @@
                 <span class="bold">Owner Response • <span class="pro-or-date"
                         data-date="{{ ownersResponse.lastUpdated }}"></span></span>
                 {{#if isOwner}}
-                <a href="/edit/review/{{ _id }}" class="pro-post-edit or-reply-delete hov3">delete</a>
+                <form action="/edit/delete/or" method="post">
+                    <label for="delete-submit" class="pro-post-edit or-reply-delete hov3">delete</label>
+                    <input type="hidden" name="id" value="{{ _id }}">
+                    <input id="delete-submit" class='input-hidden' type="submit">
+                </form>
                 {{/if}}
             </div>
             <div class="pro-or-text">{{ ownersResponse.body }}</div>

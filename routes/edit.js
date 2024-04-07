@@ -194,7 +194,35 @@ router.post("/delete", async (req, res) => {
             })
         })
 
-        console.log("DELETED: " + review.name)
+        console.log("DELETED: " + review.title)
+        res.redirect(`/resto/id/${review.restoId.name}`)
+    } catch (err) {
+        console.log(`ERROR! ${err.message}`)
+
+        if (err.name != "ReviewFetchError" && err.name != "LoginFailError") {
+            res.redirect(`/error`)
+        } else {
+            res.redirect(`/error?errorMsg=${err.message}`)
+        }
+    }
+})
+
+router.post("/delete/or", async (req, res) => {
+    try {
+        const id = req.body.id
+        const review = await query.getReview({ _id: id })
+
+        if (!review) {
+            error.throwReviewFetchError()
+        }
+
+        if (!req.isAuthenticated() || !req.user._id.equals(review.restoId.owner)) {
+            error.throwLoginFailError()
+        }
+
+        await query.updateReview({ _id: id }, { $set: { ownersResponse: null, hasOr: false } })
+
+        console.log("DELETED OR: " + review.title)
         res.redirect(`/resto/id/${review.restoId.name}`)
     } catch (err) {
         console.log(`ERROR! ${err.message}`)
