@@ -2,7 +2,12 @@ const mongoose = require("mongoose")
 const Profile = require("../database/models/Profile")
 const Resto = require("../database/models/Resto")
 const Review = require("../database/models/Review")
-mongoose.connect("mongodb://localhost/ccapdev_ngolimko");
+
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+}
+
+mongoose.connect(process.env.MONGO_URL);
 
 const query = {
     getProfile: (filter) => {

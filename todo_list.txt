@@ -13,15 +13,11 @@
 [x] 13. mvc
 
 POST SUBMISSION CHECKLIST
-[ ] 14. Editing and deleting posts (including owner posts)
-[ ] 15. Remember me
+[x] 14. Editing and deleting posts (including owner posts)
+[x] 15. Remember me
 [ ] 16. Add more sample data
 [ ] 17. Add "no reviews :(" message (easy!)
 [ ] 18. About page
-[ ] 19. Better file and directory names
-[ ] 20. Double check post and get authorization
+[-] 19. Better file and directory names
+[x] 20. Double check post and get authorization
 [ ] 21. Finish deploying
-
-TODO: 
-disable erm farming
-add data stars only at review form, it is waht it is
