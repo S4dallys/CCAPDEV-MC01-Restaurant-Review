@@ -7,12 +7,12 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
 
-mongoose.connect(process.env.MONGO_URL);
+await mongoose.connect(process.env.MONGO_URL);
 
 // Load JSON files
 const profilesData = JSON.parse(fs.readFileSync(__dirname + '/profiles.json', 'utf-8'));
 const restosData = JSON.parse(fs.readFileSync(__dirname + '/restos.json', 'utf-8'));
-const reviewsData = JSON.parse(fs.readFileSync(__dirname + '/reviews.json', 'utf-8')); 
+const reviewsData = JSON.parse(fs.readFileSync(__dirname + '/reviews.json', 'utf-8'));
 
 // Function to convert string _id to ObjectId in an array of objects
 function convertIdsToObjectId(data) {
@@ -58,12 +58,12 @@ async function insertData() {
 }
 
 // Execute the function to insert data
-insertData().then(() => {
+insertData().then(async () => {
     console.log('Data inserted successfully.');
-    mongoose.connection.close();
-}).catch(err => {
+    await mongoose.connection.close();
+}).catch(async (err) => {
     console.error('Error inserting data:', err);
-    mongoose.connection.close();
+    await mongoose.connection.close();
 });
 
 
