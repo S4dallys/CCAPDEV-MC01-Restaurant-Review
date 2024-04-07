@@ -7,7 +7,11 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
 
-await mongoose.connect(process.env.MONGO_URL);
+async function connectDB() {
+    await mongoose.connect(process.env.MONGO_URL);
+}
+
+connectDB()
 
 // Load JSON files
 const profilesData = JSON.parse(fs.readFileSync(__dirname + '/profiles.json', 'utf-8'));
