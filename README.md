@@ -4,16 +4,22 @@
 
 A repo for a restaurant review site.   
    
-Contains numerous pieces of sample data for users and restaurants, as well as multiple sample reviews. Placeholder users/reviews/reastaurants are purely to show off scrolling/what the site would look like if it were fully populated.
+Contains numerous pieces of sample data for users and restaurants, as well as multiple sample reviews.
 
 ## ⭐ Members
 - LIM, RYDEL   
 - NGO, RENDELL   
 - KO, CARL
 
-## 🔭 Dependencies
+## 🔭 Dependencies 
 - [MongoDB Community Server](https://www.mongodb.com/try/download/community)  
 - [Node.js](https://nodejs.org/en)
+- A [.env](https://www.npmjs.com/package/dotenv) file containing 
+```
+SESSION_SECRET=<secret string>
+NODE_ENV=development
+MONGO_URL=<mongodb url>
+```
 
 ## 👇 Installation
 ```
@@ -28,18 +34,14 @@ npm ci
 npm run populate
 npm start
 ```
-
-### NOTE!
-- Server runs locally on Port 3000
-- Running `npm run populate` empties and populates a local db named *ccapdev_ngolimko*
   
-### Alternatively, view deployed site on [Render.com](https://ccapdev-mco-ngolimko.onrender.com) (under construction!)
+## 🚀 View LIVE Deployment on [Render.com](https://ccapdev-mco-ngolimko.onrender.com/)
 
-## 🌵 Todo
-- [ ] Editing and deleting posts
+## 🌵 Todo *POST* Submission
+- [x] Editing and deleting posts
 - [ ] Add more sample data
 - [ ] Add "no reviews :(" message (easy!)
 - [ ] About page
-- [ ] Better file and directory names
-- [ ] Double check post and get authorization
-- [ ] Finish deploying
+- [x] Better file and directory names
+- [x] Double check post and get authorization
+- [x] Finish deploying

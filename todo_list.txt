@@ -21,3 +21,5 @@ POST SUBMISSION CHECKLIST
 [-] 19. Better file and directory names
 [x] 20. Double check post and get authorization
 [ ] 21. Finish deploying
+
+what are you looking at >:(
