@@ -10,9 +10,9 @@ if (process.env.NODE_ENV !== 'production') {
 mongoose.connect(process.env.MONGO_URL);
 
 // Load JSON files
-const profilesData = JSON.parse(fs.readFileSync('./profiles.json', 'utf-8'));
-const restosData = JSON.parse(fs.readFileSync('./restos.json', 'utf-8'));
-const reviewsData = JSON.parse(fs.readFileSync('./reviews.json', 'utf-8')); 
+const profilesData = JSON.parse(fs.readFileSync(__dirname + '/profiles.json', 'utf-8'));
+const restosData = JSON.parse(fs.readFileSync(__dirname + '/restos.json', 'utf-8'));
+const reviewsData = JSON.parse(fs.readFileSync(__dirname + '/reviews.json', 'utf-8')); 
 
 // Function to convert string _id to ObjectId in an array of objects
 function convertIdsToObjectId(data) {
