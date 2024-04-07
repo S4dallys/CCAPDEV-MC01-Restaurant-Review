@@ -42,6 +42,10 @@ file.addEventListener("change", validateFilesLength);
 file.addEventListener("click", validateFilesLength);
 form.addEventListener('submit', validateReviewContent)
 
+cancel.addEventListener('click', ev => {
+    file.setAttribute("data-changed", "false")
+})
+
 const deleteForm = document.getElementById('delete-yes')
 deleteForm.addEventListener("click", (e) => { deleteForm.submit() })
 
@@ -80,11 +84,14 @@ function validateFilesLength() {
         icon.style.backgroundPosition = errorIcon
         label.innerText = "MAX 4 IMGS"
     }
+
+    file.setAttribute("data-changed", "true")
 }
 
 function submitForm() {
     const data = new FormData(form)
     data.append("id", revId)
+    data.append("imagesChanged", file.getAttribute("data-changed"))
 
     let xhttp = new XMLHttpRequest()
     xhttp.open("POST", `/edit/review`, true)

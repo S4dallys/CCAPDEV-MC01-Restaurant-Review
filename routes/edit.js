@@ -5,6 +5,7 @@ const error = require("../utility/error")
 const multer = require("multer")
 const fs = require("fs")
 const checkAuthenticate = require("../utility/checkauthenticate")
+const { updateOne } = require("../database/models/Profile")
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
@@ -115,7 +116,7 @@ router.post('/profile', av.single("avatar"), async (req, res) => {
 router.post('/review', up.array("images", 4), async (req, res) => {
     try {
         const user = req.user
-        const { title, content, stars, id } = req.body
+        const { title, content, stars, id, imagesChanged } = req.body
         const images = req.files
 
         if (!user || title === "") {
@@ -132,7 +133,7 @@ router.post('/review', up.array("images", 4), async (req, res) => {
         if (review.profileId._id.equals(user._id)) {
             const oldImages = review.uploads
             const updateObj = { title: title, body: content, stars: stars }
-            if (images) {
+            if (imagesChanged === "true") {
                 updateObj.uploads = images.map(i => { return i.filename })
 
                 oldImages.forEach(img => {
@@ -146,7 +147,7 @@ router.post('/review', up.array("images", 4), async (req, res) => {
                 })
             }
 
-            if (images.length != 0 || updateObj.title !== review.title || updateObj.body !== review.body || updateObj.stars !== review.stars.toString()) {
+            if (imagesChanged || updateObj.title !== review.title || updateObj.body !== review.body || updateObj.stars !== review.stars.toString()) {
                 updateObj.edited = true
                 updateObj.lastUpdated = new Date()
 
