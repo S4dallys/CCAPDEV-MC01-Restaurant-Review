@@ -25,11 +25,13 @@ app.set('view engine', 'hbs')
 app.set('view options', { layout: '/layouts/header' });
 
 const session = require("express-session")
+const MongoStore = require('connect-mongo')(session);
 const passport = require('passport')
 const initPassport = require("./utility/passport_config")
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
+    store: new MongoStore(options),
     resave: false,
     saveUninitialized: false,
     cookie: {
