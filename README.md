@@ -19,6 +19,7 @@ Contains numerous pieces of sample data for users and restaurants, as well as mu
 SESSION_SECRET=<secret string>
 NODE_ENV=development
 MONGO_URL=<mongodb url>
+PORT=<port number>
 ```
 
 ## 👇 Installation
