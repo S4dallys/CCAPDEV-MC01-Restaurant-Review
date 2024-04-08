@@ -195,7 +195,8 @@ body {
     align-items: center;
 }
 
-#cr-container, #or-container {
+#cr-container,
+#or-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -673,7 +674,8 @@ body {
     margin-bottom: 5px;
 }
 
-.pro-user-date, .pro-user-edited {
+.pro-user-date,
+.pro-user-edited {
     font-style: italic;
 }
 
@@ -693,7 +695,7 @@ body {
     width: 50%;
 }
 
-.pro-review-header > * {
+.pro-review-header>* {
     flex-grow: 1;
 }
 
@@ -1053,7 +1055,8 @@ body {
     resize: none;
 }
 
-#cr-content, #or-content {
+#cr-content,
+#or-content {
     height: 150px;
     font-size: 1.1rem;
     padding: 10px;
@@ -1379,11 +1382,11 @@ body {
     flex-direction: column;
 }
 
-#delete-content > h2 {
+#delete-content>h2 {
     text-align: center;
 }
 
-#delete-content > div {
+#delete-content>div {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -1394,4 +1397,55 @@ body {
     font-size: 2rem;
     margin-top: 150px;
     height: 100%;
+}
+
+#about-container {
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+#about-ul {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 25px;
+    margin-block: 40px;
+}
+
+.about-title {
+    font-size: 3rem;
+}
+
+#about-ul li {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.about-li-item {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 200px;
+    left: calc(50% - 100px);
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.about-li-desc {
+    border: 2px solid #82b7c2;
+    background-color: rgba(38, 43, 56, 0.5);
+    margin-top: 10px;
+    min-height: 100px;
+    width: 300px;
+    padding: 20px;
 }

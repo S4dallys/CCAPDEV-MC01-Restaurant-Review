@@ -32,7 +32,7 @@ POST SUBMISSION CHECKLIST
 [ ] 19. Add more sample data
     - added fake "likes" and "erms" to populate website easier
     - added real and fake "owners" to populate website easier
-[ ] 20. About page
+[x] 20. About page
 [x] 21. Finish deploying
     - setup a mongodb atlas server cluster for DB
     - render.com web service for node server
