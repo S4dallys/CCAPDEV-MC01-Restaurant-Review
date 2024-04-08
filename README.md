@@ -38,11 +38,5 @@ npm start
   
 ## 🚀 View LIVE Deployment on [Render.com](https://ccapdev-mco-ngolimko.onrender.com/)
 
-## 🌵 Todo *POST* Submission
-- [x] Editing and deleting posts
-- [ ] Add more sample data
-- [ ] Add "no reviews :(" message (easy!)
-- [ ] About page
-- [x] Better file and directory names
-- [x] Double check post and get authorization
-- [x] Finish deploying
+## 🌵 Todo 
+- [ ] *one day*, our filenames and variables will make sense...

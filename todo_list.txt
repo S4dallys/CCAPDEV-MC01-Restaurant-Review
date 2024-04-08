@@ -13,13 +13,28 @@
 [x] 13. mvc
 
 POST SUBMISSION CHECKLIST
-[x] 14. Editing and deleting posts (including owner posts)
+[x] 14. Editing and deleting posts
+    - Edit button on user post
+    - added "edited" field to reviews
+    - Deleting old images if not used anymore
+    - delete button on edit_review hbs
+    - reply button on user posts if owner
+    - delete button for owner responses
+    - Add "no reviews :(" message on empty review sets
 [x] 15. Remember me
-[ ] 16. Add more sample data
-[ ] 17. Add "no reviews :(" message (easy!)
-[ ] 18. About page
-[-] 19. Better file and directory names
-[x] 20. Double check post and get authorization
-[ ] 21. Finish deploying
+    - using session-cookies instead of persistent cookies (if not selected)
+    - remember me button on login
+[x] 16. Filtering reviews based on keyword in body or title
+[x] 17. Date Descending is now default sorting method (on render)
+[x] 18. Using MongoStore with mongo-connect to store sessions
+    - replaced sensitive data such as Mongo_Url with env variables (on render.com)
+    - added local .env to gitignore
+[ ] 19. Add more sample data
+    - added fake "likes" and "erms" to populate website easier
+    - added real and fake "owners" to populate website easier
+[ ] 20. About page
+[x] 21. Finish deploying
+    - setup a mongodb atlas server cluster for DB
+    - render.com web service for node server
 
 what are you looking at >:(
