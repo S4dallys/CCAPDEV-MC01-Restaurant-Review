@@ -24,6 +24,9 @@
         <div id="sortfilter">
             {{> sortfilter}}
         </div>
+        {{# if empty}}
+        <div id="empty-reviews-msg">No reviews found (ￗ﹏ￗ )</div>
+        {{/if}}
         {{> review reviews}}
     </div>
 </div>

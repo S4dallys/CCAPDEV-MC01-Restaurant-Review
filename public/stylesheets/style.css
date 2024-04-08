@@ -1388,3 +1388,10 @@ body {
     justify-content: center;
     gap: 10px;
 }
+
+#empty-reviews-msg {
+    color: var(--col-white);
+    font-size: 2rem;
+    margin-top: 150px;
+    height: 100%;
+}

@@ -43,8 +43,10 @@ router.get('/id/:restoId', checkAuthenticate, async (req, res) => {
            s.isOwner = isOwner  
         })
 
+        const empty = sfReviews.length == 0
+
         console.log(`ROUTE -> resto: ${req.params.restoId}`)
-        res.render('resto', { sb: sb, reviews: sfReviews  })
+        res.render('resto', { sb: sb, reviews: sfReviews, empty: empty })
     } catch (err) {
         console.log(`ERROR! ${err.message}`)
 

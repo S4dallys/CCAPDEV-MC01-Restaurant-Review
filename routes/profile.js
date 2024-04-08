@@ -37,9 +37,10 @@ router.get('/id/:profileId', checkAuthenticate, async (req, res) => {
         }
 
         const sfReviews = await sortFilterReviews(reviews, min, max, sort, order, page, or, filter, req.user)
+        const empty = sfReviews.length == 0
 
         console.log(`ROUTE -> profile: ${req.params.profileId}`)
-        res.render('profile', { sb: sb, reviews: sfReviews, isCurrentUser: isCurrentUser })
+        res.render('profile', { sb: sb, reviews: sfReviews, isCurrentUser: isCurrentUser, empty: empty })
     } catch (err) {
         console.log(`ERROR! ${err.message}`)
 
