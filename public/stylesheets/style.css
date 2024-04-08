@@ -1414,8 +1414,8 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 25px;
+    justify-content: center;
+    gap: 30px;
     margin-block: 40px;
 }
 
@@ -1445,7 +1445,7 @@ body {
     border: 2px solid #82b7c2;
     background-color: rgba(38, 43, 56, 0.5);
     margin-top: 10px;
-    min-height: 100px;
+    min-height: 85px;
     width: 300px;
     padding: 20px;
 }
