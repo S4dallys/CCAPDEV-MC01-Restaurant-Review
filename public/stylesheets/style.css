@@ -743,6 +743,7 @@ body {
     max-height: 5rem;
     padding-bottom: 1.2rem;
     color: var(--col-owner-sec);
+    word-wrap: break-word;
 }
 
 .post-expanded {
