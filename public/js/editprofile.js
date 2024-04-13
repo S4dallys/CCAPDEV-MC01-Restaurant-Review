@@ -24,7 +24,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault()
     const data = new FormData(form)
     let xhttp = new XMLHttpRequest()
-    xhttp.open("POST", `/auth/register`, true)
+    xhttp.open("POST", `/auth/nametaken`, true)
 
     xhttp.onreadystatechange = () => {
         if (xhttp.readyState != 4) {
